@@ -72,7 +72,6 @@
 		DD382D841AC0599C000C78E3 = {
 			isa = PBXGroup;
 			children = (
-				DD382DBF1AC05C91000C78E3 /* Entidades */,
 				DD382D8F1AC0599C000C78E3 /* MiniChallenge 2 */,
 				DD382DA91AC0599C000C78E3 /* MiniChallenge 2Tests */,
 				DD382D8E1AC0599C000C78E3 /* Products */,
@@ -91,6 +90,7 @@
 		DD382D8F1AC0599C000C78E3 /* MiniChallenge 2 */ = {
 			isa = PBXGroup;
 			children = (
+				DD382DBF1AC05C91000C78E3 /* Entidades */,
 				DD382D941AC0599C000C78E3 /* AppDelegate.h */,
 				DD382D951AC0599C000C78E3 /* AppDelegate.m */,
 				DD382D971AC0599C000C78E3 /* ViewController.h */,
@@ -140,6 +140,7 @@
 				DD382DB71AC05C49000C78E3 /* Filho.m */,
 			);
 			name = Entidades;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
