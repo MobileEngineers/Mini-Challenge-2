@@ -7,7 +7,7 @@ Ana Elisa Pessoa
 
 Isaías Rocha Lima
 
-Lídia Chou
+Lidia Chou
 
 Matheus Amancio Seixeiro
 
