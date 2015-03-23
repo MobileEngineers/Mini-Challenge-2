@@ -15,7 +15,6 @@
 		DD382DA11AC0599C000C78E3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD382D9F1AC0599C000C78E3 /* LaunchScreen.xib */; };
 		DD382DAD1AC0599C000C78E3 /* MiniChallenge_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD382DAC1AC0599C000C78E3 /* MiniChallenge_2Tests.m */; };
 		DD382DB81AC05C49000C78E3 /* Filho.m in Sources */ = {isa = PBXBuildFile; fileRef = DD382DB71AC05C49000C78E3 /* Filho.m */; };
-		DD382DBB1AC05C5F000C78E3 /* Peso e Altura.m in Sources */ = {isa = PBXBuildFile; fileRef = DD382DBA1AC05C5F000C78E3 /* Peso e Altura.m */; };
 		DD382DBE1AC05C88000C78E3 /* Vacinas.m in Sources */ = {isa = PBXBuildFile; fileRef = DD382DBD1AC05C88000C78E3 /* Vacinas.m */; };
 /* End PBXBuildFile section */
 
@@ -45,8 +44,6 @@
 		DD382DAC1AC0599C000C78E3 /* MiniChallenge_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniChallenge_2Tests.m; sourceTree = "<group>"; };
 		DD382DB61AC05C49000C78E3 /* Filho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filho.h; sourceTree = "<group>"; };
 		DD382DB71AC05C49000C78E3 /* Filho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filho.m; sourceTree = "<group>"; };
-		DD382DB91AC05C5F000C78E3 /* Peso e Altura.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Peso e Altura.h"; sourceTree = "<group>"; };
-		DD382DBA1AC05C5F000C78E3 /* Peso e Altura.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Peso e Altura.m"; sourceTree = "<group>"; };
 		DD382DBC1AC05C88000C78E3 /* Vacinas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vacinas.h; sourceTree = "<group>"; };
 		DD382DBD1AC05C88000C78E3 /* Vacinas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vacinas.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,8 +131,6 @@
 			children = (
 				DD382DBC1AC05C88000C78E3 /* Vacinas.h */,
 				DD382DBD1AC05C88000C78E3 /* Vacinas.m */,
-				DD382DB91AC05C5F000C78E3 /* Peso e Altura.h */,
-				DD382DBA1AC05C5F000C78E3 /* Peso e Altura.m */,
 				DD382DB61AC05C49000C78E3 /* Filho.h */,
 				DD382DB71AC05C49000C78E3 /* Filho.m */,
 			);
@@ -243,7 +238,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD382DBB1AC05C5F000C78E3 /* Peso e Altura.m in Sources */,
 				DD382DB81AC05C49000C78E3 /* Filho.m in Sources */,
 				DD382D991AC0599C000C78E3 /* ViewController.m in Sources */,
 				DD382D961AC0599C000C78E3 /* AppDelegate.m in Sources */,
@@ -441,6 +435,7 @@
 				DD382DB21AC0599C000C78E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD382DB31AC0599C000C78E3 /* Build configuration list for PBXNativeTarget "MiniChallenge 2Tests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +444,7 @@
 				DD382DB51AC0599C000C78E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

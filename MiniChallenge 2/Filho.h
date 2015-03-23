@@ -10,4 +10,9 @@
 
 @interface Filho : NSObject
 
+@property double peso;
+@property double altura;
+
+@property (strong, nonatomic) NSMutableArray *pesoAltura;
+
 @end
