@@ -1,19 +1,19 @@
 //
-//  MiniChallenge_2Tests.m
-//  MiniChallenge 2Tests
+//  EngineerChallengeTests.m
+//  EngineerChallengeTests
 //
-//  Created by Matheus Amancio Seixeiro on 3/23/15.
-//  Copyright (c) 2015 Matheus Amancio Seixeiro. All rights reserved.
+//  Created by Isaías Lima on 24/03/15.
+//  Copyright (c) 2015 Isaías Lima. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface MiniChallenge_2Tests : XCTestCase
+@interface EngineerChallengeTests : XCTestCase
 
 @end
 
-@implementation MiniChallenge_2Tests
+@implementation EngineerChallengeTests
 
 - (void)setUp {
     [super setUp];
