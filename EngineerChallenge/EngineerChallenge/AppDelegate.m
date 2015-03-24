@@ -1,13 +1,12 @@
 //
 //  AppDelegate.m
-//  MiniChallenge 2
+//  EngineerChallenge
 //
-//  Created by Matheus Amancio Seixeiro on 3/23/15.
-//  Copyright (c) 2015 Matheus Amancio Seixeiro. All rights reserved.
+//  Created by Isaías Lima on 24/03/15.
+//  Copyright (c) 2015 Isaías Lima. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import <CoreData/CoreData.h>
 
 @interface AppDelegate ()
 
@@ -52,7 +51,7 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "Ana.nkj" in the application's documents directory.
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "Mack-Mobile.EngineerChallenge" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
@@ -61,7 +60,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"nkj" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"EngineerChallenge" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -75,7 +74,7 @@
     // Create the coordinator and store
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"nkj.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"EngineerChallenge.sqlite"];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
