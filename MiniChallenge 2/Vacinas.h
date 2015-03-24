@@ -10,4 +10,9 @@
 
 @interface Vacinas : NSObject
 
+@property NSString* nome;
+@property NSString* detalhe;
+@property int data;
+@property int doses;
+
 @end
