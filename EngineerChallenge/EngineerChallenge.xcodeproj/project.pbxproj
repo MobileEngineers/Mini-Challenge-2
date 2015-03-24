@@ -15,6 +15,8 @@
 		E4024BD71AC1F17A00A0FFF6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4024BD51AC1F17A00A0FFF6 /* LaunchScreen.xib */; };
 		E4024BE31AC1F17B00A0FFF6 /* EngineerChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4024BE21AC1F17B00A0FFF6 /* EngineerChallengeTests.m */; };
 		E4024BED1AC1F1BE00A0FFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4024BEC1AC1F1BE00A0FFF6 /* Main.storyboard */; };
+		E428C1E71AC1FF2E00CCC0EA /* Filho.m in Sources */ = {isa = PBXBuildFile; fileRef = E428C1E61AC1FF2E00CCC0EA /* Filho.m */; };
+		E428C1EA1AC1FF2F00CCC0EA /* Vacina.m in Sources */ = {isa = PBXBuildFile; fileRef = E428C1E91AC1FF2F00CCC0EA /* Vacina.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,10 @@
 		E4024BE11AC1F17B00A0FFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4024BE21AC1F17B00A0FFF6 /* EngineerChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EngineerChallengeTests.m; sourceTree = "<group>"; };
 		E4024BEC1AC1F1BE00A0FFF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E428C1E51AC1FF2E00CCC0EA /* Filho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filho.h; sourceTree = "<group>"; };
+		E428C1E61AC1FF2E00CCC0EA /* Filho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filho.m; sourceTree = "<group>"; };
+		E428C1E81AC1FF2F00CCC0EA /* Vacina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vacina.h; sourceTree = "<group>"; };
+		E428C1E91AC1FF2F00CCC0EA /* Vacina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vacina.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,10 @@
 				E4024BD31AC1F17A00A0FFF6 /* Images.xcassets */,
 				E4024BD51AC1F17A00A0FFF6 /* LaunchScreen.xib */,
 				E4024BCA1AC1F17A00A0FFF6 /* EngineerChallenge.xcdatamodeld */,
+				E428C1E81AC1FF2F00CCC0EA /* Vacina.h */,
+				E428C1E91AC1FF2F00CCC0EA /* Vacina.m */,
+				E428C1E51AC1FF2E00CCC0EA /* Filho.h */,
+				E428C1E61AC1FF2E00CCC0EA /* Filho.m */,
 				E4024BC31AC1F17A00A0FFF6 /* Supporting Files */,
 			);
 			path = EngineerChallenge;
@@ -222,8 +232,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E428C1E71AC1FF2E00CCC0EA /* Filho.m in Sources */,
 				E4024BCC1AC1F17A00A0FFF6 /* EngineerChallenge.xcdatamodeld in Sources */,
 				E4024BC91AC1F17A00A0FFF6 /* AppDelegate.m in Sources */,
+				E428C1EA1AC1FF2F00CCC0EA /* Vacina.m in Sources */,
 				E4024BCF1AC1F17A00A0FFF6 /* ViewController.m in Sources */,
 				E4024BC61AC1F17A00A0FFF6 /* main.m in Sources */,
 			);
@@ -408,6 +420,7 @@
 				E4024BE81AC1F17B00A0FFF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4024BE91AC1F17B00A0FFF6 /* Build configuration list for PBXNativeTarget "EngineerChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +429,7 @@
 				E4024BEB1AC1F17B00A0FFF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
