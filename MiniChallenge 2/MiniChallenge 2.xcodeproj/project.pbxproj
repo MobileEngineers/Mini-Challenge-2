@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1F1680C1AC1903C001053F5 /* minichallenge2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1F1680A1AC1903C001053F5 /* minichallenge2.xcdatamodeld */; };
 		DD382D931AC0599C000C78E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD382D921AC0599C000C78E3 /* main.m */; };
 		DD382D961AC0599C000C78E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD382D951AC0599C000C78E3 /* AppDelegate.m */; };
 		DD382D991AC0599C000C78E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD382D981AC0599C000C78E3 /* ViewController.m */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A1F1680B1AC1903C001053F5 /* minichallenge2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = minichallenge2.xcdatamodel; sourceTree = "<group>"; };
 		DD382D8D1AC0599C000C78E3 /* MiniChallenge 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MiniChallenge 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD382D911AC0599C000C78E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD382D921AC0599C000C78E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				DD382DBF1AC05C91000C78E3 /* Entidades */,
 				DD382D941AC0599C000C78E3 /* AppDelegate.h */,
 				DD382D951AC0599C000C78E3 /* AppDelegate.m */,
+				A1F1680A1AC1903C001053F5 /* minichallenge2.xcdatamodeld */,
 				DD382D971AC0599C000C78E3 /* ViewController.h */,
 				DD382D981AC0599C000C78E3 /* ViewController.m */,
 				DD382D9A1AC0599C000C78E3 /* Main.storyboard */,
@@ -241,6 +244,7 @@
 				DD382DB81AC05C49000C78E3 /* Filho.m in Sources */,
 				DD382D991AC0599C000C78E3 /* ViewController.m in Sources */,
 				DD382D961AC0599C000C78E3 /* AppDelegate.m in Sources */,
+				A1F1680C1AC1903C001053F5 /* minichallenge2.xcdatamodeld in Sources */,
 				DD382D931AC0599C000C78E3 /* main.m in Sources */,
 				DD382DBE1AC05C88000C78E3 /* Vacinas.m in Sources */,
 			);
@@ -447,6 +451,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A1F1680A1AC1903C001053F5 /* minichallenge2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A1F1680B1AC1903C001053F5 /* minichallenge2.xcdatamodel */,
+			);
+			currentVersion = A1F1680B1AC1903C001053F5 /* minichallenge2.xcdatamodel */;
+			path = minichallenge2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DD382D851AC0599C000C78E3 /* Project object */;
 }
