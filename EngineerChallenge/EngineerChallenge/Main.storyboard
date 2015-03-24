@@ -98,7 +98,7 @@
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="adicionaFilho" selectionStyle="default" indentationWidth="10" id="PqE-Tf-Fkz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="adicionaFilho" tableViewCell="PqE-Tf-Fkz" id="EkB-Zh-aSP">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PqE-Tf-Fkz" id="EkB-Zh-aSP">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujf-81-qrE">
@@ -109,6 +109,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="j1f-C7-Lgj" kind="popoverPresentation" popoverAnchorView="PqE-Tf-Fkz" id="Ufx-rr-nnf">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -116,11 +121,6 @@
                             <outlet property="delegate" destination="vVi-R2-DWf" id="LSb-ZD-rTt"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <segue destination="j1f-C7-Lgj" kind="popoverPresentation" id="DjT-4Q-Erc">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROa-9P-Kmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
