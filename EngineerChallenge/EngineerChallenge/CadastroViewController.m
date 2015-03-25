@@ -7,6 +7,7 @@
 //
 
 #import "CadastroViewController.h"
+#import <CoreData/CoreData.h>
 
 @interface CadastroViewController ()
 

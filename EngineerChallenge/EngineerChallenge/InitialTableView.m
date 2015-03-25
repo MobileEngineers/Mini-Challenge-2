@@ -9,11 +9,13 @@
 #import "InitialTableView.h"
 #import "Filho.h"
 #import "AppDelegate.h"
+#import "CadastroCell.h"
 
 @interface InitialTableView ()
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *filhos;
+
 
 @end
 
@@ -35,6 +37,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSManagedObjectContext *)managedObjectContext{
+    return [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -51,11 +57,27 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"nomeFilho" forIndexPath:indexPath];
     
-    cell.textLabel.text = @"Filho1";
+    if (indexPath.row < self.filhos.count) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"nomeFilho" forIndexPath:indexPath];
+        Filho *currentFilho = [self.filhos objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        cell.textLabel.text = currentFilho.nome;
+        return cell;
+        
+    } else {
+        CadastroCell *cadastro = [tableView dequeueReusableCellWithIdentifier:@"cadastroFilho" forIndexPath:indexPath];
+        cadastro.textLabel.text = @"Adicionar filho";
+        return cadastro;
+    }
     
-    return cell;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"Filhos";
 }
 
 
@@ -102,5 +124,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)addFilhoWithNome: (NSString *)nom andNascimento: (NSDate *)nas andSexo: (BOOL)s{
+    Filho *newFilho = [NSEntityDescription insertNewObjectForEntityForName:@"Filho" inManagedObjectContext:self.managedObjectContext];
+    newFilho.nome = nom;
+    newFilho.nascimento = nas;
+    newFilho.sexo = s;
+    
+    [self.managedObjectContext save:nil];
+    self.filhos = [self.filhos arrayByAddingObject:newFilho];
+}
 
 @end

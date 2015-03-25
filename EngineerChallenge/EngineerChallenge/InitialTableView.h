@@ -10,4 +10,6 @@
 
 @interface InitialTableView : UITableViewController
 
+- (void) addFilhoWithNome: (NSString *)nom andNascimento: (NSDate *)nas andSexo: (BOOL)s;
+
 @end
