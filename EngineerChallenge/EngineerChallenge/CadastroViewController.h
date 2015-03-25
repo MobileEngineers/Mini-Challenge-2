@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CadastroViewController : UIViewController
+@interface CadastroViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nomeText;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sexoFilho;

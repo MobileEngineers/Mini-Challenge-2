@@ -9,7 +9,7 @@
 #import "InitialTableView.h"
 #import "Filho.h"
 #import "AppDelegate.h"
-#import "CadastroCell.h"
+#import "CadastroViewController.h"
 
 @interface InitialTableView ()
 @property (weak, nonatomic) IBOutlet UIView *headerView;
@@ -52,29 +52,18 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return self.filhos.count + 1;
+    return self.filhos.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row < self.filhos.count) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"nomeFilho" forIndexPath:indexPath];
-        Filho *currentFilho = [self.filhos objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-        cell.textLabel.text = currentFilho.nome;
-        return cell;
-        
-    } else {
-        CadastroCell *cadastro = [tableView dequeueReusableCellWithIdentifier:@"cadastroFilho" forIndexPath:indexPath];
-        cadastro.textLabel.text = @"Adicionar filho";
-        return cadastro;
-    }
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"nomeFilho" forIndexPath:indexPath];
+    Filho *currentFilho = [self.filhos objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    cell.textLabel.text = currentFilho.nome;
+    return cell;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self.tableView reloadData];
-}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Filhos";
@@ -115,15 +104,8 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+#pragma mark - Navigation
 
 -(void)addFilhoWithNome: (NSString *)nom andNascimento: (NSDate *)nas andSexo: (BOOL)s{
     Filho *newFilho = [NSEntityDescription insertNewObjectForEntityForName:@"Filho" inManagedObjectContext:self.managedObjectContext];
@@ -133,6 +115,11 @@
     
     [self.managedObjectContext save:nil];
     self.filhos = [self.filhos arrayByAddingObject:newFilho];
+    [self.tableView reloadData];
+}
+
+- (IBAction)cadastrar:(id)sender {
+    [self performSegueWithIdentifier:@"cadastrar" sender:self];
 }
 
 @end

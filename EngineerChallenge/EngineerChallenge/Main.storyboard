@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vVi-R2-DWf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Cadastro-->
@@ -16,50 +17,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cadastro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gx9-gH-wJI">
-                                <rect key="frame" x="256" y="63" width="88" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gx9-gH-wJI">
+                                <rect key="frame" x="260" y="63" width="81" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjg-a4-sG7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjg-a4-sG7">
                                 <rect key="frame" x="60" y="122" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sexo:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRn-IT-97B">
-                                <rect key="frame" x="60" y="459" width="44" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexo:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRn-IT-97B">
+                                <rect key="frame" x="60" y="458" width="44" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJ4-k0-OoH">
-                                <rect key="frame" x="60" y="151" width="477" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJ4-k0-OoH">
+                                <rect key="frame" x="16" y="151" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data de Nascimento:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBJ-rZ-O7I">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Nascimento:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBJ-rZ-O7I">
                                 <rect key="frame" x="60" y="210" width="162" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="quD-MV-a2G">
-                                <rect key="frame" x="60" y="244" width="477" height="180"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="quD-MV-a2G">
+                                <rect key="frame" x="16" y="243" width="568" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="448977069.083179">
                                     <!--2015-03-25 11:51:09 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="pt_BR"/>
                             </datePicker>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-Ui-GXZ">
-                                <rect key="frame" x="129" y="456" width="162" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-Ui-GXZ">
+                                <rect key="frame" x="129" y="457" width="119" height="29"/>
                                 <segments>
                                     <segment title="Menino"/>
                                     <segment title="Menina"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrS-GS-e9z">
-                                <rect key="frame" x="272" y="543" width="52" height="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrS-GS-e9z">
+                                <rect key="frame" x="275" y="537" width="50" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Salvar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,6 +72,26 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EJ4-k0-OoH" firstAttribute="top" secondItem="Gx9-gH-wJI" secondAttribute="bottom" constant="64" id="ENK-ot-R0P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EJ4-k0-OoH" secondAttribute="trailing" id="H1v-RT-rlh"/>
+                            <constraint firstItem="Gx9-gH-wJI" firstAttribute="top" secondItem="tNb-jP-psq" secondAttribute="bottom" constant="43" id="Lhk-Pm-u0D"/>
+                            <constraint firstItem="ClD-G1-VUE" firstAttribute="top" secondItem="SrS-GS-e9z" secondAttribute="bottom" constant="29" id="QJl-wh-dXj"/>
+                            <constraint firstItem="quD-MV-a2G" firstAttribute="leading" secondItem="VDO-Gg-Lmr" secondAttribute="leadingMargin" id="RdW-nz-gJf"/>
+                            <constraint firstItem="quD-MV-a2G" firstAttribute="top" secondItem="JBJ-rZ-O7I" secondAttribute="bottom" constant="13" id="RjM-zX-Cwp"/>
+                            <constraint firstItem="JBJ-rZ-O7I" firstAttribute="top" secondItem="EJ4-k0-OoH" secondAttribute="bottom" constant="29" id="VQy-LY-ion"/>
+                            <constraint firstItem="DRn-IT-97B" firstAttribute="top" secondItem="quD-MV-a2G" secondAttribute="bottom" constant="53" id="Xkg-oB-aWQ"/>
+                            <constraint firstItem="EJ4-k0-OoH" firstAttribute="leading" secondItem="VDO-Gg-Lmr" secondAttribute="leadingMargin" id="Z6D-Of-PgF"/>
+                            <constraint firstItem="JBJ-rZ-O7I" firstAttribute="leading" secondItem="VDO-Gg-Lmr" secondAttribute="leadingMargin" constant="44" id="cta-6h-ifb"/>
+                            <constraint firstAttribute="centerX" secondItem="SrS-GS-e9z" secondAttribute="centerX" id="dqd-d1-Szo"/>
+                            <constraint firstItem="xjg-a4-sG7" firstAttribute="leading" secondItem="VDO-Gg-Lmr" secondAttribute="leadingMargin" constant="44" id="pDP-Nw-W0F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="quD-MV-a2G" secondAttribute="trailing" id="pye-jU-BY3"/>
+                            <constraint firstAttribute="centerX" secondItem="Gx9-gH-wJI" secondAttribute="centerX" id="qli-eH-KuV"/>
+                            <constraint firstItem="ybX-Ui-GXZ" firstAttribute="top" secondItem="quD-MV-a2G" secondAttribute="bottom" constant="51" id="sdU-8D-82V"/>
+                            <constraint firstItem="DRn-IT-97B" firstAttribute="leading" secondItem="VDO-Gg-Lmr" secondAttribute="leadingMargin" constant="44" id="vZz-Cu-i5V"/>
+                            <constraint firstItem="ybX-Ui-GXZ" firstAttribute="leading" secondItem="DRn-IT-97B" secondAttribute="trailing" constant="25" id="yEi-UY-imj"/>
+                            <constraint firstItem="xjg-a4-sG7" firstAttribute="top" secondItem="tNb-jP-psq" secondAttribute="bottom" constant="102" id="yVD-hG-1Ui"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="quD-MV-a2G" id="2cE-yv-nWr"/>
@@ -94,6 +116,20 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gDW-BR-MEq">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem systemItem="add" id="ci8-Kx-K5U">
+                                    <connections>
+                                        <action selector="cadastrar:" destination="vVi-R2-DWf" id="3iG-3n-J6Y"/>
+                                        <segue destination="j1f-C7-Lgj" kind="popoverPresentation" identifier="cadastrar" popoverAnchorBarButtonItem="ci8-Kx-K5U" id="17S-lO-PaZ">
+                                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                        </segue>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="nomeFilho" textLabel="3nU-C3-sZS" rowHeight="55" style="IBUITableViewCellStyleDefault" id="0dP-lb-we1">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -109,28 +145,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="qfn-2c-jkn" kind="show" id="pNr-Gt-XdS"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="adicionaFilho" selectionStyle="default" indentationWidth="10" textLabel="CW6-Xv-ebY" style="IBUITableViewCellStyleDefault" id="PqE-Tf-Fkz" customClass="CadastroCell">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PqE-Tf-Fkz" id="EkB-Zh-aSP">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CW6-Xv-ebY">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.053212006676513379" green="1" blue="0.88959455108506991" alpha="0.39000000000000001" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <segue destination="j1f-C7-Lgj" kind="popoverPresentation" popoverAnchorView="PqE-Tf-Fkz" id="Ufx-rr-nnf">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="qfn-2c-jkn" kind="show" identifier="selecionouFilho" id="pNr-Gt-XdS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -140,6 +155,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="barrinha" destination="gDW-BR-MEq" id="LIL-eN-DPc"/>
                         <outlet property="headerView" destination="8Zu-wv-3ur" id="JUK-I8-eBu"/>
                     </connections>
                 </tableViewController>

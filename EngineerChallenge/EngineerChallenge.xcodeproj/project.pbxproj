@@ -10,7 +10,6 @@
 		02BB77A91AC2D14700F1DD4D /* Filho.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77A81AC2D14700F1DD4D /* Filho.m */; };
 		02BB77AC1AC2D14700F1DD4D /* Vacina.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77AB1AC2D14700F1DD4D /* Vacina.m */; };
 		02BB77AF1AC2D28300F1DD4D /* InitialTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77AE1AC2D28300F1DD4D /* InitialTableView.m */; };
-		02BB77B21AC2D75400F1DD4D /* CadastroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77B11AC2D75400F1DD4D /* CadastroCell.m */; };
 		02BB77B51AC2D85F00F1DD4D /* CadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77B41AC2D85F00F1DD4D /* CadastroViewController.m */; };
 		E4024BC61AC1F17A00A0FFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4024BC51AC1F17A00A0FFF6 /* main.m */; };
 		E4024BC91AC1F17A00A0FFF6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4024BC81AC1F17A00A0FFF6 /* AppDelegate.m */; };
@@ -38,8 +37,6 @@
 		02BB77AB1AC2D14700F1DD4D /* Vacina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vacina.m; path = Entidades/Vacina.m; sourceTree = "<group>"; };
 		02BB77AD1AC2D28300F1DD4D /* InitialTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialTableView.h; sourceTree = "<group>"; };
 		02BB77AE1AC2D28300F1DD4D /* InitialTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialTableView.m; sourceTree = "<group>"; };
-		02BB77B01AC2D75400F1DD4D /* CadastroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadastroCell.h; sourceTree = "<group>"; };
-		02BB77B11AC2D75400F1DD4D /* CadastroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadastroCell.m; sourceTree = "<group>"; };
 		02BB77B31AC2D85F00F1DD4D /* CadastroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadastroViewController.h; sourceTree = "<group>"; };
 		02BB77B41AC2D85F00F1DD4D /* CadastroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadastroViewController.m; sourceTree = "<group>"; };
 		E4024BC01AC1F17A00A0FFF6 /* EngineerChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineerChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,8 +108,6 @@
 				E4024BC81AC1F17A00A0FFF6 /* AppDelegate.m */,
 				02BB77AD1AC2D28300F1DD4D /* InitialTableView.h */,
 				02BB77AE1AC2D28300F1DD4D /* InitialTableView.m */,
-				02BB77B01AC2D75400F1DD4D /* CadastroCell.h */,
-				02BB77B11AC2D75400F1DD4D /* CadastroCell.m */,
 				02BB77B31AC2D85F00F1DD4D /* CadastroViewController.h */,
 				02BB77B41AC2D85F00F1DD4D /* CadastroViewController.m */,
 				E4024BEC1AC1F1BE00A0FFF6 /* Main.storyboard */,
@@ -254,7 +249,6 @@
 				02BB77A91AC2D14700F1DD4D /* Filho.m in Sources */,
 				E4024BCC1AC1F17A00A0FFF6 /* EngineerChallenge.xcdatamodeld in Sources */,
 				02BB77B51AC2D85F00F1DD4D /* CadastroViewController.m in Sources */,
-				02BB77B21AC2D75400F1DD4D /* CadastroCell.m in Sources */,
 				02BB77AC1AC2D14700F1DD4D /* Vacina.m in Sources */,
 				E4024BC91AC1F17A00A0FFF6 /* AppDelegate.m in Sources */,
 				E4024BC61AC1F17A00A0FFF6 /* main.m in Sources */,

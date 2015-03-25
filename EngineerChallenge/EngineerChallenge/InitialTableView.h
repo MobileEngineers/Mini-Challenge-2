@@ -10,6 +10,8 @@
 
 @interface InitialTableView : UITableViewController
 
-- (void) addFilhoWithNome: (NSString *)nom andNascimento: (NSDate *)nas andSexo: (BOOL)s;
+@property (weak, nonatomic) IBOutlet UIToolbar *barrinha;
+- (void)addFilhoWithNome: (NSString *)nom andNascimento: (NSDate *)nas andSexo: (BOOL)s;
+- (IBAction)cadastrar:(id)sender;
 
 @end

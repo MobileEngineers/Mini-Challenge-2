@@ -7,17 +7,23 @@
 //
 
 #import "CadastroViewController.h"
+#import "InitialTableView.h"
 #import <CoreData/CoreData.h>
 
 @interface CadastroViewController ()
 
 @end
 
-@implementation CadastroViewController
+@implementation CadastroViewController {
+    InitialTableView *tableView;
+}
+
+@synthesize nomeText, datePicker, sexoFilho;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,16 +31,35 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    [textField becomeFirstResponder];
 }
-*/
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([nomeText isFirstResponder] && [touch view] != nomeText) {
+        [nomeText resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
 
 - (IBAction)salvarCadastro:(id)sender {
+        
+    BOOL aux;
+    if (sexoFilho.selectedSegmentIndex == 0){
+        aux = YES;
+    } else {
+        aux = NO;
+    }
+    
+    [tableView addFilhoWithNome:nomeText.text andNascimento:datePicker.date andSexo:aux];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
+
 @end
