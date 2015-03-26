@@ -59,7 +59,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"nomeFilho" forIndexPath:indexPath];
-    Filho *currentFilho = [self.filhos objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    Filho *currentFilho = [self.filhos objectAtIndex:indexPath.row];
     cell.textLabel.text = currentFilho.nome;
     return cell;
 }
@@ -70,25 +70,32 @@
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        
+        [self.managedObjectContext deleteObject:[self.filhos objectAtIndex:indexPath.row]];
+        [self.managedObjectContext save:nil];
+        
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Filho"];
+        fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"nome" ascending:YES]];
+        self.filhos = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -107,15 +114,20 @@
 
 #pragma mark - Navigation
 
--(void)addFilhoWithNome: (NSString *)nom andNascimento: (NSDate *)nas andSexo: (BOOL)s{
+-(void)retornoCadastro:(NSString *)nome andData:(NSDate *)nascimento andSexo:(BOOL)sexo {
     Filho *newFilho = [NSEntityDescription insertNewObjectForEntityForName:@"Filho" inManagedObjectContext:self.managedObjectContext];
-    newFilho.nome = nom;
-    newFilho.nascimento = nas;
-    newFilho.sexo = s;
+    newFilho.nome = nome;
+    newFilho.nascimento = nascimento;
+    newFilho.sexo = sexo;
     
     [self.managedObjectContext save:nil];
     self.filhos = [self.filhos arrayByAddingObject:newFilho];
+    NSLog(@"Xablau");
     [self.tableView reloadData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+        [segue.destinationViewController setDelegate:self];
 }
 
 - (IBAction)cadastrar:(id)sender {

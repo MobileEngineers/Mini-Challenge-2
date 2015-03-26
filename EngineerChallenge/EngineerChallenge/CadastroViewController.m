@@ -18,10 +18,11 @@
     InitialTableView *tableView;
 }
 
-@synthesize nomeText, datePicker, sexoFilho;
+@synthesize nomeText, datePicker, sexoFilho, delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view.
     
 }
@@ -49,17 +50,14 @@
 }
 
 - (IBAction)salvarCadastro:(id)sender {
-        
     BOOL aux;
     if (sexoFilho.selectedSegmentIndex == 0){
         aux = YES;
     } else {
         aux = NO;
     }
-    
-    [tableView addFilhoWithNome:nomeText.text andNascimento:datePicker.date andSexo:aux];
+    [delegate retornoCadastro:nomeText.text andData:datePicker.date andSexo:aux];
     [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
 @end

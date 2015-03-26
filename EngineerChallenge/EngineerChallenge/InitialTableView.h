@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CadastroViewController.h"
 
-@interface InitialTableView : UITableViewController
+@interface InitialTableView : UITableViewController <returnData>
 
 @property (weak, nonatomic) IBOutlet UIToolbar *barrinha;
-- (void)addFilhoWithNome: (NSString *)nom andNascimento: (NSDate *)nas andSexo: (BOOL)s;
+
 - (IBAction)cadastrar:(id)sender;
 
 @end
