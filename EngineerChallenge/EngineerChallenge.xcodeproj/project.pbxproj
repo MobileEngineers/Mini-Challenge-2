@@ -17,6 +17,7 @@
 		02BB77AC1AC2D14700F1DD4D /* Vacina.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77AB1AC2D14700F1DD4D /* Vacina.m */; };
 		02BB77AF1AC2D28300F1DD4D /* InitialTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77AE1AC2D28300F1DD4D /* InitialTableView.m */; };
 		02BB77B51AC2D85F00F1DD4D /* CadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77B41AC2D85F00F1DD4D /* CadastroViewController.m */; };
+		02C370761AC49B58008E849B /* GraficosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C370751AC49B58008E849B /* GraficosTableViewCell.m */; };
 		E4024BC61AC1F17A00A0FFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4024BC51AC1F17A00A0FFF6 /* main.m */; };
 		E4024BC91AC1F17A00A0FFF6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4024BC81AC1F17A00A0FFF6 /* AppDelegate.m */; };
 		E4024BCC1AC1F17A00A0FFF6 /* EngineerChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4024BCA1AC1F17A00A0FFF6 /* EngineerChallenge.xcdatamodeld */; };
@@ -57,6 +58,8 @@
 		02BB77AE1AC2D28300F1DD4D /* InitialTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialTableView.m; sourceTree = "<group>"; };
 		02BB77B31AC2D85F00F1DD4D /* CadastroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadastroViewController.h; sourceTree = "<group>"; };
 		02BB77B41AC2D85F00F1DD4D /* CadastroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadastroViewController.m; sourceTree = "<group>"; };
+		02C370741AC49B58008E849B /* GraficosTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraficosTableViewCell.h; sourceTree = "<group>"; };
+		02C370751AC49B58008E849B /* GraficosTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraficosTableViewCell.m; sourceTree = "<group>"; };
 		E4024BC01AC1F17A00A0FFF6 /* EngineerChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineerChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4024BC41AC1F17A00A0FFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4024BC51AC1F17A00A0FFF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				02B5FE9A1AC437AF00B96E05 /* VacinasViewController.m */,
 				02B5FE9C1AC437F300B96E05 /* GraficosTableViewController.h */,
 				02B5FE9D1AC437F300B96E05 /* GraficosTableViewController.m */,
+				02C370741AC49B58008E849B /* GraficosTableViewCell.h */,
+				02C370751AC49B58008E849B /* GraficosTableViewCell.m */,
 				02B5FE9F1AC4387C00B96E05 /* DetalheGraficoViewController.h */,
 				02B5FEA01AC4387C00B96E05 /* DetalheGraficoViewController.m */,
 				E4024BEC1AC1F1BE00A0FFF6 /* Main.storyboard */,
@@ -288,6 +293,7 @@
 				02B5FE951AC4342900B96E05 /* TabBarController.m in Sources */,
 				E4024BC91AC1F17A00A0FFF6 /* AppDelegate.m in Sources */,
 				E4024BC61AC1F17A00A0FFF6 /* main.m in Sources */,
+				02C370761AC49B58008E849B /* GraficosTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

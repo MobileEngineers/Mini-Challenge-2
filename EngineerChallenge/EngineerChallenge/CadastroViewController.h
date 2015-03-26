@@ -23,5 +23,7 @@
 
 
 - (IBAction)salvarCadastro:(id)sender;
+- (IBAction)cancelarCadastro:(id)sender;
+
 
 @end

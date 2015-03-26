@@ -20,9 +20,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     solitaire = [Solitaire sharedInstance];
     nomeLabel.text = solitaire.nombre;
+    
+    //Para aparecer a idade em meses
+    NSDate *today = [NSDate date];
+    NSDateComponents *ageMonths = [[NSCalendar currentCalendar]
+                                       components:NSCalendarUnitMonth
+                                       fromDate:solitaire.cumpleanos
+                                       toDate:today
+                                       options:0];
+    
+    NSDateComponents *ageWeeks = [[NSCalendar currentCalendar]
+                                       components:NSCalendarUnitWeekOfMonth
+                                       fromDate:solitaire.cumpleanos
+                                       toDate:today
+                                       options:0];
+    if (ageWeeks.weekOfMonth < 13) {
+        mesesLabel.text = [NSString stringWithFormat:@"%ld semanas", (long)ageWeeks.weekOfMonth];
+    } else{
+        mesesLabel.text = [NSString stringWithFormat:@"%ld meses", (long)ageMonths.month];
+
+    }
+    
+    //Para identificar o sexo da pessoa
+    if (solitaire.persona == YES) {
+        sexoLabel.text = @"Menino";
+    } else {
+        sexoLabel.text = @"Menina";
+    }
+    
+
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -39,4 +70,8 @@
 }
 */
 
+- (IBAction)backButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
 @end

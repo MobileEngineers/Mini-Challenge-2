@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *pesoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *alturaLabel;
 
+- (IBAction)backButton:(id)sender;
 
 @end

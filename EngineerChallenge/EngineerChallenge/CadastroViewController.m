@@ -60,4 +60,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)cancelarCadastro:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
