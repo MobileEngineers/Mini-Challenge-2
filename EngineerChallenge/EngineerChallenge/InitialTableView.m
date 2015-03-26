@@ -127,7 +127,9 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"cadastrar"]) {
         [segue.destinationViewController setDelegate:self];
+    }
 }
 
 - (IBAction)cadastrar:(id)sender {

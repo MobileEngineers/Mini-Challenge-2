@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02B5FE951AC4342900B96E05 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FE941AC4342900B96E05 /* TabBarController.m */; };
+		02B5FE981AC4359400B96E05 /* PerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FE971AC4359400B96E05 /* PerfilViewController.m */; };
+		02B5FE9B1AC437AF00B96E05 /* VacinasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FE9A1AC437AF00B96E05 /* VacinasViewController.m */; };
+		02B5FE9E1AC437F300B96E05 /* GraficosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FE9D1AC437F300B96E05 /* GraficosTableViewController.m */; };
+		02B5FEA11AC4387C00B96E05 /* DetalheGraficoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FEA01AC4387C00B96E05 /* DetalheGraficoViewController.m */; };
 		02BB77A91AC2D14700F1DD4D /* Filho.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77A81AC2D14700F1DD4D /* Filho.m */; };
 		02BB77AC1AC2D14700F1DD4D /* Vacina.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77AB1AC2D14700F1DD4D /* Vacina.m */; };
 		02BB77AF1AC2D28300F1DD4D /* InitialTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77AE1AC2D28300F1DD4D /* InitialTableView.m */; };
@@ -31,6 +36,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02B5FE931AC4342900B96E05 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarController.h; path = ../TabBarController.h; sourceTree = "<group>"; };
+		02B5FE941AC4342900B96E05 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarController.m; path = ../TabBarController.m; sourceTree = "<group>"; };
+		02B5FE961AC4359400B96E05 /* PerfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfilViewController.h; sourceTree = "<group>"; };
+		02B5FE971AC4359400B96E05 /* PerfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfilViewController.m; sourceTree = "<group>"; };
+		02B5FE991AC437AF00B96E05 /* VacinasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VacinasViewController.h; sourceTree = "<group>"; };
+		02B5FE9A1AC437AF00B96E05 /* VacinasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VacinasViewController.m; sourceTree = "<group>"; };
+		02B5FE9C1AC437F300B96E05 /* GraficosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraficosTableViewController.h; sourceTree = "<group>"; };
+		02B5FE9D1AC437F300B96E05 /* GraficosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraficosTableViewController.m; sourceTree = "<group>"; };
+		02B5FE9F1AC4387C00B96E05 /* DetalheGraficoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalheGraficoViewController.h; sourceTree = "<group>"; };
+		02B5FEA01AC4387C00B96E05 /* DetalheGraficoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheGraficoViewController.m; sourceTree = "<group>"; };
 		02BB77A71AC2D14700F1DD4D /* Filho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Filho.h; path = Entidades/Filho.h; sourceTree = "<group>"; };
 		02BB77A81AC2D14700F1DD4D /* Filho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Filho.m; path = Entidades/Filho.m; sourceTree = "<group>"; };
 		02BB77AA1AC2D14700F1DD4D /* Vacina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vacina.h; path = Entidades/Vacina.h; sourceTree = "<group>"; };
@@ -110,6 +125,16 @@
 				02BB77AE1AC2D28300F1DD4D /* InitialTableView.m */,
 				02BB77B31AC2D85F00F1DD4D /* CadastroViewController.h */,
 				02BB77B41AC2D85F00F1DD4D /* CadastroViewController.m */,
+				02B5FE931AC4342900B96E05 /* TabBarController.h */,
+				02B5FE941AC4342900B96E05 /* TabBarController.m */,
+				02B5FE961AC4359400B96E05 /* PerfilViewController.h */,
+				02B5FE971AC4359400B96E05 /* PerfilViewController.m */,
+				02B5FE991AC437AF00B96E05 /* VacinasViewController.h */,
+				02B5FE9A1AC437AF00B96E05 /* VacinasViewController.m */,
+				02B5FE9C1AC437F300B96E05 /* GraficosTableViewController.h */,
+				02B5FE9D1AC437F300B96E05 /* GraficosTableViewController.m */,
+				02B5FE9F1AC4387C00B96E05 /* DetalheGraficoViewController.h */,
+				02B5FEA01AC4387C00B96E05 /* DetalheGraficoViewController.m */,
 				E4024BEC1AC1F1BE00A0FFF6 /* Main.storyboard */,
 				E4024BD31AC1F17A00A0FFF6 /* Images.xcassets */,
 				E4024BD51AC1F17A00A0FFF6 /* LaunchScreen.xib */,
@@ -245,11 +270,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B5FE981AC4359400B96E05 /* PerfilViewController.m in Sources */,
 				02BB77AF1AC2D28300F1DD4D /* InitialTableView.m in Sources */,
 				02BB77A91AC2D14700F1DD4D /* Filho.m in Sources */,
+				02B5FE9E1AC437F300B96E05 /* GraficosTableViewController.m in Sources */,
 				E4024BCC1AC1F17A00A0FFF6 /* EngineerChallenge.xcdatamodeld in Sources */,
 				02BB77B51AC2D85F00F1DD4D /* CadastroViewController.m in Sources */,
+				02B5FEA11AC4387C00B96E05 /* DetalheGraficoViewController.m in Sources */,
 				02BB77AC1AC2D14700F1DD4D /* Vacina.m in Sources */,
+				02B5FE9B1AC437AF00B96E05 /* VacinasViewController.m in Sources */,
+				02B5FE951AC4342900B96E05 /* TabBarController.m in Sources */,
 				E4024BC91AC1F17A00A0FFF6 /* AppDelegate.m in Sources */,
 				E4024BC61AC1F17A00A0FFF6 /* main.m in Sources */,
 			);
