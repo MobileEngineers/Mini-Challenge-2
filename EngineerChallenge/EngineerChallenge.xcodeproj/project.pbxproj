@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02377CB71AC456C20081B4A2 /* Solitaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 02377CB61AC456C20081B4A2 /* Solitaire.m */; };
 		02B5FE951AC4342900B96E05 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FE941AC4342900B96E05 /* TabBarController.m */; };
 		02B5FE981AC4359400B96E05 /* PerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FE971AC4359400B96E05 /* PerfilViewController.m */; };
 		02B5FE9B1AC437AF00B96E05 /* VacinasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FE9A1AC437AF00B96E05 /* VacinasViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02377CB51AC456C20081B4A2 /* Solitaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Solitaire.h; sourceTree = "<group>"; };
+		02377CB61AC456C20081B4A2 /* Solitaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Solitaire.m; sourceTree = "<group>"; };
 		02B5FE931AC4342900B96E05 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarController.h; path = ../TabBarController.h; sourceTree = "<group>"; };
 		02B5FE941AC4342900B96E05 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarController.m; path = ../TabBarController.m; sourceTree = "<group>"; };
 		02B5FE961AC4359400B96E05 /* PerfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfilViewController.h; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				02BB77AB1AC2D14700F1DD4D /* Vacina.m */,
 				02BB77A71AC2D14700F1DD4D /* Filho.h */,
 				02BB77A81AC2D14700F1DD4D /* Filho.m */,
+				02377CB51AC456C20081B4A2 /* Solitaire.h */,
+				02377CB61AC456C20081B4A2 /* Solitaire.m */,
 			);
 			name = Entidades;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				02B5FE981AC4359400B96E05 /* PerfilViewController.m in Sources */,
 				02BB77AF1AC2D28300F1DD4D /* InitialTableView.m in Sources */,
 				02BB77A91AC2D14700F1DD4D /* Filho.m in Sources */,
+				02377CB71AC456C20081B4A2 /* Solitaire.m in Sources */,
 				02B5FE9E1AC437F300B96E05 /* GraficosTableViewController.m in Sources */,
 				E4024BCC1AC1F17A00A0FFF6 /* EngineerChallenge.xcdatamodeld in Sources */,
 				02BB77B51AC2D85F00F1DD4D /* CadastroViewController.m in Sources */,

@@ -10,6 +10,7 @@
 #import "Filho.h"
 #import "AppDelegate.h"
 #import "CadastroViewController.h"
+#import "Solitaire.h"
 
 @interface InitialTableView ()
 @property (weak, nonatomic) IBOutlet UIView *headerView;
@@ -19,7 +20,9 @@
 
 @end
 
-@implementation InitialTableView
+@implementation InitialTableView {
+    Solitaire *solitaire;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -130,6 +133,17 @@
     if ([segue.identifier isEqualToString:@"cadastrar"]) {
         [segue.destinationViewController setDelegate:self];
     }
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    solitaire = [Solitaire sharedInstance];
+    
+    solitaire.nombre = [[self.filhos objectAtIndex:indexPath.row] nome];
+    solitaire.cumpleanos = [[self.filhos objectAtIndex:indexPath.row] nascimento];
+    solitaire.persona = [[self.filhos objectAtIndex:indexPath.row] sexo];
+    
+    [self performSegueWithIdentifier:@"selecionouFilho" sender:self];
 }
 
 - (IBAction)cadastrar:(id)sender {

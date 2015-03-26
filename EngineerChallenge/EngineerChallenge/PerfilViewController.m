@@ -7,16 +7,21 @@
 //
 
 #import "PerfilViewController.h"
+#import "Solitaire.h"
 
 @interface PerfilViewController ()
 
 @end
 
-@implementation PerfilViewController
+@implementation PerfilViewController  {
+    Solitaire *solitaire;
+}
+@synthesize nomeLabel, mesesLabel, sexoLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    solitaire = [Solitaire sharedInstance];
+    nomeLabel.text = solitaire.nombre;
 }
 
 - (void)didReceiveMemoryWarning {
