@@ -1,23 +1,21 @@
 //
-//  VacinasViewController.m
+//  VacinasCalendarioView.m
 //  EngineerChallenge
 //
-//  Created by Lidia Chou on 3/26/15.
+//  Created by Lidia Chou on 3/27/15.
 //  Copyright (c) 2015 Isaías Lima. All rights reserved.
 //
 
-#import "VacinasViewController.h"
+#import "VacinasCalendarioView.h"
 #import "Solitaire.h"
 
-@interface VacinasViewController ()
+@interface VacinasCalendarioView ()
 
 @end
 
-@implementation VacinasViewController {
+@implementation VacinasCalendarioView {
     Solitaire *solitaire;
 }
-
-@synthesize segmentedCont;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,9 +29,8 @@
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
         self.view.backgroundColor = fundoTela;
     }
-    
-    segmentedCont.backgroundColor = [UIColor whiteColor];
-    
+
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
