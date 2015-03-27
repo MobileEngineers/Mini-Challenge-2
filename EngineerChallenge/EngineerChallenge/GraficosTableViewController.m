@@ -7,15 +7,29 @@
 //
 
 #import "GraficosTableViewController.h"
+#import "Solitaire.h"
 
 @interface GraficosTableViewController ()
 
 @end
 
-@implementation GraficosTableViewController
+@implementation GraficosTableViewController {
+    Solitaire *solitaire;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    solitaire = [Solitaire sharedInstance];
+    
+    if (solitaire.persona == YES) {
+        UIColor *fundoTela = [[UIColor alloc] initWithRed:0.7 green:0.7 blue:0.9 alpha:1.0];
+        self.view.backgroundColor = fundoTela;
+    } else {
+        UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
+        self.view.backgroundColor = fundoTela;
+    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

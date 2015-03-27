@@ -16,6 +16,7 @@
 @implementation PerfilViewController  {
     Solitaire *solitaire;
 }
+
 @synthesize nomeLabel, mesesLabel, sexoLabel;
 
 - (void)viewDidLoad {
@@ -71,8 +72,14 @@
     //Para identificar o sexo da pessoa
     if (solitaire.persona == YES) {
         sexoLabel.text = @"Menino";
+        nomeLabel.textColor = [UIColor blueColor];
+        UIColor *fundoTela = [[UIColor alloc] initWithRed:0.7 green:0.7 blue:0.9 alpha:1.0];
+        self.view.backgroundColor = fundoTela;
     } else {
         sexoLabel.text = @"Menina";
+        nomeLabel.textColor = [UIColor magentaColor];
+        UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
+        self.view.backgroundColor = fundoTela;
     }
     
 

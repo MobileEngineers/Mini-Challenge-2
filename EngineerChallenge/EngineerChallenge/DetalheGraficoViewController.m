@@ -7,6 +7,7 @@
 //
 
 #import "DetalheGraficoViewController.h"
+#import "Solitaire.h"
 
 @interface DetalheGraficoViewController ()
 
