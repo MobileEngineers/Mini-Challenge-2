@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *sexoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pesoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *alturaLabel;
+@property (weak, nonatomic) IBOutlet UILabel *vacinasEmDia;
 
 - (IBAction)backButton:(id)sender;
 

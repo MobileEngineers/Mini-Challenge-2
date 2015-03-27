@@ -12,6 +12,8 @@
 @interface InitialTableView : UITableViewController <returnData>
 
 @property (weak, nonatomic) IBOutlet UIToolbar *barrinha;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addFilho;
+@property (weak, nonatomic) IBOutlet UIView *logoView;
 
 - (IBAction)cadastrar:(id)sender;
 

@@ -23,6 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    UIColor *fundoTela = [[UIColor alloc] initWithRed:0.5 green:0.9 blue:0.8 alpha:1.0];
+    self.view.backgroundColor = fundoTela;
+    
+    self.sexoFilho.backgroundColor = [UIColor whiteColor];
+    
+    
     datePicker.maximumDate = [NSDate date];
     
 }

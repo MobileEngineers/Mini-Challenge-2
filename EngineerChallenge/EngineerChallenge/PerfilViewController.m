@@ -24,23 +24,47 @@
     solitaire = [Solitaire sharedInstance];
     nomeLabel.text = solitaire.nombre;
     
-    //Para aparecer a idade em meses
-    NSDate *today = [NSDate date];
-    NSDateComponents *ageMonths = [[NSCalendar currentCalendar]
-                                       components:NSCalendarUnitMonth
-                                       fromDate:solitaire.cumpleanos
-                                       toDate:today
-                                       options:0];
     
+    NSDate *today = [NSDate date];
+    //Para aparecer a idade em dias (se nao tiver 1 semana)
+    NSDateComponents *ageDays = [[NSCalendar currentCalendar]
+                                   components:NSCalendarUnitDay
+                                   fromDate:solitaire.cumpleanos
+                                   toDate:today
+                                   options:0];
+    
+    //Para aparecer a idade em semanas (até 3 meses)
     NSDateComponents *ageWeeks = [[NSCalendar currentCalendar]
-                                       components:NSCalendarUnitWeekOfMonth
-                                       fromDate:solitaire.cumpleanos
-                                       toDate:today
-                                       options:0];
-    if (ageWeeks.weekOfMonth < 13) {
+                                  components:NSCalendarUnitWeekOfMonth
+                                  fromDate:solitaire.cumpleanos
+                                  toDate:today
+                                  options:0];
+    
+    //Para aparecer a idade em meses (até 2 anos)
+    NSDateComponents *ageMonths = [[NSCalendar currentCalendar]
+                                   components:NSCalendarUnitMonth
+                                   fromDate:solitaire.cumpleanos
+                                   toDate:today
+                                   options:0];
+    
+    //Para aparecer a idade em anos
+    NSDateComponents *ageYears = [[NSCalendar currentCalendar]
+                                   components:NSCalendarUnitYear
+                                   fromDate:solitaire.cumpleanos
+                                   toDate:today
+                                   options:0];
+    
+    if (ageWeeks.weekOfMonth < 1) {
+        mesesLabel.text = [NSString stringWithFormat:@"%ld dias", (long)ageDays.day];
+        
+    } else if (ageWeeks.weekOfMonth < 12) {
         mesesLabel.text = [NSString stringWithFormat:@"%ld semanas", (long)ageWeeks.weekOfMonth];
-    } else{
+        
+    } else if (ageYears.year < 2) {
         mesesLabel.text = [NSString stringWithFormat:@"%ld meses", (long)ageMonths.month];
+        
+    } else {
+        mesesLabel.text = [NSString stringWithFormat:@"%ld anos", (long)ageYears.year];
 
     }
     
