@@ -319,6 +319,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R0o-gg-1ew" id="tsW-RE-ebU">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="XE5-xm-s7K" kind="show" id="Rlp-F9-v4S"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -330,6 +333,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oh6-WD-Rdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1699" y="2519"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9zi-nG-DPG">
+            <objects>
+                <viewController id="XE5-xm-s7K" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GVM-Ek-kkX"/>
+                        <viewControllerLayoutGuide type="bottom" id="eII-2s-ztF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="94U-RX-XSH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ay3-Xi-k7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1699" y="3252"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="aCo-n4-6Tu">
@@ -520,6 +541,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Vacinas" id="jqe-hG-1cZ"/>
                     <connections>
+                        <outlet property="containerVacinas" destination="fnx-4b-err" id="hkZ-Dn-bkh"/>
                         <outlet property="segmentedCont" destination="UgD-Ou-Be0" id="vnz-2U-Gu6"/>
                     </connections>
                 </viewController>

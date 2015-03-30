@@ -10,5 +10,6 @@
 
 @interface VacinasViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedCont;
+@property (weak, nonatomic) IBOutlet UIView *containerVacinas;
 
 @end

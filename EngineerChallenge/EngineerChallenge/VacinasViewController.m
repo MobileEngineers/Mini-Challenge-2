@@ -8,6 +8,7 @@
 
 #import "VacinasViewController.h"
 #import "Solitaire.h"
+#import "VacinasAplicarTableView.h"
 
 @interface VacinasViewController ()
 
@@ -17,7 +18,7 @@
     Solitaire *solitaire;
 }
 
-@synthesize segmentedCont;
+@synthesize segmentedCont, containerVacinas;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +34,11 @@
     }
     
     segmentedCont.backgroundColor = [UIColor whiteColor];
+    
+    if (segmentedCont == 0) {
+        VacinasAplicarTableView *aAplicar = [[VacinasAplicarTableView alloc] init];
+        containerVacinas = aAplicar;
+    }
     
 }
 
