@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Filho.h"
+#import "UpdateViewController.h"
 
-@interface GraficosTableViewController : UITableViewController
+@interface GraficosTableViewController : UITableViewController <returnMedidas>
 
 @property (nonatomic, strong) Filho *filho;
 

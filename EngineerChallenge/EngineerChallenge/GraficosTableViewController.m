@@ -58,6 +58,8 @@
 }
 
 - (IBAction)addMedida:(id)sender {
+    
+    [self performSegueWithIdentifier:@"medindo" sender:self];
 }
 
 #pragma mark - Table view data source
@@ -81,6 +83,7 @@
     Medidas *medidas = [filho.crescimento objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%f quilogramas - %f centímetros", medidas.peso, medidas.altura];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", medidas.data];
     
     return cell;
 }
@@ -89,6 +92,24 @@
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Medidas"];
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
     filho.crescimento = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
+    [self.tableView reloadData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"medindo"]) {
+        [segue.destinationViewController setDelegate:self];
+    }
+}
+
+-(void)retornoMedidas:(double)peso and: (double)altura {
+    Medidas *newMedida = [NSEntityDescription insertNewObjectForEntityForName:@"Medidas" inManagedObjectContext:self.managedObjectContext];
+    newMedida.peso = peso;
+    newMedida.altura = altura;
+    newMedida.data = [NSDate date];
+    
+    [self.managedObjectContext save:nil];
+    filho.crescimento = [filho.crescimento arrayByAddingObject:newMedida];
     
     [self.tableView reloadData];
 }

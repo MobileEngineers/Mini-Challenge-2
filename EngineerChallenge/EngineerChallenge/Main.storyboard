@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vVi-R2-DWf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vVi-R2-DWf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -193,6 +193,7 @@
                                 <barButtonItem title="Item" systemItem="add" id="h7M-0d-1Ps">
                                     <connections>
                                         <action selector="addMedida:" destination="8iE-7r-0HV" id="ayS-me-lgU"/>
+                                        <segue destination="cSN-kL-gEE" kind="show" identifier="medindo" id="QvA-IO-uNb"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
@@ -232,6 +233,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPK-Uc-G3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2577" y="1052"/>
+        </scene>
+        <!--Update View Controller-->
+        <scene sceneID="Ekk-Q1-klg">
+            <objects>
+                <viewController id="cSN-kL-gEE" customClass="UpdateViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l2f-WV-z58"/>
+                        <viewControllerLayoutGuide type="bottom" id="zft-Bf-CuB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ltD-AY-suq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QlA-ue-qPm">
+                                <rect key="frame" x="39" y="436" width="522" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB2-sT-JMD">
+                                <rect key="frame" x="39" y="177" width="69" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Altura" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g2-QR-e8R">
+                                <rect key="frame" x="39" y="391" width="79" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mio-m5-Sez">
+                                <rect key="frame" x="39" y="222" width="522" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Mio-m5-Sez" firstAttribute="leading" secondItem="ltD-AY-suq" secondAttribute="leadingMargin" constant="23" id="9Xn-AB-hzb"/>
+                            <constraint firstItem="2g2-QR-e8R" firstAttribute="top" secondItem="Mio-m5-Sez" secondAttribute="bottom" constant="139" id="BDf-5m-S0T"/>
+                            <constraint firstItem="BB2-sT-JMD" firstAttribute="leading" secondItem="ltD-AY-suq" secondAttribute="leadingMargin" constant="23" id="JMe-ke-Pld"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QlA-ue-qPm" secondAttribute="trailing" constant="23" id="Jek-wY-95C"/>
+                            <constraint firstItem="Mio-m5-Sez" firstAttribute="top" secondItem="BB2-sT-JMD" secondAttribute="bottom" constant="8" id="KOJ-Ia-Nno"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mio-m5-Sez" secondAttribute="trailing" constant="23" id="KYa-Eu-f0R"/>
+                            <constraint firstItem="BB2-sT-JMD" firstAttribute="top" secondItem="l2f-WV-z58" secondAttribute="bottom" constant="157" id="PQT-Ac-6Oz"/>
+                            <constraint firstItem="2g2-QR-e8R" firstAttribute="leading" secondItem="ltD-AY-suq" secondAttribute="leadingMargin" constant="23" id="SaY-74-x8X"/>
+                            <constraint firstItem="QlA-ue-qPm" firstAttribute="top" secondItem="2g2-QR-e8R" secondAttribute="bottom" constant="8" id="TzS-fa-V1O"/>
+                            <constraint firstItem="QlA-ue-qPm" firstAttribute="leading" secondItem="ltD-AY-suq" secondAttribute="leadingMargin" constant="23" id="VKc-Xr-KjO"/>
+                            <constraint firstItem="Mio-m5-Sez" firstAttribute="top" secondItem="BB2-sT-JMD" secondAttribute="bottom" constant="8" id="fdu-2b-Cpd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KOJ-Ia-Nno"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BAp-A9-0LX" appends="YES" id="fUD-pj-mfU"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="altura" destination="QlA-ue-qPm" id="3ob-8P-vgg"/>
+                        <outlet property="peso" destination="Mio-m5-Sez" id="uhr-Mc-DBw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PwL-vi-Cai" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="BAp-A9-0LX">
+                    <connections>
+                        <action selector="salvar:" destination="cSN-kL-gEE" id="Fwg-df-3c7"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3352" y="1052"/>
         </scene>
         <!--detalheGrafico-->
         <scene sceneID="RKS-Vb-8aY">
