@@ -8,6 +8,7 @@
     </entity>
     <entity name="Medidas" representedClassName="Medidas" syncable="YES">
         <attribute name="altura" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="peso" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="pessoa" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Filho" inverseName="crescimento" inverseEntity="Filho" syncable="YES"/>
     </entity>
@@ -22,6 +23,6 @@
     <elements>
         <element name="Filho" positionX="-315" positionY="-157" width="128" height="103"/>
         <element name="Vacina" positionX="-54" positionY="27" width="128" height="133"/>
-        <element name="Medidas" positionX="250" positionY="-142" width="128" height="88"/>
+        <element name="Medidas" positionX="250" positionY="-142" width="128" height="103"/>
     </elements>
 </model>

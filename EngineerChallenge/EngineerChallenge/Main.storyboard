@@ -186,6 +186,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Guv-L8-IT5">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Item" systemItem="add" id="h7M-0d-1Ps">
+                                    <connections>
+                                        <action selector="addMedida:" destination="8iE-7r-0HV" id="ayS-me-lgU"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medida" textLabel="YEF-js-ZzL" detailTextLabel="Y7P-p0-ESC" rowHeight="50" style="IBUITableViewCellStyleValue1" id="Zto-xm-w3q" customClass="GraficosTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>

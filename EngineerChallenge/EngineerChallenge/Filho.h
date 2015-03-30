@@ -13,7 +13,7 @@
 
 @interface Filho : NSManagedObject
 
-@property (nonatomic) NSTimeInterval nascimento;
+@property (nonatomic) NSDate *nascimento;
 @property (nonatomic, retain) NSString * nome;
 @property (nonatomic) BOOL sexo;
 @property (nonatomic, retain) NSArray *crescimento;

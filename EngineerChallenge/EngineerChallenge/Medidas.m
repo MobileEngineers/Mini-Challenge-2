@@ -14,6 +14,7 @@
 
 @dynamic peso;
 @dynamic altura;
+@dynamic data;
 @dynamic pessoa;
 
 @end

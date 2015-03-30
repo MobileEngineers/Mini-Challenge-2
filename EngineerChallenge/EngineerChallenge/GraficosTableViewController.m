@@ -8,20 +8,30 @@
 
 #import "GraficosTableViewController.h"
 #import "Solitaire.h"
+#import "Medidas.h"
+#import "AppDelegate.h"
 
 @interface GraficosTableViewController ()
+
+
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+- (IBAction)addMedida:(id)sender;
 
 @end
 
 @implementation GraficosTableViewController {
     Solitaire *solitaire;
 }
+@synthesize filho;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     solitaire = [Solitaire sharedInstance];
+    filho.nome = solitaire.nombre;
+    filho.nascimento = solitaire.cumpleanos;
+    filho.sexo = solitaire.persona;
     
     if (solitaire.persona == YES) {
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.7 green:0.7 blue:0.9 alpha:1.0];
@@ -31,16 +41,23 @@
         self.view.backgroundColor = fundoTela;
     }
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Medidas"];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
+    filho.crescimento = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+    return [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
+}
+
+- (IBAction)addMedida:(id)sender {
 }
 
 #pragma mark - Table view data source
@@ -54,18 +71,28 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [filho.crescimento count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"medida" forIndexPath:indexPath];
     
-    // Configure the cell...
+    Medidas *medidas = [filho.crescimento objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%f quilogramas - %f centímetros", medidas.peso, medidas.altura];
     
     return cell;
 }
-*/
+
+- (void) viewWillAppear:(BOOL)animated {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Medidas"];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
+    filho.crescimento = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
+    [self.tableView reloadData];
+}
+
 
 /*
 // Override to support conditional editing of the table view.

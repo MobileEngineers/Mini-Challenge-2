@@ -15,6 +15,7 @@
 
 @property (nonatomic) double peso;
 @property (nonatomic) double altura;
+@property (nonatomic) NSDate *data;
 @property (nonatomic, retain) Filho *pessoa;
 
 @end

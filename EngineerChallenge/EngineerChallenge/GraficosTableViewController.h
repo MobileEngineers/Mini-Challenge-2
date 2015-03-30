@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Filho.h"
 
 @interface GraficosTableViewController : UITableViewController
+
+@property (nonatomic, strong) Filho *filho;
 
 @end
