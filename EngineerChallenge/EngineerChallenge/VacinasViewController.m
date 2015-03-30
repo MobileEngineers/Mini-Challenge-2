@@ -9,6 +9,9 @@
 #import "VacinasViewController.h"
 #import "Solitaire.h"
 #import "VacinasAplicarTableView.h"
+#import "VacinasDetalhesTableView.h"
+#import "VacinasCalendarioTableView.h"
+#import "VacinasHistoricoTableView.h"
 
 @interface VacinasViewController ()
 
@@ -16,9 +19,15 @@
 
 @implementation VacinasViewController {
     Solitaire *solitaire;
+    
+    VacinasAplicarTableView     * va;
+    VacinasDetalhesTableView    * vd;
+    VacinasCalendarioTableView  * vc;
+    VacinasHistoricoTableView   * vh;
+    
 }
 
-@synthesize segmentedCont, containerVacinas;
+@synthesize segmentedCont;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,11 +44,17 @@
     
     segmentedCont.backgroundColor = [UIColor whiteColor];
     
-    if (segmentedCont == 0) {
-        VacinasAplicarTableView *aAplicar = [[VacinasAplicarTableView alloc] init];
-        containerVacinas = aAplicar;
-    }
-    
+    va = [self.storyboard instantiateViewControllerWithIdentifier:@"AplicarVacinas"];
+    vd = [self.storyboard instantiateViewControllerWithIdentifier:@"DetalhesVacina"];
+    vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CalendarioVacina"];
+    vh = [self.storyboard instantiateViewControllerWithIdentifier:@"JaAplicadas"];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    vh.view.bounds = self.conteudoView.bounds;
+    va.view.bounds = self.conteudoView.bounds;
+    [self.conteudoView addSubview:va.view];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,4 +72,18 @@
 }
 */
 
+
+
+- (IBAction)alterarView:(UISegmentedControl *)sender
+{
+    if (sender.selectedSegmentIndex == 0) {
+        [self.conteudoView addSubview:va.view];
+    } else if (sender.selectedSegmentIndex == 1) {
+        [self.conteudoView addSubview:vd.view];
+    } else if (sender.selectedSegmentIndex == 2) {
+        [self.conteudoView addSubview:vc.view];
+    } else if (sender.selectedSegmentIndex == 3) {
+        [self.conteudoView addSubview:vh.view];
+    }
+}
 @end
