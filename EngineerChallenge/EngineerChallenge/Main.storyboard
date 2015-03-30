@@ -182,38 +182,31 @@
         <scene sceneID="WqG-eI-dmD">
             <objects>
                 <tableViewController title="Graficos" id="8iE-7r-0HV" customClass="GraficosTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="226" sectionHeaderHeight="22" sectionFooterHeight="22" id="jKK-F1-uOi">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="jKK-F1-uOi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="226" id="Zto-xm-w3q" customClass="GraficosTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medida" textLabel="YEF-js-ZzL" detailTextLabel="Y7P-p0-ESC" rowHeight="50" style="IBUITableViewCellStyleValue1" id="Zto-xm-w3q" customClass="GraficosTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zto-xm-w3q" id="hKr-cf-xMP">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome_grafico" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqg-zV-BTg">
-                                            <rect key="frame" x="27" y="12" width="108" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YEF-js-ZzL">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MeX-JV-skZ">
-                                            <rect key="frame" x="10" y="36" width="580" height="184"/>
-                                        </imageView>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y7P-p0-ESC">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Aqg-zV-BTg" firstAttribute="leading" secondItem="hKr-cf-xMP" secondAttribute="leadingMargin" constant="19" id="4Kx-UL-LwW"/>
-                                        <constraint firstItem="MeX-JV-skZ" firstAttribute="top" secondItem="Aqg-zV-BTg" secondAttribute="bottom" constant="3" id="5dg-3i-Cxs"/>
-                                        <constraint firstItem="MeX-JV-skZ" firstAttribute="leading" secondItem="hKr-cf-xMP" secondAttribute="leadingMargin" constant="2" id="7ev-1f-HYZ"/>
-                                        <constraint firstItem="MeX-JV-skZ" firstAttribute="bottom" secondItem="hKr-cf-xMP" secondAttribute="bottomMargin" constant="2" id="Hdy-8j-nB9"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="MeX-JV-skZ" secondAttribute="trailing" constant="2" id="Sp6-jm-bGG"/>
-                                        <constraint firstItem="Aqg-zV-BTg" firstAttribute="top" secondItem="hKr-cf-xMP" secondAttribute="topMargin" constant="4" id="cSq-I0-B2O"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="graficoImageView" destination="MeX-JV-skZ" id="vdf-G1-IUf"/>
-                                    <outlet property="nomeGraficoLabel" destination="Aqg-zV-BTg" id="5x0-a3-MXx"/>
                                     <segue destination="BdG-dQ-FCq" kind="show" id="YUJ-oP-nvx"/>
                                 </connections>
                             </tableViewCell>
