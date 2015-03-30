@@ -16,7 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *filhos;
+@property (nonatomic,strong) AppDelegate *appDelegate;
 
+-(void)requestAccessToEvents;
 
 @end
 
@@ -38,7 +40,11 @@
     self.logoView.backgroundColor = fundoTela;
     self.barrinha.backgroundColor = fundoTela;
     
+    self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+       [self performSelector:@selector(requestAccessToEvents) withObject:nil afterDelay:0.1];
     [self.tableView reloadData];
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +54,21 @@
 
 -(NSManagedObjectContext *)managedObjectContext{
     return [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
+}
+
+#pragma mark - accessCalendarGranted
+
+-(void)requestAccessToEvents{
+    [self.appDelegate.eventManager.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+        if (error == nil) {
+            // Store the returned granted value.
+            self.appDelegate.eventManager.eventsAccessGranted = granted;
+        }
+        else{
+            // In case of error, just log its description to the debugger.
+            NSLog(@"%@", [error localizedDescription]);
+        }
+    }];
 }
 
 #pragma mark - Table view data source
