@@ -2,7 +2,7 @@
 //  Filho.h
 //  EngineerChallenge
 //
-//  Created by Isaías Lima on 24/03/15.
+//  Created by Isaías Lima on 30/03/15.
 //  Copyright (c) 2015 Isaías Lima. All rights reserved.
 //
 
@@ -12,10 +12,8 @@
 
 @interface Filho : NSManagedObject
 
+@property (nonatomic) NSTimeInterval nascimento;
 @property (nonatomic, retain) NSString * nome;
-@property (nonatomic) NSDate *nascimento;
-@property (nonatomic) double peso;
-@property (nonatomic) double altura;
 @property (nonatomic) BOOL sexo;
 
 @end

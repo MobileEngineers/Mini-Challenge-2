@@ -2,7 +2,7 @@
 //  Vacina.m
 //  EngineerChallenge
 //
-//  Created by Isaías Lima on 24/03/15.
+//  Created by Isaías Lima on 30/03/15.
 //  Copyright (c) 2015 Isaías Lima. All rights reserved.
 //
 
@@ -11,8 +11,11 @@
 
 @implementation Vacina
 
-@dynamic nome;
-@dynamic detalhes;
+@dynamic aplicado;
+@dynamic doencas;
 @dynamic meses;
+@dynamic nome;
+@dynamic efeitos;
+@dynamic contras;
 
 @end

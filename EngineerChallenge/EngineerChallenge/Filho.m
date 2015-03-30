@@ -2,7 +2,7 @@
 //  Filho.m
 //  EngineerChallenge
 //
-//  Created by Isaías Lima on 24/03/15.
+//  Created by Isaías Lima on 30/03/15.
 //  Copyright (c) 2015 Isaías Lima. All rights reserved.
 //
 
@@ -11,10 +11,8 @@
 
 @implementation Filho
 
-@dynamic nome;
 @dynamic nascimento;
-@dynamic peso;
-@dynamic altura;
+@dynamic nome;
 @dynamic sexo;
 
 @end
