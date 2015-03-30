@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vVi-R2-DWf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vVi-R2-DWf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -265,23 +265,42 @@
             </objects>
             <point key="canvasLocation" x="2577" y="1826"/>
         </scene>
-        <!--Vacinas Calendario View-->
-        <scene sceneID="iqN-db-Gqh">
+        <!--Vacinas Calendario Table View-->
+        <scene sceneID="keX-WF-MU2">
             <objects>
-                <viewController storyboardIdentifier="CalendarioVacinas" id="A1L-6n-oRU" customClass="VacinasCalendarioView" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WHu-NP-HWh"/>
-                        <viewControllerLayoutGuide type="bottom" id="GcC-wR-Lwp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="srU-QJ-eWk">
+                <tableViewController id="F1h-2Z-u07" customClass="VacinasCalendarioTableView" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wt1-tO-epE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gON-S6-bdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="YPe-rx-8Ob">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Exportar" id="fQc-03-T43"/>
+                            </items>
+                        </toolbar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yxl-wI-pJ2">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yxl-wI-pJ2" id="sZE-wj-LvH">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="F1h-2Z-u07" id="3of-Zg-Iy7"/>
+                            <outlet property="delegate" destination="F1h-2Z-u07" id="Id2-k6-LhF"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="expotar" destination="fQc-03-T43" id="EV6-vi-iut"/>
+                        <outlet property="toolEvent" destination="YPe-rx-8Ob" id="pNs-6x-WFK"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ChA-Z3-SWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2326" y="2519"/>
+            <point key="canvasLocation" x="2328" y="2513"/>
         </scene>
         <!--Vacinas Historico Table View-->
         <scene sceneID="Jww-qc-UiV">
