@@ -16,6 +16,7 @@
 @property (nonatomic) BOOL eventsAccessGranted;
 
 -(void)saveCustomCalendarIdentifier:(NSString *)identifier;
+-(NSArray *)getLocalEventCalendars;
 
 
 @end

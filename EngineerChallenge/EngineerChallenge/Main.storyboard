@@ -359,7 +359,7 @@
                             </items>
                         </toolbar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yxl-wI-pJ2">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="idCellCalendar" id="yxl-wI-pJ2">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yxl-wI-pJ2" id="sZE-wj-LvH">
                                     <autoresizingMask key="autoresizingMask"/>

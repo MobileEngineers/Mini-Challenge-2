@@ -15,9 +15,12 @@ static EKCalendar *calendario = nil;
 @interface VacinasCalendarioTableView ()
 
 -(void)createCalendar;
+-(void)loadEventCalendars;
+
 
 
 @property (nonatomic, strong) AppDelegate *appDelegate;
+@property (nonatomic, strong) NSArray *arrCalendars;
 
 
 @end
@@ -28,11 +31,6 @@ static EKCalendar *calendario = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    if (calendario == nil) {
-        [self createCalendar];
-    }
-    
     
     solitaire = [Solitaire sharedInstance];
     
@@ -47,9 +45,12 @@ static EKCalendar *calendario = nil;
     self.eventEndDate = nil; //pegar o intervalo (inicio + intervalo)
     
   
-    
+    self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
     self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 50.0f, 0.0);
     
+    [self loadEventCalendars];
+    [self createCalendar];
     
 }
 - (void)didReceiveMemoryWarning {
@@ -57,20 +58,38 @@ static EKCalendar *calendario = nil;
     // Dispose of any resources that can be recreated.
 }
 
+-(void)loadEventCalendars{
+    // Load all local event calendars.
+    self.arrCalendars = [self.appDelegate.eventManager getLocalEventCalendars];
+    
+    // Reload the table view.
+    [self.tableView reloadData];
+}
 
 
--(void)createCalendar;
-{
-    EKCalendar *calendar = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:self.appDelegate.eventManager.eventStore];
+-(void)createCalendar{
+ 
     
-    calendar.title = @"calendario Vacinas";
+    // Create a new calendar.
+    calendario = [EKCalendar calendarForEntityType:EKEntityTypeEvent
+                                                  eventStore:self.appDelegate.eventManager.eventStore];
     
-    EKSource *source = [[EKSource alloc]init];
+    // Set the calendar title.
+    calendario.title = @"vacinas";
+    
+    // Set the calendar source.
+    for (int i=0; i<self.appDelegate.eventManager.eventStore.sources.count; i++) {
+        EKSource *source = (EKSource *)[self.appDelegate.eventManager.eventStore.sources objectAtIndex:i];
         EKSourceType currentSourceType = source.sourceType;
         
+        if (currentSourceType == EKSourceTypeCalDAV) {
             calendario.source = source;
+            break;
         }
+    }
     
+    
+    // Save and commit the calendar.
     NSError *error;
     [self.appDelegate.eventManager.eventStore saveCalendar:calendario commit:YES error:&error];
     
@@ -83,15 +102,69 @@ static EKCalendar *calendario = nil;
         [self.appDelegate.eventManager saveCustomCalendarIdentifier:calendario.calendarIdentifier];
         
         // Reload all calendars.
-        [self.tableView reloadData];
+        [self loadEventCalendars];
     }
     else{
         // Display the error description to the debugger.
         NSLog(@"%@", [error localizedDescription]);
     }
-
-
 }
+
+//-(void)createCalendar;
+//{
+//    
+//    
+//  
+//    EKSource *localSource = nil;
+//    for (EKSource *source in self.appDelegate.eventManager.eventStore.sources)
+//    {
+//        if (source.sourceType == EKCalendarTypeCalDAV) {
+//            localSource = source;
+//            break;
+//        }
+//    }
+//    NSString *identifier =@" 5BA891B3-0E64-45F7-B7E6-2397CAFC7B10;
+//    if (identifier == nil) {
+////        
+//    calendario = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:self.appDelegate.eventManager.eventStore];
+//    calendario.title = @"calendario Vacinas";
+//        calendario.source = localSource;
+//        [self.appDelegate.eventManager.eventStore saveCalendar:calendario commit:YES error:nil];
+//        
+//        NSLog(@"cal id = %@", calendario.calendarIdentifier);
+//    }
+//    
+////
+////    for (int i=0; i<self.appDelegate.eventManager.eventStore.sources.count; i++) {
+////        EKSource *source = (EKSource *)[self.appDelegate.eventManager.eventStore.sources objectAtIndex:i];
+////        EKSourceType currentSourceType = source.sourceType;
+////        
+////        if (currentSourceType == EKSourceTypeCalDAV) {
+////            calendario.source = source;
+////            break;
+////        }
+////    }
+////    NSError *error;
+////    [self.appDelegate.eventManager.eventStore saveCalendar:calendario commit:YES error:&error];
+////    
+////    // If no error occurs then turn the editing mode off, store the new calendar identifier and reload the calendars.
+////    if (error == nil) {
+////        // Turn off the edit mode.
+////        [self.tableView setEditing:NO animated:YES];
+////        
+////        // Store the calendar identifier.
+////        [self.appDelegate.eventManager saveCustomCalendarIdentifier:calendario.calendarIdentifier];
+////        
+////        // Reload all calendars.
+////        [self loadEventCalendars];
+////    }
+////    else{
+////        // Display the error description to the debugger.
+////        NSLog(@"%@", [error localizedDescription]);
+////    }
+////
+////
+//}
 
 
 
@@ -100,24 +173,43 @@ static EKCalendar *calendario = nil;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.arrCalendars.count;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellCalendar"];
     
-    // Configure the cell...
+    EKCalendar *currentCalendar = [self.arrCalendars objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = currentCalendar.title;
     
     return cell;
 }
-*/
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44.0;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return solitaire.nombre;
+}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellCalendar"];
+//    
+//    EKCalendar *currentCalendar = [self.arrCalendars objectAtIndex:indexPath.row];
+//    
+//    cell.textLabel.text = currentCalendar.title;
+//    
+//    return cell;
+//    
+//}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -163,4 +255,6 @@ static EKCalendar *calendario = nil;
 }
 */
 
+
 @end
+

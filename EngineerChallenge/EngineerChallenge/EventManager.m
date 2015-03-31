@@ -34,11 +34,29 @@
      [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:eventsAccessGranted] forKey:@"eventkit_events_access_granted"];
 }
 
+
+
+-(NSArray *)getLocalEventCalendars{
+    NSArray *allCalendars = [self.eventStore calendarsForEntityType:EKEntityTypeEvent];
+    NSMutableArray *localCalendars = [[NSMutableArray alloc] init];
+    
+    //check the type of each returned calendar. Every local calendar found in the first array is stored to the mutable one, which is returned at the end
+    for (int i=0; i<allCalendars.count; i++){
+        EKCalendar *currentCalendar = [allCalendars objectAtIndex:i];
+        if (currentCalendar.type == EKCalendarTypeCalDAV){
+            //Each calendar (the currentCalendar) is stored to a EKCalendar object temporarily.
+            [localCalendars addObject:currentCalendar];
+            
+        }
+    }
+    
+    return (NSArray *)localCalendars;
+}
+
 -(void)saveCustomCalendarIdentifier:(NSString *)identifier{
     [self.arrCustomCalendarIdentifiers addObject:identifier];
     
     [[NSUserDefaults standardUserDefaults] setObject:self.arrCustomCalendarIdentifiers forKey:@"eventkit_cal_identifiers"];
 }
-
 @end
 
