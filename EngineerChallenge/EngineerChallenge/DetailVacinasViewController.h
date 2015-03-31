@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VacinasSingleton.h"
 
 @interface DetailVacinasViewController : UIViewController
+
+{
+    VacinasSingleton *vacin;
+    NSMutableArray *todavacinas;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *nome;
 @property (weak, nonatomic) IBOutlet UILabel *doenca;

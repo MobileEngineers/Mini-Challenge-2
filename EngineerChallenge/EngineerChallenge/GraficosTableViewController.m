@@ -68,13 +68,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [filho.medicoes count];
 }
@@ -83,10 +83,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"medida" forIndexPath:indexPath];
     
-    Medidas *medidas = [filho.medicoes objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%f kg - %f cm", medidas.peso, medidas.altura];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", medidas.data];
+//    Medidas *medidas = [filho.medicoes objectAtIndex:indexPath.row];
+//    
+//    cell.textLabel.text = [NSString stringWithFormat:@"%f kg - %f cm", medidas.peso, medidas.altura];
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", medidas.data];
     
     
     return cell;
@@ -108,12 +108,12 @@
 
 -(void)retornoMedidas:(double)peso and: (double)altura {
     Medidas *newMedida = [NSEntityDescription insertNewObjectForEntityForName:@"Medidas" inManagedObjectContext:self.managedObjectContext];
-    newMedida.peso = [NSNumber numberWithDouble:peso];
-    newMedida.altura = [NSNumber numberWithDouble:altura];
-    newMedida.data = [NSDate date];
-    
-    [self.managedObjectContext save:nil];
-    filho.medicoes = [filho.medicoes arrayByAddingObject:newMedida];
+//    newMedida.peso = [NSNumber numberWithDouble:peso];
+//    newMedida.altura = [NSNumber numberWithDouble:altura];
+//    newMedida.data = [NSDate date];
+//    
+//    [self.managedObjectContext save:nil];
+//    filho.medicoes = [filho.medicoes arrayByAddingObject:newMedida];
     
     [self.tableView reloadData];
 }
