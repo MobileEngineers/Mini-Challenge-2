@@ -18,10 +18,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *nomeText;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sexoFilho;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
 @property (nonatomic,assign) id <returnData> delegate;
 
-
+- (IBAction)textFieldChanged:(id)sender;
 - (IBAction)salvarCadastro:(id)sender;
 - (IBAction)cancelarCadastro:(id)sender;
 

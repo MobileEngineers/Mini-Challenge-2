@@ -39,6 +39,9 @@
                                 <rect key="frame" x="16" y="151" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldChanged:" destination="j1f-C7-Lgj" eventType="editingDidEnd" id="DxS-VL-Pyn"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Nascimento:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBJ-rZ-O7I">
                                 <rect key="frame" x="60" y="210" width="162" height="21"/>
@@ -107,6 +110,7 @@
                     <connections>
                         <outlet property="datePicker" destination="quD-MV-a2G" id="2cE-yv-nWr"/>
                         <outlet property="nomeText" destination="EJ4-k0-OoH" id="l5g-pk-z1u"/>
+                        <outlet property="saveButton" destination="SrS-GS-e9z" id="MXX-Dj-0fn"/>
                         <outlet property="sexoFilho" destination="ybX-Ui-GXZ" id="yIB-ff-0a7"/>
                     </connections>
                 </viewController>
