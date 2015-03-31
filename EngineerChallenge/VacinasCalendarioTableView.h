@@ -10,6 +10,9 @@
 
 @interface VacinasCalendarioTableView : UITableViewController
 
+@property (nonatomic, strong) NSString *eventTitle;
+@property (nonatomic, strong) NSDate *eventStartDate;
+@property (nonatomic, strong) NSDate *eventEndDate;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolEvent;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *expotar;
 @end

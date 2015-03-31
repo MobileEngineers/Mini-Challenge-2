@@ -35,6 +35,9 @@
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
         self.view.backgroundColor = fundoTela;
     }
+    self.eventStartDate = nil;
+    self.eventEndDate = nil; //pegar o intervalo (inicio + intervalo)
+    
     
     
 }

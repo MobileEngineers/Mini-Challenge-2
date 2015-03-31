@@ -40,7 +40,7 @@
     self.logoView.backgroundColor = fundoTela;
     self.barrinha.backgroundColor = fundoTela;
     
-    self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.appDelegate =(AppDelegate *)[[UIApplication sharedApplication] delegate];
 
        [self performSelector:@selector(requestAccessToEvents) withObject:nil afterDelay:0.1];
     [self.tableView reloadData];
