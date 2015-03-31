@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <EventKit/EventKit.h>
+
 
 @interface VacinasCalendarioTableView : UITableViewController
 
@@ -15,4 +17,5 @@
 @property (nonatomic, strong) NSDate *eventEndDate;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolEvent;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *expotar;
+
 @end

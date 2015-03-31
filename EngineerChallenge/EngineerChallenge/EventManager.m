@@ -34,5 +34,11 @@
      [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:eventsAccessGranted] forKey:@"eventkit_events_access_granted"];
 }
 
+-(void)saveCustomCalendarIdentifier:(NSString *)identifier{
+    [self.arrCustomCalendarIdentifiers addObject:identifier];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:self.arrCustomCalendarIdentifiers forKey:@"eventkit_cal_identifiers"];
+}
+
 @end
 

@@ -10,11 +10,14 @@
 #import "Solitaire.h"
 #import "AppDelegate.h"
 
+static EKCalendar *calendario = nil;
+
 @interface VacinasCalendarioTableView ()
 
+-(void)createCalendar;
+
+
 @property (nonatomic, strong) AppDelegate *appDelegate;
-
-
 
 
 @end
@@ -25,6 +28,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (calendario == nil) {
+        [self createCalendar];
+    }
+    
     
     solitaire = [Solitaire sharedInstance];
     
@@ -38,6 +46,7 @@
     self.eventStartDate = nil;
     self.eventEndDate = nil; //pegar o intervalo (inicio + intervalo)
     
+  
     
     
 }
@@ -45,6 +54,43 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+-(void)createCalendar;
+{
+    EKCalendar *calendar = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:self.appDelegate.eventManager.eventStore];
+    
+    calendar.title = @"calendario Vacinas";
+    
+    EKSource *source = [[EKSource alloc]init];
+        EKSourceType currentSourceType = source.sourceType;
+        
+            calendario.source = source;
+        }
+    
+    NSError *error;
+    [self.appDelegate.eventManager.eventStore saveCalendar:calendario commit:YES error:&error];
+    
+    // If no error occurs then turn the editing mode off, store the new calendar identifier and reload the calendars.
+    if (error == nil) {
+        // Turn off the edit mode.
+        [self.tableView setEditing:NO animated:YES];
+        
+        // Store the calendar identifier.
+        [self.appDelegate.eventManager saveCustomCalendarIdentifier:calendario.calendarIdentifier];
+        
+        // Reload all calendars.
+        [self.tableView reloadData];
+    }
+    else{
+        // Display the error description to the debugger.
+        NSLog(@"%@", [error localizedDescription]);
+    }
+
+
+}
+
 
 
 #pragma mark - Table view data source

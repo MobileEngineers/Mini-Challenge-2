@@ -10,7 +10,12 @@
 @import EventKit;
 
 @interface EventManager : NSObject
+
+@property (nonatomic, strong) NSMutableArray *arrCustomCalendarIdentifiers;
 @property (nonatomic, strong) EKEventStore *eventStore;
 @property (nonatomic) BOOL eventsAccessGranted;
+
+-(void)saveCustomCalendarIdentifier:(NSString *)identifier;
+
 
 @end
