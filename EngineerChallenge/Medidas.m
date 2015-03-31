@@ -2,7 +2,7 @@
 //  Medidas.m
 //  EngineerChallenge
 //
-//  Created by Isaías Lima on 30/03/15.
+//  Created by Isaías Lima on 31/03/15.
 //  Copyright (c) 2015 Isaías Lima. All rights reserved.
 //
 
@@ -11,8 +11,8 @@
 
 @implementation Medidas
 
-@dynamic peso;
 @dynamic altura;
 @dynamic data;
+@dynamic peso;
 
 @end
