@@ -18,7 +18,7 @@
     InitialTableView *tableView;
 }
 
-@synthesize nomeText, datePicker, sexoFilho, delegate;
+@synthesize nomeText, datePicker, sexoFilho, delegate, saveButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,9 +28,14 @@
     
     self.sexoFilho.backgroundColor = [UIColor whiteColor];
     
-    
     datePicker.maximumDate = [NSDate date];
     
+    //Primeira letra sempre maiuscula
+    nomeText.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    nomeText.returnKeyType = UIReturnKeyDone;
+    nomeText.delegate = self;
+
+    [saveButton setEnabled:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,16 +51,27 @@
     [textField becomeFirstResponder];
 }
 
-
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = [[event allTouches] anyObject];
-    if ([nomeText isFirstResponder] && [touch view] != nomeText) {
-        [nomeText resignFirstResponder];
+    [nomeText resignFirstResponder];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [nomeText resignFirstResponder];
+    return NO;
+}
+
+- (IBAction)textFieldChanged:(id)sender {
+    
+    if ([nomeText.text length] != 0) {
+        [saveButton setEnabled:YES];
+    } else {
+        [saveButton setEnabled:NO];
     }
-    [super touchesBegan:touches withEvent:event];
+    
 }
 
 - (IBAction)salvarCadastro:(id)sender {
+    
     BOOL aux;
     if (sexoFilho.selectedSegmentIndex == 0){
         aux = YES;
@@ -69,5 +85,6 @@
 - (IBAction)cancelarCadastro:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 @end
