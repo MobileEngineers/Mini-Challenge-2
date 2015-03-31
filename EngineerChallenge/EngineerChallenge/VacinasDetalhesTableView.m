@@ -30,6 +30,8 @@
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
         self.view.backgroundColor = fundoTela;
     }
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 50.0f, 0.0);
 
     _vacinaDetalhe = [[NSMutableArray alloc] init];
     
@@ -59,13 +61,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return _vacinaDetalhe.count;
 }
@@ -92,14 +94,20 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DetailVacinasViewController *as =[DetailVacinasViewController new];
+    DetailVacinasViewController *as = [self.storyboard instantiateViewControllerWithIdentifier:@"detailVacinasViewController"];
+
     long row = [indexPath row];
     
     as.nome = [[_vacinaDetalhe objectAtIndex:row] objectForKey:@"nome"];
     
+    
     [self presentViewController:as animated:YES completion:nil];
 }
 
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 55;
+}
 
 /*
 // Override to support conditional editing of the table view.
