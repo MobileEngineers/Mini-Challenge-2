@@ -18,6 +18,8 @@
 		02B5FEA11AC4387C00B96E05 /* DetalheGraficoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FEA01AC4387C00B96E05 /* DetalheGraficoViewController.m */; };
 		02BB77AF1AC2D28300F1DD4D /* InitialTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77AE1AC2D28300F1DD4D /* InitialTableView.m */; };
 		02BB77B51AC2D85F00F1DD4D /* CadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BB77B41AC2D85F00F1DD4D /* CadastroViewController.m */; };
+		A1E8F3681ACABD3D00C7F39F /* VacinasSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8F3671ACABD3D00C7F39F /* VacinasSingleton.m */; };
+		A1E8F36B1ACABECD00C7F39F /* DetailVacinasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8F36A1ACABECD00C7F39F /* DetailVacinasViewController.m */; };
 		DDB6F57C1AC97BA40068997C /* VacinasCalendarioTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB6F57B1AC97BA40068997C /* VacinasCalendarioTableView.m */; };
 		DDB6F57F1AC984B70068997C /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB6F57E1AC984B70068997C /* EventManager.m */; };
 		DDB6F5831AC987650068997C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6F5801AC985550068997C /* EventKit.framework */; };
@@ -67,6 +69,10 @@
 		02BB77AE1AC2D28300F1DD4D /* InitialTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialTableView.m; sourceTree = "<group>"; };
 		02BB77B31AC2D85F00F1DD4D /* CadastroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadastroViewController.h; sourceTree = "<group>"; };
 		02BB77B41AC2D85F00F1DD4D /* CadastroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadastroViewController.m; sourceTree = "<group>"; };
+		A1E8F3661ACABD3D00C7F39F /* VacinasSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VacinasSingleton.h; sourceTree = "<group>"; };
+		A1E8F3671ACABD3D00C7F39F /* VacinasSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VacinasSingleton.m; sourceTree = "<group>"; };
+		A1E8F3691ACABECD00C7F39F /* DetailVacinasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVacinasViewController.h; sourceTree = "<group>"; };
+		A1E8F36A1ACABECD00C7F39F /* DetailVacinasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVacinasViewController.m; sourceTree = "<group>"; };
 		DDB6F57A1AC97BA40068997C /* VacinasCalendarioTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VacinasCalendarioTableView.h; path = ../VacinasCalendarioTableView.h; sourceTree = "<group>"; };
 		DDB6F57B1AC97BA40068997C /* VacinasCalendarioTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VacinasCalendarioTableView.m; path = ../VacinasCalendarioTableView.m; sourceTree = "<group>"; };
 		DDB6F57D1AC984B70068997C /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 				E4C0D2A81ACAC14200DC3903 /* Filho.m */,
 				E4C0D2A41ACAC14100DC3903 /* Medidas.h */,
 				E4C0D2A51ACAC14100DC3903 /* Medidas.m */,
+				A1E8F3661ACABD3D00C7F39F /* VacinasSingleton.h */,
+				A1E8F3671ACABD3D00C7F39F /* VacinasSingleton.m */,
 			);
 			name = Entidades;
 			sourceTree = "<group>";
@@ -177,6 +185,8 @@
 				0206AFD51AC5E17E000682CD /* VacinasAplicarTableView.m */,
 				0206AFD71AC5E198000682CD /* VacinasDetalhesTableView.h */,
 				0206AFD81AC5E198000682CD /* VacinasDetalhesTableView.m */,
+				A1E8F3691ACABECD00C7F39F /* DetailVacinasViewController.h */,
+				A1E8F36A1ACABECD00C7F39F /* DetailVacinasViewController.m */,
 				DDB6F57A1AC97BA40068997C /* VacinasCalendarioTableView.h */,
 				DDB6F57B1AC97BA40068997C /* VacinasCalendarioTableView.m */,
 				0206AFDA1AC5E1C1000682CD /* VacinasHistoricoTableView.h */,
@@ -327,12 +337,14 @@
 				E4C0D2A91ACAC14200DC3903 /* Filho.m in Sources */,
 				02B5FE981AC4359400B96E05 /* PerfilViewController.m in Sources */,
 				02BB77AF1AC2D28300F1DD4D /* InitialTableView.m in Sources */,
+				A1E8F3681ACABD3D00C7F39F /* VacinasSingleton.m in Sources */,
 				02377CB71AC456C20081B4A2 /* Solitaire.m in Sources */,
 				02B5FE9E1AC437F300B96E05 /* GraficosTableViewController.m in Sources */,
 				0206AFDC1AC5E1C1000682CD /* VacinasHistoricoTableView.m in Sources */,
 				E4024BCC1AC1F17A00A0FFF6 /* EngineerChallenge.xcdatamodeld in Sources */,
 				02BB77B51AC2D85F00F1DD4D /* CadastroViewController.m in Sources */,
 				E44D31911AC9878C00A81319 /* UpdateViewController.m in Sources */,
+				A1E8F36B1ACABECD00C7F39F /* DetailVacinasViewController.m in Sources */,
 				0206AFD91AC5E198000682CD /* VacinasDetalhesTableView.m in Sources */,
 				E4C0D2A61ACAC14200DC3903 /* Medidas.m in Sources */,
 				DDB6F57C1AC97BA40068997C /* VacinasCalendarioTableView.m in Sources */,

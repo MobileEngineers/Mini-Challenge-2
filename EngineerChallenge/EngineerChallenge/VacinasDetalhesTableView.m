@@ -8,6 +8,7 @@
 
 #import "VacinasDetalhesTableView.h"
 #import "Solitaire.h"
+#import "DetailVacinasViewController.h"
 
 @interface VacinasDetalhesTableView ()
 
@@ -30,6 +31,18 @@
         self.view.backgroundColor = fundoTela;
     }
 
+    _vacinaDetalhe = [[NSMutableArray alloc] init];
+    
+    [_vacinaDetalhe addObject:@{@"nome":@"Hepatite B"}];
+    [_vacinaDetalhe addObject:@{@"nome":@"BCG"}];
+    [_vacinaDetalhe addObject:@{@"nome":@"Penta"}];
+    [_vacinaDetalhe addObject:@{@"nome":@"Poliomielite"}];
+    [_vacinaDetalhe addObject:@{@"nome":@"Rotavírus"}];
+    [_vacinaDetalhe addObject:@{@"nome":@"Pneumo 10"}];
+    [_vacinaDetalhe addObject:@{@"nome":@"Meningo C"}];
+    [_vacinaDetalhe addObject:@{@"nome":@"Febre Amarela"}];
+    [_vacinaDetalhe addObject:@{@"nome":@"Tríplice Viral"}];
+    [_vacinaDetalhe addObject:@{@"nome":@"Hepatite A"}];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -48,24 +61,35 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return _vacinaDetalhe.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"vacinacell"];
+    
+    cell.textLabel.text = [[_vacinaDetalhe objectAtIndex:indexPath.row]objectForKey:@"nome"];
     
     return cell;
 }
-*/
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailVacinasViewController *as =[DetailVacinasViewController new];
+    long row = [indexPath row];
+    
+    as.nome = [[_vacinaDetalhe objectAtIndex:row] objectForKey:@"nome"];
+    
+    [self presentViewController:as animated:YES completion:nil];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
