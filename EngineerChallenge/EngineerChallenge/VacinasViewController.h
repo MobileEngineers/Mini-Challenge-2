@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface VacinasViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedCont;
-@property (weak, nonatomic) IBOutlet UIView *containerVacinas;
+@property (weak, nonatomic) IBOutlet UIView *conteudoView;
+
+- (IBAction)alterarView:(UISegmentedControl *)sender;
+
 
 @end

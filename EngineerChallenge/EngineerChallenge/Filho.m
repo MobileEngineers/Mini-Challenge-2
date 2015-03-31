@@ -14,6 +14,5 @@
 @dynamic nascimento;
 @dynamic nome;
 @dynamic sexo;
-@dynamic crescimento;
 
 @end
