@@ -9,13 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Filho;
 
 @interface Medidas : NSManagedObject
 
-@property (nonatomic) double peso;
-@property (nonatomic) double altura;
-@property (nonatomic) NSDate *data;
-@property (nonatomic, retain) Filho *pessoa;
+@property (nonatomic, retain) NSNumber * peso;
+@property (nonatomic, retain) NSNumber * altura;
+@property (nonatomic, retain) NSDate * data;
 
 @end

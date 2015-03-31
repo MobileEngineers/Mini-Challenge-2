@@ -201,6 +201,7 @@
     solitaire.nombre = [[self.filhos objectAtIndex:indexPath.row] nome];
     solitaire.cumpleanos = [[self.filhos objectAtIndex:indexPath.row] nascimento];
     solitaire.persona = [[self.filhos objectAtIndex:indexPath.row] sexo];
+    solitaire.nino = [self.filhos objectAtIndex:indexPath.row];
     
     [self performSegueWithIdentifier:@"selecionouFilho" sender:self];
 }

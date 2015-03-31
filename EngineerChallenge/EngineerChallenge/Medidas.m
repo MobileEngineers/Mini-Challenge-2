@@ -7,7 +7,6 @@
 //
 
 #import "Medidas.h"
-#import "Filho.h"
 
 
 @implementation Medidas
@@ -15,6 +14,5 @@
 @dynamic peso;
 @dynamic altura;
 @dynamic data;
-@dynamic pessoa;
 
 @end
