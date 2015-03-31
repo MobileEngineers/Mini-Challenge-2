@@ -15,6 +15,7 @@
 
 
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSArray *medicoes;
 - (IBAction)addMedida:(id)sender;
 
 @end
@@ -31,9 +32,9 @@
     self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 50.0f, 0.0);
     
     solitaire = [Solitaire sharedInstance];
-    filho.nome = solitaire.nombre;
-    filho.nascimento = solitaire.cumpleanos;
-    filho.sexo = solitaire.persona;
+    filho = solitaire.nino;
+    
+    NSLog(@"%@", solitaire.nombre);
     
     if (solitaire.persona == YES) {
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.7 green:0.7 blue:0.9 alpha:1.0];
@@ -45,9 +46,10 @@
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Medidas"];
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
-    filho.crescimento = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    self.medicoes = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
     [self.tableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,28 +77,29 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [filho.crescimento count];
+    return [self.medicoes count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"medida" forIndexPath:indexPath];
     
-    Medidas *medidas = [filho.crescimento objectAtIndex:indexPath.row];
+    Medidas *medidas = [self.medicoes objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%f quilogramas - %f centímetros", medidas.peso, medidas.altura];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ kg - %@ cm", medidas.peso, medidas.altura];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", medidas.data];
+    
     
     return cell;
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Medidas"];
-    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
-    filho.crescimento = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
-    
-    [self.tableView reloadData];
-}
+//- (void) viewWillAppear:(BOOL)animated {
+//    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Medidas"];
+//    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
+//    filho.crescimento = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+//    
+//    [self.tableView reloadData];
+//}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"medindo"]) {
@@ -106,12 +109,12 @@
 
 -(void)retornoMedidas:(double)peso and: (double)altura {
     Medidas *newMedida = [NSEntityDescription insertNewObjectForEntityForName:@"Medidas" inManagedObjectContext:self.managedObjectContext];
-    newMedida.peso = peso;
-    newMedida.altura = altura;
+    newMedida.peso = [NSNumber numberWithDouble:peso];
+    newMedida.altura = [NSNumber numberWithDouble:altura];
     newMedida.data = [NSDate date];
     
     [self.managedObjectContext save:nil];
-    filho.crescimento = [filho.crescimento arrayByAddingObject:newMedida];
+    self.medicoes = [self.medicoes arrayByAddingObject:newMedida];
     
     [self.tableView reloadData];
 }

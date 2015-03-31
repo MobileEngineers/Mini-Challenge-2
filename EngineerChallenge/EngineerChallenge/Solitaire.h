@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class Filho;
+
 @interface Solitaire : NSObject
 
 @property NSString *nombre;
 @property NSDate *cumpleanos;
 @property BOOL persona;
+@property Filho *nino;
 
 + (Solitaire *)sharedInstance;
 
