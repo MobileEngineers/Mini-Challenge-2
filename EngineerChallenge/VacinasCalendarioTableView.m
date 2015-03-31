@@ -36,6 +36,8 @@
         self.view.backgroundColor = fundoTela;
     }
     
+    self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 50.0f, 0.0);
+    
     
 }
 - (void)didReceiveMemoryWarning {

@@ -52,9 +52,8 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    vh.view.bounds = self.conteudoView.bounds;
-    va.view.bounds = self.conteudoView.bounds;
     [self.conteudoView addSubview:va.view];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,8 +70,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-
 
 - (IBAction)alterarView:(UISegmentedControl *)sender
 {

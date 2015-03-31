@@ -30,6 +30,8 @@
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
         self.view.backgroundColor = fundoTela;
     }
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 50.0f, 0.0);
 
     vaci = [VacinasSingleton sharedInstance];
     todasvacinas = [vaci getVacinas];
@@ -65,7 +67,13 @@
     
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"vacinacell"];
     
-    // Configure the cell...
+    if (solitaire.persona == YES) {
+        UIColor *fundoTela = [[UIColor alloc] initWithRed:0.7 green:0.7 blue:0.9 alpha:1.0];
+        cell.backgroundColor = fundoTela;
+    } else {
+        UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
+        cell.backgroundColor = fundoTela;
+    }
     
     cell.textLabel.text = [[todasvacinas objectAtIndex:indexPath.row]objectForKey:@"nome"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ meses", [[todasvacinas objectAtIndex:indexPath.row]objectForKey:@"meses"]];

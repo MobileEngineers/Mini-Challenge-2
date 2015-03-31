@@ -29,6 +29,8 @@
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
         self.view.backgroundColor = fundoTela;
     }
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 50.0f, 0.0);
 
     
     // Uncomment the following line to preserve selection between presentations.
@@ -61,7 +63,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"vacinaHistoricoCellIdentifier" forIndexPath:indexPath];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Celula: %ld", indexPath.row];
+    if (solitaire.persona == YES) {
+        UIColor *fundoTela = [[UIColor alloc] initWithRed:0.7 green:0.7 blue:0.9 alpha:1.0];
+        cell.backgroundColor = fundoTela;
+    } else {
+        UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
+        cell.backgroundColor = fundoTela;
+    }
     
     return cell;
 }

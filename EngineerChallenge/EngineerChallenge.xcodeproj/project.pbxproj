@@ -138,6 +138,23 @@
 			name = Entidades;
 			sourceTree = "<group>";
 		};
+		02BE118B1ACAC6D70060D9AC /* SegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				0206AFD41AC5E17E000682CD /* VacinasAplicarTableView.h */,
+				0206AFD51AC5E17E000682CD /* VacinasAplicarTableView.m */,
+				0206AFD71AC5E198000682CD /* VacinasDetalhesTableView.h */,
+				0206AFD81AC5E198000682CD /* VacinasDetalhesTableView.m */,
+				A1E8F3691ACABECD00C7F39F /* DetailVacinasViewController.h */,
+				A1E8F36A1ACABECD00C7F39F /* DetailVacinasViewController.m */,
+				DDB6F57A1AC97BA40068997C /* VacinasCalendarioTableView.h */,
+				DDB6F57B1AC97BA40068997C /* VacinasCalendarioTableView.m */,
+				0206AFDA1AC5E1C1000682CD /* VacinasHistoricoTableView.h */,
+				0206AFDB1AC5E1C1000682CD /* VacinasHistoricoTableView.m */,
+			);
+			name = SegmentedControl;
+			sourceTree = "<group>";
+		};
 		DDB6F5841AC987900068997C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,16 +198,7 @@
 				02B5FE971AC4359400B96E05 /* PerfilViewController.m */,
 				02B5FE991AC437AF00B96E05 /* VacinasViewController.h */,
 				02B5FE9A1AC437AF00B96E05 /* VacinasViewController.m */,
-				0206AFD41AC5E17E000682CD /* VacinasAplicarTableView.h */,
-				0206AFD51AC5E17E000682CD /* VacinasAplicarTableView.m */,
-				0206AFD71AC5E198000682CD /* VacinasDetalhesTableView.h */,
-				0206AFD81AC5E198000682CD /* VacinasDetalhesTableView.m */,
-				A1E8F3691ACABECD00C7F39F /* DetailVacinasViewController.h */,
-				A1E8F36A1ACABECD00C7F39F /* DetailVacinasViewController.m */,
-				DDB6F57A1AC97BA40068997C /* VacinasCalendarioTableView.h */,
-				DDB6F57B1AC97BA40068997C /* VacinasCalendarioTableView.m */,
-				0206AFDA1AC5E1C1000682CD /* VacinasHistoricoTableView.h */,
-				0206AFDB1AC5E1C1000682CD /* VacinasHistoricoTableView.m */,
+				02BE118B1ACAC6D70060D9AC /* SegmentedControl */,
 				02B5FE9C1AC437F300B96E05 /* GraficosTableViewController.h */,
 				02B5FE9D1AC437F300B96E05 /* GraficosTableViewController.m */,
 				E44D318F1AC9878C00A81319 /* UpdateViewController.h */,
