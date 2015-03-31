@@ -75,7 +75,8 @@ static EKCalendar *calendario = nil;
                                                   eventStore:self.appDelegate.eventManager.eventStore];
     
     // Set the calendar title.
-    calendario.title = @"vacinas";
+    calendario.title = [NSString stringWithFormat:@"Vacinas %@", solitaire.nombre];
+
     
     // Set the calendar source.
     for (int i=0; i<self.appDelegate.eventManager.eventStore.sources.count; i++) {

@@ -82,7 +82,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"medida" forIndexPath:indexPath];
-    
+
 //    Medidas *medidas = [filho.medicoes objectAtIndex:indexPath.row];
 //    
 //    cell.textLabel.text = [NSString stringWithFormat:@"%f kg - %f cm", medidas.peso, medidas.altura];
@@ -114,7 +114,7 @@
 //    
 //    [self.managedObjectContext save:nil];
 //    filho.medicoes = [filho.medicoes arrayByAddingObject:newMedida];
-//    
+    
     [self.tableView reloadData];
 }
 
