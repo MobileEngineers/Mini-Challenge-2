@@ -30,7 +30,7 @@
     
     datePicker.maximumDate = [NSDate date];
     
-    //Primeira letra sempre maiuscula
+    //Primeira letra sempre maiuscula, botao "Done" funcionando
     nomeText.autocapitalizationType = UITextAutocapitalizationTypeWords;
     nomeText.returnKeyType = UIReturnKeyDone;
     nomeText.delegate = self;
