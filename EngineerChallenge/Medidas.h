@@ -2,7 +2,7 @@
 //  Medidas.h
 //  EngineerChallenge
 //
-//  Created by Isaías Lima on 30/03/15.
+//  Created by Isaías Lima on 31/03/15.
 //  Copyright (c) 2015 Isaías Lima. All rights reserved.
 //
 
@@ -12,8 +12,8 @@
 
 @interface Medidas : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * peso;
-@property (nonatomic, retain) NSNumber * altura;
-@property (nonatomic, retain) NSDate * data;
+@property (nonatomic) double altura;
+@property (nonatomic) NSDate *data;
+@property (nonatomic) double peso;
 
 @end
