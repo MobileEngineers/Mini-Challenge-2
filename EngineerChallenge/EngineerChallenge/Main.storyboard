@@ -337,21 +337,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZ0-7B-WSt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2577" y="1826"/>
+            <point key="canvasLocation" x="2577" y="1797"/>
         </scene>
         <!--Vacinas Calendario Table View-->
         <scene sceneID="keX-WF-MU2">
             <objects>
-                <tableViewController id="F1h-2Z-u07" customClass="VacinasCalendarioTableView" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CalendarioVacina" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F1h-2Z-u07" customClass="VacinasCalendarioTableView" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wt1-tO-epE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="YPe-rx-8Ob">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="113" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
-                                <barButtonItem title="Exportar" id="fQc-03-T43"/>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="mGC-Lc-Ozd"/>
+                                <barButtonItem title="Exportar Calendario" id="fQc-03-T43"/>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="t5x-d9-gc6"/>
                             </items>
                         </toolbar>
                         <prototypes>
@@ -374,18 +376,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChA-Z3-SWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2328" y="2513"/>
+            <point key="canvasLocation" x="2160" y="2539"/>
         </scene>
         <!--Vacinas Historico Table View-->
         <scene sceneID="Jww-qc-UiV">
             <objects>
-                <tableViewController storyboardIdentifier="JaAplicadas" id="iYV-jd-jCr" customClass="VacinasHistoricoTableView" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="JaAplicadas" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iYV-jd-jCr" customClass="VacinasHistoricoTableView" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="afa-zS-TmL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zB8-eh-rhm">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="vacinaHistoricoCellIdentifier" id="zB8-eh-rhm">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zB8-eh-rhm" id="7Ze-tJ-aLy">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -400,12 +402,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgQ-hS-lN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2953" y="2519"/>
+            <point key="canvasLocation" x="2812" y="2539"/>
         </scene>
         <!--Vacinas Detalhes Table View-->
         <scene sceneID="xTz-ik-SK8">
             <objects>
-                <tableViewController storyboardIdentifier="DetalhesVacinas" id="jZU-Nh-TXW" customClass="VacinasDetalhesTableView" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DetalhesVacina" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jZU-Nh-TXW" customClass="VacinasDetalhesTableView" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Fke-xB-bVu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -429,7 +431,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oh6-WD-Rdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1699" y="2519"/>
+            <point key="canvasLocation" x="1495" y="2539"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="9zi-nG-DPG">
@@ -447,7 +449,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ay3-Xi-k7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1699" y="3252"/>
+            <point key="canvasLocation" x="1495" y="3277"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="aCo-n4-6Tu">
@@ -609,37 +611,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnx-4b-err">
-                                <rect key="frame" x="16" y="64" width="568" height="487"/>
-                                <connections>
-                                    <segue destination="6t9-Gk-2gM" kind="embed" id="9PB-AP-xAh"/>
-                                </connections>
-                            </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UgD-Ou-Be0">
                                 <rect key="frame" x="16" y="28" width="568" height="29"/>
                                 <segments>
                                     <segment title="A aplicar"/>
                                     <segment title="Detalhes"/>
-                                    <segment title="Quando?"/>
+                                    <segment title="Calendario"/>
                                     <segment title="Historico"/>
                                 </segments>
+                                <connections>
+                                    <action selector="alterarView:" destination="DVY-0p-Mbu" eventType="valueChanged" id="VwC-qw-Fpw"/>
+                                </connections>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTe-V9-bav">
+                                <rect key="frame" x="0.0" y="71" width="600" height="480"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="UgD-Ou-Be0" secondAttribute="trailing" id="3FB-7D-GnM"/>
-                            <constraint firstItem="n5h-W0-s8h" firstAttribute="top" secondItem="fnx-4b-err" secondAttribute="bottom" id="3t2-7V-IDi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fnx-4b-err" secondAttribute="trailing" id="aWH-g7-3X3"/>
-                            <constraint firstItem="fnx-4b-err" firstAttribute="top" secondItem="UgD-Ou-Be0" secondAttribute="bottom" constant="8" id="cYt-RR-B7s"/>
+                            <constraint firstItem="XTe-V9-bav" firstAttribute="centerX" secondItem="UgD-Ou-Be0" secondAttribute="centerX" id="Dyl-az-94x"/>
+                            <constraint firstItem="XTe-V9-bav" firstAttribute="leading" secondItem="ZgK-XP-kmF" secondAttribute="leading" id="IXv-4V-h4r"/>
                             <constraint firstItem="UgD-Ou-Be0" firstAttribute="leading" secondItem="ZgK-XP-kmF" secondAttribute="leadingMargin" id="h3v-Pi-Ke3"/>
-                            <constraint firstItem="fnx-4b-err" firstAttribute="leading" secondItem="ZgK-XP-kmF" secondAttribute="leadingMargin" id="mTc-t2-EqC"/>
+                            <constraint firstItem="XTe-V9-bav" firstAttribute="top" secondItem="UgD-Ou-Be0" secondAttribute="bottom" constant="15" id="mbl-3W-wx4"/>
                             <constraint firstItem="UgD-Ou-Be0" firstAttribute="top" secondItem="GGm-ux-A44" secondAttribute="bottom" constant="8" id="umE-dv-JGh"/>
+                            <constraint firstItem="XTe-V9-bav" firstAttribute="bottom" secondItem="n5h-W0-s8h" secondAttribute="top" id="yvv-Hj-a2p"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Vacinas" id="jqe-hG-1cZ"/>
                     <connections>
-                        <outlet property="containerVacinas" destination="fnx-4b-err" id="hkZ-Dn-bkh"/>
-                        <outlet property="segmentedCont" destination="UgD-Ou-Be0" id="vnz-2U-Gu6"/>
+                        <outlet property="conteudoView" destination="XTe-V9-bav" id="1zq-Er-LHV"/>
+                        <outlet property="segmentedCont" destination="UgD-Ou-Be0" id="aAF-mh-bQK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SpQ-84-KPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -649,7 +652,7 @@
         <!--Vacinas Aplicar Table View-->
         <scene sceneID="XDa-T1-bHh">
             <objects>
-                <tableViewController storyboardIdentifier="AplicarVacinas" id="uER-TZ-lJQ" customClass="VacinasAplicarTableView" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AplicarVacinas" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uER-TZ-lJQ" customClass="VacinasAplicarTableView" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" id="XFt-8I-fgL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -670,26 +673,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cw-EP-d5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074" y="2519"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="anv-wn-Wn3">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="6t9-Gk-2gM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bML-mc-JMQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="XnT-3j-gYM"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Cfq-1y-rZS">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="487"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bT3-ss-Zoi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1810" y="1770"/>
+            <point key="canvasLocation" x="808" y="2539"/>
         </scene>
     </scenes>
 </document>

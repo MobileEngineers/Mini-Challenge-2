@@ -8,8 +8,14 @@
 
 #import "VacinasCalendarioTableView.h"
 #import "Solitaire.h"
+#import "AppDelegate.h"
 
 @interface VacinasCalendarioTableView ()
+
+@property (nonatomic, strong) AppDelegate *appDelegate;
+
+
+
 
 @end
 
@@ -29,11 +35,14 @@
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
         self.view.backgroundColor = fundoTela;
     }
+    
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark - Table view data source
 
