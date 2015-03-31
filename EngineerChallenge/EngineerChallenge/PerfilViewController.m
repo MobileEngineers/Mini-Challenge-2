@@ -77,7 +77,7 @@
         self.view.backgroundColor = fundoTela;
     } else {
         sexoLabel.text = @"Menina";
-        nomeLabel.textColor = [UIColor magentaColor];
+        nomeLabel.textColor = [[UIColor alloc] initWithRed:0.45 green:0 blue:0.45 alpha:1.0];
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
         self.view.backgroundColor = fundoTela;
     }
