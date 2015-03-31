@@ -32,8 +32,8 @@
 		E4024BED1AC1F1BE00A0FFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4024BEC1AC1F1BE00A0FFF6 /* Main.storyboard */; };
 		E44D31851AC96AF800A81319 /* Vacina.m in Sources */ = {isa = PBXBuildFile; fileRef = E44D31841AC96AF800A81319 /* Vacina.m */; };
 		E44D31911AC9878C00A81319 /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44D31901AC9878C00A81319 /* UpdateViewController.m */; };
-		E4EBB70F1ACAB9B800F6FDE4 /* Filho.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EBB70C1ACAB9B800F6FDE4 /* Filho.m */; };
-		E4EBB7101ACAB9B800F6FDE4 /* Medidas.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EBB70E1ACAB9B800F6FDE4 /* Medidas.m */; };
+		E4C0D2A61ACAC14200DC3903 /* Medidas.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0D2A51ACAC14100DC3903 /* Medidas.m */; };
+		E4C0D2A91ACAC14200DC3903 /* Filho.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0D2A81ACAC14200DC3903 /* Filho.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,10 +94,10 @@
 		E44D31841AC96AF800A81319 /* Vacina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vacina.m; sourceTree = "<group>"; };
 		E44D318F1AC9878C00A81319 /* UpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateViewController.h; sourceTree = "<group>"; };
 		E44D31901AC9878C00A81319 /* UpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateViewController.m; sourceTree = "<group>"; };
-		E4EBB70B1ACAB9B800F6FDE4 /* Filho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filho.h; sourceTree = "<group>"; };
-		E4EBB70C1ACAB9B800F6FDE4 /* Filho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filho.m; sourceTree = "<group>"; };
-		E4EBB70D1ACAB9B800F6FDE4 /* Medidas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Medidas.h; sourceTree = "<group>"; };
-		E4EBB70E1ACAB9B800F6FDE4 /* Medidas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Medidas.m; sourceTree = "<group>"; };
+		E4C0D2A41ACAC14100DC3903 /* Medidas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Medidas.h; path = ../Medidas.h; sourceTree = "<group>"; };
+		E4C0D2A51ACAC14100DC3903 /* Medidas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medidas.m; path = ../Medidas.m; sourceTree = "<group>"; };
+		E4C0D2A71ACAC14200DC3903 /* Filho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Filho.h; path = ../Filho.h; sourceTree = "<group>"; };
+		E4C0D2A81ACAC14200DC3903 /* Filho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Filho.m; path = ../Filho.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,10 +128,10 @@
 				E44D31841AC96AF800A81319 /* Vacina.m */,
 				DDB6F57D1AC984B70068997C /* EventManager.h */,
 				DDB6F57E1AC984B70068997C /* EventManager.m */,
-				E4EBB70B1ACAB9B800F6FDE4 /* Filho.h */,
-				E4EBB70C1ACAB9B800F6FDE4 /* Filho.m */,
-				E4EBB70D1ACAB9B800F6FDE4 /* Medidas.h */,
-				E4EBB70E1ACAB9B800F6FDE4 /* Medidas.m */,
+				E4C0D2A71ACAC14200DC3903 /* Filho.h */,
+				E4C0D2A81ACAC14200DC3903 /* Filho.m */,
+				E4C0D2A41ACAC14100DC3903 /* Medidas.h */,
+				E4C0D2A51ACAC14100DC3903 /* Medidas.m */,
 				A1E8F3661ACABD3D00C7F39F /* VacinasSingleton.h */,
 				A1E8F3671ACABD3D00C7F39F /* VacinasSingleton.m */,
 			);
@@ -334,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C0D2A91ACAC14200DC3903 /* Filho.m in Sources */,
 				02B5FE981AC4359400B96E05 /* PerfilViewController.m in Sources */,
 				02BB77AF1AC2D28300F1DD4D /* InitialTableView.m in Sources */,
 				A1E8F3681ACABD3D00C7F39F /* VacinasSingleton.m in Sources */,
@@ -345,14 +346,13 @@
 				E44D31911AC9878C00A81319 /* UpdateViewController.m in Sources */,
 				A1E8F36B1ACABECD00C7F39F /* DetailVacinasViewController.m in Sources */,
 				0206AFD91AC5E198000682CD /* VacinasDetalhesTableView.m in Sources */,
+				E4C0D2A61ACAC14200DC3903 /* Medidas.m in Sources */,
 				DDB6F57C1AC97BA40068997C /* VacinasCalendarioTableView.m in Sources */,
 				02B5FEA11AC4387C00B96E05 /* DetalheGraficoViewController.m in Sources */,
 				02B5FE9B1AC437AF00B96E05 /* VacinasViewController.m in Sources */,
 				02B5FE951AC4342900B96E05 /* TabBarController.m in Sources */,
 				DDB6F57F1AC984B70068997C /* EventManager.m in Sources */,
 				E4024BC91AC1F17A00A0FFF6 /* AppDelegate.m in Sources */,
-				E4EBB7101ACAB9B800F6FDE4 /* Medidas.m in Sources */,
-				E4EBB70F1ACAB9B800F6FDE4 /* Filho.m in Sources */,
 				E4024BC61AC1F17A00A0FFF6 /* main.m in Sources */,
 				E44D31851AC96AF800A81319 /* Vacina.m in Sources */,
 				0206AFD61AC5E17E000682CD /* VacinasAplicarTableView.m in Sources */,
