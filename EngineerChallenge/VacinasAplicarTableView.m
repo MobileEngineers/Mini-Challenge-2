@@ -8,6 +8,7 @@
 
 #import "VacinasAplicarTableView.h"
 #import "Solitaire.h"
+#import "DetailVacinasViewController.h"
 
 @interface VacinasAplicarTableView ()
 
@@ -30,6 +31,8 @@
         self.view.backgroundColor = fundoTela;
     }
 
+    vaci = [VacinasSingleton sharedInstance];
+    todasvacinas = [vaci getVacinas];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -48,24 +51,37 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return todasvacinas.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"vacinacell"];
     
     // Configure the cell...
     
+    cell.textLabel.text = [[todasvacinas objectAtIndex:indexPath.row]objectForKey:@"nome"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ meses", [[todasvacinas objectAtIndex:indexPath.row]objectForKey:@"meses"]];
     return cell;
 }
-*/
+
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    DetailVacinasViewController *as =[DetailVacinasViewController new];
+//    long row = [indexPath row];
+//    
+//    as.nome = [[todasvacinas objectAtIndex:row] objectForKey:@"nome"];
+//    
+//    [self presentViewController:as animated:YES completion:nil];
+//}
+
 
 /*
 // Override to support conditional editing of the table view.

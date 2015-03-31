@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VacinasSingleton.h"
 
 @interface VacinasAplicarTableView : UITableViewController
+
+{
+    VacinasSingleton *vaci;
+    NSMutableArray *todasvacinas;
+}
 
 @end

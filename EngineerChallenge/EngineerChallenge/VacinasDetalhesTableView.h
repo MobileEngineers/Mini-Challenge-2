@@ -10,4 +10,6 @@
 
 @interface VacinasDetalhesTableView : UITableViewController
 
+@property NSMutableArray *vacinaDetalhe;
+
 @end
