@@ -87,6 +87,7 @@
     
     cell.textLabel.text = [NSString stringWithFormat:@"%f kg - %f cm", medidas.peso, medidas.altura];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", medidas.data];
+
     
     
     return cell;
