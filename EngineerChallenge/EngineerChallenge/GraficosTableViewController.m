@@ -15,7 +15,6 @@
 
 
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) NSArray *medicoes;
 - (IBAction)addMedida:(id)sender;
 
 @end
@@ -46,7 +45,7 @@
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Medidas"];
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
-    self.medicoes = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    filho.medicoes = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
     [self.tableView reloadData];
     
@@ -77,16 +76,16 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.medicoes count];
+    return [filho.medicoes count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"medida" forIndexPath:indexPath];
     
-    Medidas *medidas = [self.medicoes objectAtIndex:indexPath.row];
+    Medidas *medidas = [filho.medicoes objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ kg - %@ cm", medidas.peso, medidas.altura];
+    cell.textLabel.text = [NSString stringWithFormat:@"%f kg - %f cm", medidas.peso, medidas.altura];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", medidas.data];
     
     
@@ -114,7 +113,7 @@
     newMedida.data = [NSDate date];
     
     [self.managedObjectContext save:nil];
-    self.medicoes = [self.medicoes arrayByAddingObject:newMedida];
+    filho.medicoes = [filho.medicoes arrayByAddingObject:newMedida];
     
     [self.tableView reloadData];
 }

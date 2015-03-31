@@ -4,6 +4,7 @@
         <attribute name="nascimento" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sexo" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="medicoes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medidas" syncable="YES"/>
     </entity>
     <entity name="Medidas" representedClassName="Medidas" syncable="YES">
         <attribute name="altura" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -19,8 +20,8 @@
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Filho" positionX="-315" positionY="-157" width="128" height="88"/>
-        <element name="Vacina" positionX="-54" positionY="27" width="128" height="133"/>
+        <element name="Filho" positionX="-315" positionY="-157" width="128" height="105"/>
         <element name="Medidas" positionX="250" positionY="-157" width="128" height="88"/>
+        <element name="Vacina" positionX="-54" positionY="27" width="128" height="133"/>
     </elements>
 </model>
