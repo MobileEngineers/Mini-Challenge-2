@@ -33,13 +33,6 @@
     
     solitaire = [Solitaire sharedInstance];
     filho = solitaire.nino;
-    //    Medidas *medidas = [NSEntityDescription insertNewObjectForEntityForName:@"Medidas" inManagedObjectContext:self.managedObjectContext];
-    //
-    //    medidas.peso = 10;
-    //    medidas.altura = 1.75;
-    //
-    //    [filho addMedicoesObject:medidas];
-    //    [self.managedObjectContext save:nil];
     
     NSLog(@"%@", solitaire.nombre);
     
@@ -90,7 +83,7 @@
     Medidas *medis = [medidas objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%.2f kg - %.0f cm", medis.peso, medis.altura];
-    cell.detailTextLabel.text = [[NSString stringWithFormat:@"%@", medis.data] substringToIndex:20];
+    cell.detailTextLabel.text = [[NSString stringWithFormat:@"%@", medis.data] substringToIndex:11];
     
     
     return cell;
