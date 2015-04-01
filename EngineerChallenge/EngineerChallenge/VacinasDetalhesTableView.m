@@ -10,6 +10,7 @@
 #import "Solitaire.h"
 #import "DetailVacinasViewController.h"
 
+
 @interface VacinasDetalhesTableView ()
 
 @end
@@ -33,18 +34,8 @@
     
     self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 50.0f, 0.0);
 
-    _vacinaDetalhe = [[NSMutableArray alloc] init];
-    
-    [_vacinaDetalhe addObject:@{@"nome":@"Hepatite B"}];
-    [_vacinaDetalhe addObject:@{@"nome":@"BCG"}];
-    [_vacinaDetalhe addObject:@{@"nome":@"Penta"}];
-    [_vacinaDetalhe addObject:@{@"nome":@"Poliomielite"}];
-    [_vacinaDetalhe addObject:@{@"nome":@"Rotavírus"}];
-    [_vacinaDetalhe addObject:@{@"nome":@"Pneumo 10"}];
-    [_vacinaDetalhe addObject:@{@"nome":@"Meningo C"}];
-    [_vacinaDetalhe addObject:@{@"nome":@"Febre Amarela"}];
-    [_vacinaDetalhe addObject:@{@"nome":@"Tríplice Viral"}];
-    [_vacinaDetalhe addObject:@{@"nome":@"Hepatite A"}];
+    vacii = [VacinasSingleton sharedInstance];
+    todasVacinasDetalhe = [vacii getVacinas1];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -69,7 +60,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return _vacinaDetalhe.count;
+    return todasVacinasDetalhe.count;
 }
 
 
@@ -87,7 +78,7 @@
     
     self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 50.0f, 0.0);
     
-    cell.textLabel.text = [[_vacinaDetalhe objectAtIndex:indexPath.row]objectForKey:@"nome"];
+    cell.textLabel.text = [[todasVacinasDetalhe objectAtIndex:indexPath.row]objectForKey:@"nome"];
     
     return cell;
 }
@@ -97,9 +88,9 @@
     DetailVacinasViewController *as = [self.storyboard instantiateViewControllerWithIdentifier:@"detailVacinasViewController"];
 
     long row = [indexPath row];
-    
-    as.nome = [[_vacinaDetalhe objectAtIndex:row] objectForKey:@"nome"];
-    
+    as.index = (int)[indexPath row];
+    as.nome.text = [[todasVacinasDetalhe objectAtIndex:row] objectForKey:@"nome"];
+    as.doenca.text = [[todasVacinasDetalhe objectAtIndex:row] objectForKey:@"doenca"];
     
     [self presentViewController:as animated:YES completion:nil];
 }
