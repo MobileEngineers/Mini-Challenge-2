@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VacinasSingleton.h"
 
 @interface VacinasDetalhesTableView : UITableViewController
 
-@property NSMutableArray *vacinaDetalhe;
+{
+    VacinasSingleton *vacii;
+    NSMutableArray *todasVacinasDetalhe;
+}
 
 @end

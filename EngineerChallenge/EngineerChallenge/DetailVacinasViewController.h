@@ -15,7 +15,7 @@
     VacinasSingleton *vacin;
     NSMutableArray *todavacinas;
 }
-
+@property int index;
 @property (weak, nonatomic) IBOutlet UILabel *nome;
 @property (weak, nonatomic) IBOutlet UILabel *doenca;
 @property (weak, nonatomic) IBOutlet UILabel *contra;

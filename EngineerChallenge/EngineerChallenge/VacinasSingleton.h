@@ -11,6 +11,7 @@
 @interface VacinasSingleton : NSObject
 
 @property NSMutableArray *vacinass;
+@property NSMutableArray *vacinasDetalhes;
 
 /**
  * gets singleton object.
@@ -18,5 +19,7 @@
  */
 + (VacinasSingleton*)sharedInstance;
 -(NSMutableArray *) getVacinas;
+-(NSMutableArray *) getVacinas1;
+
 
 @end
