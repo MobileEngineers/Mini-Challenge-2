@@ -8,6 +8,8 @@
 
 #import "PerfilViewController.h"
 #import "Solitaire.h"
+#import "Filho.h"
+#import "Medidas.h"
 
 @interface PerfilViewController ()
 
@@ -15,9 +17,10 @@
 
 @implementation PerfilViewController  {
     Solitaire *solitaire;
+    NSArray *medidas;
 }
 
-@synthesize nomeLabel, mesesLabel, sexoLabel;
+@synthesize nomeLabel, mesesLabel, sexoLabel, pesoLabel, alturaLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -82,9 +85,16 @@
         self.view.backgroundColor = fundoTela;
     }
     
+    medidas = [solitaire.nino.medicoes allObjects];
 
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    medidas = [solitaire.nino.medicoes allObjects];
+    
+    pesoLabel.text = [NSString stringWithFormat:@"%.2f kg", [medidas.lastObject peso]];
+    alturaLabel.text = [NSString stringWithFormat:@"%.0f cm", [medidas.lastObject altura]];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
