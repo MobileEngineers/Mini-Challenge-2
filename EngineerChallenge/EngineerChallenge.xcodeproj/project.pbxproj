@@ -155,6 +155,34 @@
 			name = SegmentedControl;
 			sourceTree = "<group>";
 		};
+		02C20BAA1ACC231D006D7B95 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				02B5FE931AC4342900B96E05 /* TabBarController.h */,
+				02B5FE941AC4342900B96E05 /* TabBarController.m */,
+				02B5FE961AC4359400B96E05 /* PerfilViewController.h */,
+				02B5FE971AC4359400B96E05 /* PerfilViewController.m */,
+				02B5FE991AC437AF00B96E05 /* VacinasViewController.h */,
+				02B5FE9A1AC437AF00B96E05 /* VacinasViewController.m */,
+				02BE118B1ACAC6D70060D9AC /* SegmentedControl */,
+				02C20BAB1ACC234D006D7B95 /* Graficos */,
+			);
+			name = TabBarController;
+			sourceTree = "<group>";
+		};
+		02C20BAB1ACC234D006D7B95 /* Graficos */ = {
+			isa = PBXGroup;
+			children = (
+				02B5FE9C1AC437F300B96E05 /* GraficosTableViewController.h */,
+				02B5FE9D1AC437F300B96E05 /* GraficosTableViewController.m */,
+				E44D318F1AC9878C00A81319 /* UpdateViewController.h */,
+				E44D31901AC9878C00A81319 /* UpdateViewController.m */,
+				02B5FE9F1AC4387C00B96E05 /* DetalheGraficoViewController.h */,
+				02B5FEA01AC4387C00B96E05 /* DetalheGraficoViewController.m */,
+			);
+			name = Graficos;
+			sourceTree = "<group>";
+		};
 		DDB6F5841AC987900068997C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,19 +220,7 @@
 				02BB77AE1AC2D28300F1DD4D /* InitialTableView.m */,
 				02BB77B31AC2D85F00F1DD4D /* CadastroViewController.h */,
 				02BB77B41AC2D85F00F1DD4D /* CadastroViewController.m */,
-				02B5FE931AC4342900B96E05 /* TabBarController.h */,
-				02B5FE941AC4342900B96E05 /* TabBarController.m */,
-				02B5FE961AC4359400B96E05 /* PerfilViewController.h */,
-				02B5FE971AC4359400B96E05 /* PerfilViewController.m */,
-				02B5FE991AC437AF00B96E05 /* VacinasViewController.h */,
-				02B5FE9A1AC437AF00B96E05 /* VacinasViewController.m */,
-				02BE118B1ACAC6D70060D9AC /* SegmentedControl */,
-				02B5FE9C1AC437F300B96E05 /* GraficosTableViewController.h */,
-				02B5FE9D1AC437F300B96E05 /* GraficosTableViewController.m */,
-				E44D318F1AC9878C00A81319 /* UpdateViewController.h */,
-				E44D31901AC9878C00A81319 /* UpdateViewController.m */,
-				02B5FE9F1AC4387C00B96E05 /* DetalheGraficoViewController.h */,
-				02B5FEA01AC4387C00B96E05 /* DetalheGraficoViewController.m */,
+				02C20BAA1ACC231D006D7B95 /* TabBarController */,
 				E4024BEC1AC1F1BE00A0FFF6 /* Main.storyboard */,
 				E4024BD31AC1F17A00A0FFF6 /* Images.xcassets */,
 				E4024BD51AC1F17A00A0FFF6 /* LaunchScreen.xib */,
