@@ -14,20 +14,27 @@ static EKCalendar *calendario = nil;
 
 @interface VacinasCalendarioTableView ()
 
+-(void)createEvent;
 -(void)createCalendar;
 -(void)loadEventCalendars;
+-(void)loadCreateCalendars;
+-(void)loadEvents;
+-(NSArray *)getEventsOfSelectedCalendar;
 
-
-
+@property (nonatomic, strong) NSArray *arrEvents;
+@property (nonatomic,strong) VacinasSingleton *vaci;
+@property (nonatomic, strong) NSMutableArray *todasvacinas;
 @property (nonatomic, strong) AppDelegate *appDelegate;
 @property (nonatomic, strong) NSArray *arrCalendars;
-
+@property (nonatomic,strong)NSMutableArray *myArrCalendars;
+@property (nonatomic,strong)NSMutableArray *myArrEvents;
 
 @end
 
 @implementation VacinasCalendarioTableView{
     Solitaire *solitaire;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,16 +48,26 @@ static EKCalendar *calendario = nil;
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
         self.view.backgroundColor = fundoTela;
     }
-    self.eventStartDate = nil;
-    self.eventEndDate = nil; //pegar o intervalo (inicio + intervalo)
-    
   
     self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
     self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 50.0f, 0.0);
     
+    //pegando as vacinas
+    _vaci = [VacinasSingleton sharedInstance];
+    _todasvacinas = [_vaci getVacinas];
+    
+        //criando calendário
     [self loadEventCalendars];
     [self createCalendar];
+    
+    //setando eventos
+    self.eventStartDate = nil;
+    self.eventEndDate = nil; //pegar o intervalo (inicio + intervalo)
+
+    //load events
+    [self performSelector:@selector(loadEvents) withObject:nil afterDelay:0.5];
+
     
 }
 - (void)didReceiveMemoryWarning {
@@ -65,6 +82,7 @@ static EKCalendar *calendario = nil;
     // Reload the table view.
     [self.tableView reloadData];
 }
+
 
 
 -(void)createCalendar{
@@ -109,64 +127,60 @@ static EKCalendar *calendario = nil;
         // Display the error description to the debugger.
         NSLog(@"%@", [error localizedDescription]);
     }
+    
+    [self.myArrCalendars addObject:calendario];
+    [self createEvent];
+    [self performSelector:@selector(loadEvents) withObject:nil afterDelay:0.5];
+
+}
+-(void)eventWasSuccessfullySaved{
+    // Reload all events.
+    [self loadEvents];
 }
 
-//-(void)createCalendar;
-//{
-//    
-//    
-//  
-//    EKSource *localSource = nil;
-//    for (EKSource *source in self.appDelegate.eventManager.eventStore.sources)
-//    {
-//        if (source.sourceType == EKCalendarTypeCalDAV) {
-//            localSource = source;
-//            break;
-//        }
-//    }
-//    NSString *identifier =@" 5BA891B3-0E64-45F7-B7E6-2397CAFC7B10;
-//    if (identifier == nil) {
-////        
-//    calendario = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:self.appDelegate.eventManager.eventStore];
-//    calendario.title = @"calendario Vacinas";
-//        calendario.source = localSource;
-//        [self.appDelegate.eventManager.eventStore saveCalendar:calendario commit:YES error:nil];
-//        
-//        NSLog(@"cal id = %@", calendario.calendarIdentifier);
-//    }
-//    
-////
-////    for (int i=0; i<self.appDelegate.eventManager.eventStore.sources.count; i++) {
-////        EKSource *source = (EKSource *)[self.appDelegate.eventManager.eventStore.sources objectAtIndex:i];
-////        EKSourceType currentSourceType = source.sourceType;
-////        
-////        if (currentSourceType == EKSourceTypeCalDAV) {
-////            calendario.source = source;
-////            break;
-////        }
-////    }
-////    NSError *error;
-////    [self.appDelegate.eventManager.eventStore saveCalendar:calendario commit:YES error:&error];
-////    
-////    // If no error occurs then turn the editing mode off, store the new calendar identifier and reload the calendars.
-////    if (error == nil) {
-////        // Turn off the edit mode.
-////        [self.tableView setEditing:NO animated:YES];
-////        
-////        // Store the calendar identifier.
-////        [self.appDelegate.eventManager saveCustomCalendarIdentifier:calendario.calendarIdentifier];
-////        
-////        // Reload all calendars.
-////        [self loadEventCalendars];
-////    }
-////    else{
-////        // Display the error description to the debugger.
-////        NSLog(@"%@", [error localizedDescription]);
-////    }
-////
-////
-//}
+-(void)loadEvents{
+    if (self.appDelegate.eventManager.eventsAccessGranted) {
+        self.arrEvents = [self.appDelegate.eventManager getEventsOfSelectedCalendar:calendario.calendarIdentifier];
+        
+        [self.tableView reloadData];    }
+}
 
+-(void)createEvent;
+{
+  for (int i = 0; i < self.todasvacinas.count; i++) {
+    
+      // Create a new event object.
+      EKEvent *event = [EKEvent eventWithEventStore:self.appDelegate.eventManager.eventStore];
+      
+      // Set the event title.
+      event.title = [[self.todasvacinas objectAtIndex:1]objectForKey:@"nome"];
+      
+      // Set its calendar.
+      event.calendar = [self.appDelegate.eventManager.eventStore calendarWithIdentifier:calendario.calendarIdentifier];
+      
+      // Set the start and end dates to the event.
+      event.startDate = [NSDate date];
+      event.endDate = [event.startDate dateByAddingTimeInterval:60*60];
+    
+      // Save and commit the event.
+      NSError *error;
+      if ([self.appDelegate.eventManager.eventStore saveEvent:event span:EKSpanFutureEvents commit:YES error:&error]) {
+          // Call the delegate method to notify the caller class (the ViewController class) that the event was saved.
+          
+//          [self.delegate eventWasSuccessfullySaved];
+          
+          // Pop the current view controller from the navigation stack.
+          [self.navigationController popViewControllerAnimated:YES];
+      }
+      else{
+          // An error occurred, so log the error description.
+          NSLog(@"%@", [error localizedDescription]);
+      }
+  }
+   
+      
+    
+}
 
 
 #pragma mark - Table view data source
@@ -174,23 +188,38 @@ static EKCalendar *calendario = nil;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return self.arrEvents.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return self.arrCalendars.count;
+//    NSArray *localEvents = [[NSArray alloc]init];
+//    for (int i=0; i<self.myArrEvents; i++) {
+//        localEvents =
+    return 1;
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellCalendar"];
+    // Get each single event.
+    EKEvent *event = [self.arrEvents objectAtIndex:indexPath.row];
     
-    EKCalendar *currentCalendar = [self.arrCalendars objectAtIndex:indexPath.row];
+    // Set its title to the cell's text label.
+    cell.textLabel.text = event.title;
     
-    cell.textLabel.text = currentCalendar.title;
+    // Get the event start date as a string value.
+//    NSString *startDateString = [self.appDelegate.eventManager getStringFromDate:event.startDate];
+    
+    // Get the event end date as a string value.
+//    NSString *endDateString = [self.appDelegate.eventManager getStringFromDate:event.endDate];
+    
+    // Add the start and end date strings to the detail text label.
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", startDateString, endDateString];
     
     return cell;
+
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 44.0;
@@ -198,7 +227,7 @@ static EKCalendar *calendario = nil;
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return solitaire.nombre;
+  return [NSString stringWithFormat:@"Vacinas %@", solitaire.nombre ];
 }
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellCalendar"];

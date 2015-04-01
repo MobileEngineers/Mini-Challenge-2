@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <EventKit/EventKit.h>
-
+#import "VacinasSingleton.h"
 
 @interface VacinasCalendarioTableView : UITableViewController
 
@@ -18,4 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *toolEvent;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *expotar;
 
+
++(instancetype)sharedInstance;
 @end

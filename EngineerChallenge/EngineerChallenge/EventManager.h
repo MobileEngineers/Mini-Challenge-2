@@ -11,12 +11,15 @@
 
 @interface EventManager : NSObject
 
+@property (nonatomic, strong) NSMutableArray *arrCustomEventsIdentifiers;
 @property (nonatomic, strong) NSMutableArray *arrCustomCalendarIdentifiers;
 @property (nonatomic, strong) EKEventStore *eventStore;
 @property (nonatomic) BOOL eventsAccessGranted;
 
 -(void)saveCustomCalendarIdentifier:(NSString *)identifier;
 -(NSArray *)getLocalEventCalendars;
+-(void)saveCustomEventsIdentifier:(NSString *)identifier;
+-(NSArray *)getEventsOfSelectedCalendar:(NSString *)identifier;
 
 
 @end
