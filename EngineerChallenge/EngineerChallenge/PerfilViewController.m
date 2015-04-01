@@ -20,7 +20,7 @@
     NSArray *medidas;
 }
 
-@synthesize nomeLabel, mesesLabel, sexoLabel;
+@synthesize nomeLabel, mesesLabel, sexoLabel, pesoLabel, alturaLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,6 +90,9 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     medidas = [solitaire.nino.medicoes allObjects];
+    
+    pesoLabel.text = [NSString stringWithFormat:@"%.2f kg", [medidas.lastObject peso]];
+    alturaLabel.text = [NSString stringWithFormat:@"%.0f cm", [medidas.lastObject altura]];
     
 }
 
