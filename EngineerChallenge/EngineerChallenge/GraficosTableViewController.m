@@ -44,7 +44,8 @@
         self.view.backgroundColor = fundoTela;
     }
     
-    medidas = [filho.medicoes allObjects];
+//    medidas = [filho.medicoes allObjects];
+    
     
     [self.tableView reloadData];
     
@@ -90,16 +91,11 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    medidas = [filho.medicoes allObjects];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
+    
+    medidas = [[filho.medicoes allObjects] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
-//- (void) viewWillAppear:(BOOL)animated {
-//    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Medidas"];
-//    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
-//    filho.crescimento = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
-//
-//    [self.tableView reloadData];
-//}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"medindo"]) {

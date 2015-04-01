@@ -173,12 +173,12 @@
 		02C20BAB1ACC234D006D7B95 /* Graficos */ = {
 			isa = PBXGroup;
 			children = (
+				02B5FE9F1AC4387C00B96E05 /* DetalheGraficoViewController.h */,
+				02B5FEA01AC4387C00B96E05 /* DetalheGraficoViewController.m */,
 				02B5FE9C1AC437F300B96E05 /* GraficosTableViewController.h */,
 				02B5FE9D1AC437F300B96E05 /* GraficosTableViewController.m */,
 				E44D318F1AC9878C00A81319 /* UpdateViewController.h */,
 				E44D31901AC9878C00A81319 /* UpdateViewController.m */,
-				02B5FE9F1AC4387C00B96E05 /* DetalheGraficoViewController.h */,
-				02B5FEA01AC4387C00B96E05 /* DetalheGraficoViewController.m */,
 			);
 			name = Graficos;
 			sourceTree = "<group>";
