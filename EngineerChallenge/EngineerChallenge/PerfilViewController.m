@@ -9,6 +9,7 @@
 #import "PerfilViewController.h"
 #import "Solitaire.h"
 #import "Filho.h"
+#import "Medidas.h"
 
 @interface PerfilViewController ()
 
@@ -87,7 +88,10 @@
     medidas = [solitaire.nino.medicoes allObjects];
 
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    medidas = [solitaire.nino.medicoes allObjects];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
