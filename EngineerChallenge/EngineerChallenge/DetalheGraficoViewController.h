@@ -10,6 +10,6 @@
 
 @interface DetalheGraficoViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *graficoImageView;
+- (IBAction)dismiss:(id)sender;
 
 @end

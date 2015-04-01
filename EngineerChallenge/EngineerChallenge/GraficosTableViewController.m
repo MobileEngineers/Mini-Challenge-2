@@ -16,6 +16,7 @@
 
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 - (IBAction)addMedida:(id)sender;
+- (IBAction)graph:(id)sender;
 
 @end
 
@@ -44,9 +45,6 @@
         self.view.backgroundColor = fundoTela;
     }
     
-//    medidas = [filho.medicoes allObjects];
-    
-    
     [self.tableView reloadData];
     
 }
@@ -63,6 +61,10 @@
 - (IBAction)addMedida:(id)sender {
     
     [self performSegueWithIdentifier:@"medindo" sender:self];
+}
+
+- (IBAction)graph:(id)sender {
+    [self performSegueWithIdentifier:@"graph" sender:self];
 }
 
 #pragma mark - Table view data source
@@ -91,7 +93,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:NO]];
     
     medidas = [[filho.medicoes allObjects] sortedArrayUsingDescriptors:sortDescriptors];
 }
@@ -102,6 +104,7 @@
         [segue.destinationViewController setDelegate:self];
     }
 }
+
 
 -(void)retornoMedidas:(double)peso and: (double)altura {
     Medidas *newMedida = [NSEntityDescription insertNewObjectForEntityForName:@"Medidas" inManagedObjectContext:self.managedObjectContext];
