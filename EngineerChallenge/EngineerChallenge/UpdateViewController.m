@@ -7,17 +7,33 @@
 //
 
 #import "UpdateViewController.h"
+#import "Solitaire.h"
 
 @interface UpdateViewController ()
 
 @end
 
 @implementation UpdateViewController
+{
+    Solitaire *solitaire;
+}
+
 @synthesize peso, altura, delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    solitaire = [Solitaire sharedInstance];
+    
+    if (solitaire.persona == YES) {
+        UIColor *fundoTela = [[UIColor alloc] initWithRed:0.7 green:0.7 blue:0.9 alpha:1.0];
+        self.view.backgroundColor = fundoTela;
+    } else {
+        UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
+        self.view.backgroundColor = fundoTela;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
