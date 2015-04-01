@@ -84,12 +84,13 @@
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
         self.view.backgroundColor = fundoTela;
     }
-    
-    medidas = [solitaire.nino.medicoes allObjects];
 
 }
 - (void)viewWillAppear:(BOOL)animated {
-    medidas = [solitaire.nino.medicoes allObjects];
+    
+    NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
+    
+    medidas = [[solitaire.nino.medicoes allObjects] sortedArrayUsingDescriptors:sortDescriptors];
     
     pesoLabel.text = [NSString stringWithFormat:@"%.2f kg", [medidas.lastObject peso]];
     alturaLabel.text = [NSString stringWithFormat:@"%.0f cm", [medidas.lastObject altura]];

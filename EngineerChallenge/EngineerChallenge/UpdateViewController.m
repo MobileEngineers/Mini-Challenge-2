@@ -34,6 +34,10 @@
         self.view.backgroundColor = fundoTela;
     }
     
+    //Mudando o teclado para numerico decimal (com ponto) para os 2 textFields
+    peso.keyboardType = UIKeyboardTypeDecimalPad;
+    altura.keyboardType = UIKeyboardTypeDecimalPad;
+    
 }
 
 - (void)didReceiveMemoryWarning {
