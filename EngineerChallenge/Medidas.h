@@ -14,7 +14,7 @@
 @interface Medidas : NSManagedObject
 
 @property (nonatomic) double altura;
-@property (nonatomic) NSTimeInterval data;
+@property (nonatomic) NSDate* data;
 @property (nonatomic) double peso;
 @property (nonatomic, retain) Filho *filho;
 
