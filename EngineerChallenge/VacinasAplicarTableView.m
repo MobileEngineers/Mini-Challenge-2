@@ -80,15 +80,31 @@
     return cell;
 }
 
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
 //    DetailVacinasViewController *as =[DetailVacinasViewController new];
 //    long row = [indexPath row];
 //    
 //    as.nome = [[todasvacinas objectAtIndex:row] objectForKey:@"nome"];
 //    
 //    [self presentViewController:as animated:YES completion:nil];
-//}
+    
+    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+
+    //Adicionando e tirando checkmark ao selecionar a celula
+    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+    }
+    
+    
+    
+}
 
 
 /*
