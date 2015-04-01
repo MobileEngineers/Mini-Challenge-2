@@ -148,13 +148,12 @@ static EKCalendar *calendario = nil;
 -(void)createEvent;
 {
   for (int i = 0; i < self.todasvacinas.count; i++) {
-    
+      int indexPath = 0;
       // Create a new event object.
       EKEvent *event = [EKEvent eventWithEventStore:self.appDelegate.eventManager.eventStore];
       
       // Set the event title.
-      event.title = [[self.todasvacinas objectAtIndex:1]objectForKey:@"nome"];
-      
+      event.title = [[self.todasvacinas objectAtIndex:i]objectForKey:@"nome"];
       // Set its calendar.
       event.calendar = [self.appDelegate.eventManager.eventStore calendarWithIdentifier:calendario.calendarIdentifier];
       
@@ -188,7 +187,7 @@ static EKCalendar *calendario = nil;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return self.arrEvents.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -197,17 +196,19 @@ static EKCalendar *calendario = nil;
 //    NSArray *localEvents = [[NSArray alloc]init];
 //    for (int i=0; i<self.myArrEvents; i++) {
 //        localEvents =
-    return 1;
-    
+return self.arrEvents.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellCalendar"];
     // Get each single event.
+    
     EKEvent *event = [self.arrEvents objectAtIndex:indexPath.row];
     
     // Set its title to the cell's text label.
-    cell.textLabel.text = event.title;
+        cell.textLabel.text = event.title;
+    return cell;
+
     
     // Get the event start date as a string value.
 //    NSString *startDateString = [self.appDelegate.eventManager getStringFromDate:event.startDate];
@@ -217,10 +218,8 @@ static EKCalendar *calendario = nil;
     
     // Add the start and end date strings to the detail text label.
 //    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", startDateString, endDateString];
-    
-    return cell;
-
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 44.0;
 }
