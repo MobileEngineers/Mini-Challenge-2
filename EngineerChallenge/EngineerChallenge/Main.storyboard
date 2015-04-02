@@ -202,6 +202,13 @@
                                     </connections>
                                 </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="9Hj-De-bm2"/>
+                                <barButtonItem image="line_chart-25" id="b7d-WY-PnI">
+                                    <connections>
+                                        <action selector="graph:" destination="8iE-7r-0HV" id="fRw-Do-Ee4"/>
+                                        <segue destination="BdG-dQ-FCq" kind="show" identifier="graph" id="juz-6f-MYO"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="zD7-dB-Brw"/>
                             </items>
                         </toolbar>
                         <prototypes>
@@ -224,9 +231,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="BdG-dQ-FCq" kind="show" id="YUJ-oP-nvx"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -345,23 +349,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCF-wJ-da5">
-                                <rect key="frame" x="16" y="28" width="568" height="181"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detalhes/Descricao do grafico" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDc-Zq-AEe">
-                                <rect key="frame" x="184" y="254" width="232" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhE-oN-Oqe" customClass="Graphs">
+                                <rect key="frame" x="16" y="30" width="568" height="300"/>
+                                <color key="backgroundColor" red="0.0" green="0.92356501839715266" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="xGp-Hv-IKS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="LhE-oN-Oqe" firstAttribute="top" secondItem="nPq-OT-JP5" secondAttribute="topMargin" constant="30" id="LlM-5Y-zcB"/>
+                            <constraint firstItem="LhE-oN-Oqe" firstAttribute="leading" secondItem="nPq-OT-JP5" secondAttribute="leadingMargin" id="V7n-Pg-9vI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LhE-oN-Oqe" secondAttribute="trailing" id="dZF-bs-ge6"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Mg6-vq-KNn" appends="YES" id="sLw-GK-Lry"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="graficoImageView" destination="TCF-wJ-da5" id="Cxb-Pd-tm0"/>
+                        <outlet property="graficoAltura" destination="LhE-oN-Oqe" id="2DW-fj-mb8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZ0-7B-WSt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="Mg6-vq-KNn">
+                    <connections>
+                        <action selector="dismiss:" destination="BdG-dQ-FCq" id="ifF-1m-Wyx"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2577" y="1797"/>
         </scene>
@@ -811,6 +827,9 @@
             <point key="canvasLocation" x="808" y="2539"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="line_chart-25" width="24" height="24"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tz9-Jj-XGB"/>
     </inferredMetricsTieBreakers>
