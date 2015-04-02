@@ -18,7 +18,7 @@
     Solitaire *solitaire;
 }
 
-@synthesize peso, altura, delegate;
+@synthesize peso, altura, salvarButton, delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +37,8 @@
     //Mudando o teclado para numerico decimal (com ponto) para os 2 textFields
     peso.keyboardType = UIKeyboardTypeDecimalPad;
     altura.keyboardType = UIKeyboardTypeDecimalPad;
+    
+    [salvarButton setEnabled:NO];
     
 }
 
@@ -70,10 +72,25 @@
 }
 */
 
+- (IBAction)textFieldChanged:(id)sender {
+    
+    if (([peso.text length] != 0) && ([altura.text length] != 0)) {
+        [salvarButton setEnabled:YES];
+    } else {
+        [salvarButton setEnabled:NO];
+    }
+    
+}
+
+
 - (IBAction)salvar:(id)sender {
    
     [delegate retornoMedidas:[peso.text doubleValue] and:[altura.text doubleValue]];
     [self dismissViewControllerAnimated:YES completion:nil];
     
+}
+
+- (IBAction)cancelar:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
