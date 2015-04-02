@@ -335,15 +335,32 @@
                         <viewControllerLayoutGuide type="top" id="iMx-uT-AMM"/>
                         <viewControllerLayoutGuide type="bottom" id="PFK-aM-9DT"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nPq-OT-JP5" customClass="Graphs">
+                    <view key="view" contentMode="scaleToFill" id="nPq-OT-JP5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhE-oN-Oqe" customClass="Graphs">
+                                <rect key="frame" x="16" y="30" width="568" height="300"/>
+                                <color key="backgroundColor" red="0.0" green="0.92356501839715266" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="xGp-Hv-IKS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="LhE-oN-Oqe" firstAttribute="top" secondItem="nPq-OT-JP5" secondAttribute="topMargin" constant="30" id="LlM-5Y-zcB"/>
+                            <constraint firstItem="LhE-oN-Oqe" firstAttribute="leading" secondItem="nPq-OT-JP5" secondAttribute="leadingMargin" id="V7n-Pg-9vI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LhE-oN-Oqe" secondAttribute="trailing" id="dZF-bs-ge6"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Mg6-vq-KNn" appends="YES" id="sLw-GK-Lry"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="graficoAltura" destination="LhE-oN-Oqe" id="2DW-fj-mb8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZ0-7B-WSt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="down" id="Mg6-vq-KNn">

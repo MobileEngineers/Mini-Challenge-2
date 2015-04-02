@@ -103,6 +103,9 @@
     if ([segue.identifier isEqualToString:@"medindo"]) {
         [segue.destinationViewController setDelegate:self];
     }
+//    if ([segue.identifier isEqualToString:@"graph"]) {
+//        solitaire.nino = filho;
+//    }
 }
 
 

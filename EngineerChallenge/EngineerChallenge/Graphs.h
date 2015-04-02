@@ -10,4 +10,6 @@
 
 @interface Graphs : UIView
 
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+
 @end
