@@ -253,9 +253,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QlA-ue-qPm">
-                                <rect key="frame" x="39" y="436" width="522" height="30"/>
+                                <rect key="frame" x="39" y="369" width="522" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert"/>
+                                <connections>
+                                    <action selector="textFieldChanged:" destination="cSN-kL-gEE" eventType="editingDidEnd" id="dWx-VR-3ZK"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso (kg)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB2-sT-JMD">
                                 <rect key="frame" x="39" y="177" width="126" height="37"/>
@@ -264,7 +267,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Altura (cm)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g2-QR-e8R">
-                                <rect key="frame" x="39" y="391" width="145" height="37"/>
+                                <rect key="frame" x="39" y="324" width="145" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -273,40 +276,46 @@
                                 <rect key="frame" x="39" y="222" width="522" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert"/>
+                                <connections>
+                                    <action selector="textFieldChanged:" destination="cSN-kL-gEE" eventType="editingChanged" id="VJg-eH-hP2"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvq-If-Nb4">
-                                <rect key="frame" x="250" y="39" width="101" height="78"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.47236924070000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="78" id="hUk-bc-imv"/>
-                                    <constraint firstAttribute="width" constant="101" id="uw0-uR-0mL"/>
-                                </constraints>
-                                <state key="normal" title="Salvar">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="275" y="488" width="50" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Salvar"/>
+                                <connections>
+                                    <action selector="salvar:" destination="cSN-kL-gEE" eventType="touchUpInside" id="gm6-Hx-Gfa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDi-ni-kOC">
+                                <rect key="frame" x="523" y="492" width="61" height="30"/>
+                                <state key="normal" title="Cancelar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="salvar:" destination="cSN-kL-gEE" eventType="touchUpInside" id="gm6-Hx-Gfa"/>
+                                    <action selector="cancelar:" destination="cSN-kL-gEE" eventType="touchUpInside" id="2uS-r8-bXN"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Pvq-If-Nb4" firstAttribute="top" secondItem="l2f-WV-z58" secondAttribute="bottom" constant="19" id="312-ES-n0T"/>
+                            <constraint firstItem="zft-Bf-CuB" firstAttribute="top" secondItem="Pvq-If-Nb4" secondAttribute="bottom" constant="29" id="88g-SF-Und"/>
                             <constraint firstItem="Mio-m5-Sez" firstAttribute="leading" secondItem="ltD-AY-suq" secondAttribute="leadingMargin" constant="23" id="9Xn-AB-hzb"/>
-                            <constraint firstItem="2g2-QR-e8R" firstAttribute="top" secondItem="Mio-m5-Sez" secondAttribute="bottom" constant="139" id="BDf-5m-S0T"/>
                             <constraint firstItem="BB2-sT-JMD" firstAttribute="leading" secondItem="ltD-AY-suq" secondAttribute="leadingMargin" constant="23" id="JMe-ke-Pld"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QlA-ue-qPm" secondAttribute="trailing" constant="23" id="Jek-wY-95C"/>
+                            <constraint firstItem="2g2-QR-e8R" firstAttribute="top" secondItem="Mio-m5-Sez" secondAttribute="bottom" constant="72" id="Jn5-DH-7jS"/>
                             <constraint firstItem="Mio-m5-Sez" firstAttribute="top" secondItem="BB2-sT-JMD" secondAttribute="bottom" constant="8" id="KOJ-Ia-Nno"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mio-m5-Sez" secondAttribute="trailing" constant="23" id="KYa-Eu-f0R"/>
+                            <constraint firstAttribute="centerX" secondItem="Pvq-If-Nb4" secondAttribute="centerX" id="Ksb-ap-scp"/>
                             <constraint firstItem="BB2-sT-JMD" firstAttribute="top" secondItem="l2f-WV-z58" secondAttribute="bottom" constant="157" id="PQT-Ac-6Oz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pvq-If-Nb4" secondAttribute="trailing" constant="233" id="R24-T7-Arp"/>
-                            <constraint firstItem="2g2-QR-e8R" firstAttribute="leading" secondItem="ltD-AY-suq" secondAttribute="leadingMargin" constant="23" id="SaY-74-x8X"/>
-                            <constraint firstItem="QlA-ue-qPm" firstAttribute="top" secondItem="2g2-QR-e8R" secondAttribute="bottom" constant="8" id="TzS-fa-V1O"/>
-                            <constraint firstItem="QlA-ue-qPm" firstAttribute="leading" secondItem="ltD-AY-suq" secondAttribute="leadingMargin" constant="23" id="VKc-Xr-KjO"/>
-                            <constraint firstItem="Pvq-If-Nb4" firstAttribute="leading" secondItem="ltD-AY-suq" secondAttribute="leadingMargin" constant="234" id="XJv-ss-5ch"/>
+                            <constraint firstItem="zft-Bf-CuB" firstAttribute="top" secondItem="YDi-ni-kOC" secondAttribute="bottom" constant="29" id="bE6-zC-EWO"/>
+                            <constraint firstItem="QlA-ue-qPm" firstAttribute="top" secondItem="2g2-QR-e8R" secondAttribute="bottom" constant="8" id="bnU-fe-Fno"/>
+                            <constraint firstItem="2g2-QR-e8R" firstAttribute="leading" secondItem="ltD-AY-suq" secondAttribute="leadingMargin" constant="23" id="cCu-f1-BAn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QlA-ue-qPm" secondAttribute="trailing" constant="23" id="d8u-8v-2kQ"/>
                             <constraint firstItem="Mio-m5-Sez" firstAttribute="top" secondItem="BB2-sT-JMD" secondAttribute="bottom" constant="8" id="fdu-2b-Cpd"/>
+                            <constraint firstItem="QlA-ue-qPm" firstAttribute="leading" secondItem="ltD-AY-suq" secondAttribute="leadingMargin" constant="23" id="i5W-vY-Cdc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YDi-ni-kOC" secondAttribute="trailing" id="yez-jL-sPs"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -317,6 +326,7 @@
                     <connections>
                         <outlet property="altura" destination="QlA-ue-qPm" id="3ob-8P-vgg"/>
                         <outlet property="peso" destination="Mio-m5-Sez" id="uhr-Mc-DBw"/>
+                        <outlet property="salvarButton" destination="Pvq-If-Nb4" id="ai6-kw-vKt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PwL-vi-Cai" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -539,7 +549,7 @@
                                 </state>
                                 <connections>
                                     <action selector="back:" destination="XE5-xm-s7K" eventType="touchUpInside" id="dWD-lD-hiO"/>
-                                    <segue destination="qfn-2c-jkn" kind="show" id="tz9-Jj-XGB"/>
+                                    <segue destination="qfn-2c-jkn" kind="show" identifier="BackToDetalhes" id="tz9-Jj-XGB"/>
                                 </connections>
                             </button>
                         </subviews>
