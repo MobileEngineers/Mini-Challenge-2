@@ -129,7 +129,28 @@
                         <view key="tableHeaderView" contentMode="scaleToFill" id="8Zu-wv-3ur">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nome_App" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cag-EJ-in1">
+                                    <rect key="frame" x="241" y="37" width="119" height="29"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="03a-9c-4PO">
+                                    <rect key="frame" x="225" y="87" width="150" height="150"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="150" id="5Vt-5d-rIt"/>
+                                        <constraint firstAttribute="width" constant="150" id="rDE-PZ-HOc"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="centerX" secondItem="03a-9c-4PO" secondAttribute="centerX" id="0jB-Mf-MzA"/>
+                                <constraint firstItem="03a-9c-4PO" firstAttribute="top" secondItem="8Zu-wv-3ur" secondAttribute="top" constant="87" id="2yL-cq-SDQ"/>
+                                <constraint firstItem="03a-9c-4PO" firstAttribute="top" secondItem="Cag-EJ-in1" secondAttribute="bottom" constant="21" id="Au8-Wi-Hjj"/>
+                                <constraint firstAttribute="centerX" secondItem="Cag-EJ-in1" secondAttribute="centerX" id="UaM-hf-mfR"/>
+                            </constraints>
                         </view>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gDW-BR-MEq">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -175,6 +196,7 @@
                         <outlet property="addFilho" destination="ci8-Kx-K5U" id="btN-Lm-0bt"/>
                         <outlet property="barrinha" destination="gDW-BR-MEq" id="LIL-eN-DPc"/>
                         <outlet property="headerView" destination="8Zu-wv-3ur" id="JUK-I8-eBu"/>
+                        <outlet property="logoImage" destination="03a-9c-4PO" id="OJL-R0-U8l"/>
                         <outlet property="logoView" destination="8Zu-wv-3ur" id="5vq-G1-Jer"/>
                     </connections>
                 </tableViewController>
@@ -202,6 +224,13 @@
                                     </connections>
                                 </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="9Hj-De-bm2"/>
+                                <barButtonItem image="line_chart-25" id="b7d-WY-PnI">
+                                    <connections>
+                                        <action selector="graph:" destination="8iE-7r-0HV" id="fRw-Do-Ee4"/>
+                                        <segue destination="BdG-dQ-FCq" kind="show" identifier="graph" id="juz-6f-MYO"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="zD7-dB-Brw"/>
                             </items>
                         </toolbar>
                         <prototypes>
@@ -224,9 +253,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="BdG-dQ-FCq" kind="show" id="YUJ-oP-nvx"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -345,23 +371,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCF-wJ-da5">
-                                <rect key="frame" x="16" y="28" width="568" height="181"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detalhes/Descricao do grafico" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDc-Zq-AEe">
-                                <rect key="frame" x="184" y="254" width="232" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhE-oN-Oqe" customClass="Graphs">
+                                <rect key="frame" x="16" y="30" width="568" height="300"/>
+                                <color key="backgroundColor" red="0.0" green="0.92356501839715266" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="xGp-Hv-IKS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="LhE-oN-Oqe" firstAttribute="top" secondItem="nPq-OT-JP5" secondAttribute="topMargin" constant="30" id="LlM-5Y-zcB"/>
+                            <constraint firstItem="LhE-oN-Oqe" firstAttribute="leading" secondItem="nPq-OT-JP5" secondAttribute="leadingMargin" id="V7n-Pg-9vI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LhE-oN-Oqe" secondAttribute="trailing" id="dZF-bs-ge6"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Mg6-vq-KNn" appends="YES" id="sLw-GK-Lry"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="graficoImageView" destination="TCF-wJ-da5" id="Cxb-Pd-tm0"/>
+                        <outlet property="graficoAltura" destination="LhE-oN-Oqe" id="2DW-fj-mb8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZ0-7B-WSt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="Mg6-vq-KNn">
+                    <connections>
+                        <action selector="dismiss:" destination="BdG-dQ-FCq" id="ifF-1m-Wyx"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2577" y="1797"/>
         </scene>
@@ -915,4 +953,10 @@
             <point key="canvasLocation" x="808" y="2539"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="line_chart-25" width="24" height="24"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="pNr-Gt-XdS"/>
+    </inferredMetricsTieBreakers>
 </document>

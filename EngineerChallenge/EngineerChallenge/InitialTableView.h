@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *barrinha;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addFilho;
 @property (weak, nonatomic) IBOutlet UIView *logoView;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImage;
 
 - (IBAction)cadastrar:(id)sender;
 

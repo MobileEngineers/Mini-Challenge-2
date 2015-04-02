@@ -43,6 +43,9 @@
     self.appDelegate =(AppDelegate *)[[UIApplication sharedApplication] delegate];
 
        [self performSelector:@selector(requestAccessToEvents) withObject:nil afterDelay:0.1];
+    [self.logoImage setImage:[UIImage imageNamed:@"iconVacine"]];
+
+    [self.logoView.viewForBaselineLayout addSubview:_logoImage];
     [self.tableView reloadData];
   
 }

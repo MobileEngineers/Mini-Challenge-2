@@ -30,6 +30,7 @@
         self.view.backgroundColor = fundoTela;
     }
     
+    self.graficoAltura.layer.cornerRadius = 20.0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,4 +48,7 @@
 }
 */
 
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
