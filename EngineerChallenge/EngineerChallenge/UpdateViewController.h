@@ -17,9 +17,13 @@
 @interface UpdateViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *peso;
 @property (strong, nonatomic) IBOutlet UITextField *altura;
+@property (weak, nonatomic) IBOutlet UIButton *salvarButton;
 
 @property (nonatomic,assign) id <returnMedidas> delegate;
 
+- (IBAction)textFieldChanged:(id)sender;
+
 - (IBAction)salvar:(id)sender;
+- (IBAction)cancelar:(id)sender;
 
 @end
