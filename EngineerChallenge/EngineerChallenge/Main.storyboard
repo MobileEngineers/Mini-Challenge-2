@@ -129,7 +129,28 @@
                         <view key="tableHeaderView" contentMode="scaleToFill" id="8Zu-wv-3ur">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nome_App" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cag-EJ-in1">
+                                    <rect key="frame" x="241" y="37" width="119" height="29"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="03a-9c-4PO">
+                                    <rect key="frame" x="225" y="87" width="150" height="150"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="150" id="5Vt-5d-rIt"/>
+                                        <constraint firstAttribute="width" constant="150" id="rDE-PZ-HOc"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="centerX" secondItem="03a-9c-4PO" secondAttribute="centerX" id="0jB-Mf-MzA"/>
+                                <constraint firstItem="03a-9c-4PO" firstAttribute="top" secondItem="8Zu-wv-3ur" secondAttribute="top" constant="87" id="2yL-cq-SDQ"/>
+                                <constraint firstItem="03a-9c-4PO" firstAttribute="top" secondItem="Cag-EJ-in1" secondAttribute="bottom" constant="21" id="Au8-Wi-Hjj"/>
+                                <constraint firstAttribute="centerX" secondItem="Cag-EJ-in1" secondAttribute="centerX" id="UaM-hf-mfR"/>
+                            </constraints>
                         </view>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gDW-BR-MEq">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -175,6 +196,7 @@
                         <outlet property="addFilho" destination="ci8-Kx-K5U" id="btN-Lm-0bt"/>
                         <outlet property="barrinha" destination="gDW-BR-MEq" id="LIL-eN-DPc"/>
                         <outlet property="headerView" destination="8Zu-wv-3ur" id="JUK-I8-eBu"/>
+                        <outlet property="logoImage" destination="03a-9c-4PO" id="OJL-R0-U8l"/>
                         <outlet property="logoView" destination="8Zu-wv-3ur" id="5vq-G1-Jer"/>
                     </connections>
                 </tableViewController>
@@ -831,6 +853,6 @@
         <image name="line_chart-25" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tz9-Jj-XGB"/>
+        <segue reference="pNr-Gt-XdS"/>
     </inferredMetricsTieBreakers>
 </document>
