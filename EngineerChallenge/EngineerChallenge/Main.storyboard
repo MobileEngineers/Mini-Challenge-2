@@ -258,7 +258,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso (kg)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB2-sT-JMD">
-                                <rect key="frame" x="39" y="177" width="125.5" height="37"/>
+                                <rect key="frame" x="39" y="177" width="126" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -539,6 +539,7 @@
                                 </state>
                                 <connections>
                                     <action selector="back:" destination="XE5-xm-s7K" eventType="touchUpInside" id="dWD-lD-hiO"/>
+                                    <segue destination="qfn-2c-jkn" kind="show" id="tz9-Jj-XGB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -800,4 +801,7 @@
             <point key="canvasLocation" x="808" y="2539"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tz9-Jj-XGB"/>
+    </inferredMetricsTieBreakers>
 </document>
