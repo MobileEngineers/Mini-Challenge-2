@@ -37,19 +37,19 @@
     
     vacin = [VacinasSingleton sharedInstance];
     todavacinas = [vacin getVacinas1];
-    _limite.text = @"1 mês";
+    _limite.text = @"Cada vacina tem o tempo limite para ser tomada de 1 mês";
     
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    _nome.text = [[todavacinas objectAtIndex:_index]objectForKey:@"nome"];
+    _nome.text = [[todavacinas objectAtIndex:_index]objectForKey:@"nomeDetalhe"];
     _doenca.text = [[todavacinas objectAtIndex:_index]objectForKey:@"doenca"];
     _efeito.text = [[todavacinas objectAtIndex:_index]objectForKey:@"efeitoCol"];
     _contra.text = [[todavacinas objectAtIndex:_index]objectForKey:@"contraInd"];
     _idade.text = [[todavacinas objectAtIndex:_index]objectForKey:@"idade"];
-    _doses.text = [NSString stringWithFormat:@"%@", [[todavacinas objectAtIndex:_index]objectForKey:@"doses"]];
+    _doses.text = [[todavacinas objectAtIndex:_index]objectForKey:@"doses"];
     
 }
 
