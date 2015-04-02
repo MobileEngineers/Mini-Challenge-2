@@ -34,6 +34,7 @@
         self.view.backgroundColor = fundoTela;
     }
     
+    
     vacin = [VacinasSingleton sharedInstance];
     todavacinas = [vacin getVacinas1];
     _limite.text = @"1 mês";
