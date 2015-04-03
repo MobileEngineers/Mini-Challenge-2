@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @class Filho;
 
@@ -16,7 +17,11 @@
 @property NSDate *cumpleanos;
 @property BOOL persona;
 @property Filho *nino;
+@property NSManagedObjectContext *context;
 
 + (Solitaire *)sharedInstance;
+
+-(void)saveContext;
+-(NSArray *)findFilhos;
 
 @end

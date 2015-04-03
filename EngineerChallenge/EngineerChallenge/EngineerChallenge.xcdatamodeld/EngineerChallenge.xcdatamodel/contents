@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1510" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Filho" representedClassName="Filho" syncable="YES">
+        <attribute name="checarCalendario" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="nascimento" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sexo" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -21,7 +22,7 @@
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Filho" positionX="-315" positionY="-157" width="128" height="105"/>
+        <element name="Filho" positionX="-315" positionY="-157" width="128" height="120"/>
         <element name="Medidas" positionX="250" positionY="-157" width="128" height="105"/>
         <element name="Vacina" positionX="-54" positionY="27" width="128" height="133"/>
     </elements>

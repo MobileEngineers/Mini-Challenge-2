@@ -21,6 +21,7 @@
 		A18EDE671ACC141500D66D3F /* Medidas.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EDE661ACC141500D66D3F /* Medidas.m */; };
 		A1E8F3681ACABD3D00C7F39F /* VacinasSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8F3671ACABD3D00C7F39F /* VacinasSingleton.m */; };
 		A1E8F36B1ACABECD00C7F39F /* DetailVacinasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8F36A1ACABECD00C7F39F /* DetailVacinasViewController.m */; };
+		DD2BDFE91ACD99D90009F955 /* Filho.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2BDFE81ACD99D90009F955 /* Filho.m */; };
 		DDB6F57C1AC97BA40068997C /* VacinasCalendarioTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB6F57B1AC97BA40068997C /* VacinasCalendarioTableView.m */; };
 		DDB6F57F1AC984B70068997C /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB6F57E1AC984B70068997C /* EventManager.m */; };
 		DDB6F5831AC987650068997C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6F5801AC985550068997C /* EventKit.framework */; };
@@ -34,7 +35,6 @@
 		E44D31851AC96AF800A81319 /* Vacina.m in Sources */ = {isa = PBXBuildFile; fileRef = E44D31841AC96AF800A81319 /* Vacina.m */; };
 		E44D31911AC9878C00A81319 /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44D31901AC9878C00A81319 /* UpdateViewController.m */; };
 		E4A6AE5A1ACC36690012834D /* Graphs.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A6AE591ACC36690012834D /* Graphs.m */; };
-		E4C0D2A91ACAC14200DC3903 /* Filho.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0D2A81ACAC14200DC3903 /* Filho.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +76,8 @@
 		A1E8F3671ACABD3D00C7F39F /* VacinasSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VacinasSingleton.m; sourceTree = "<group>"; };
 		A1E8F3691ACABECD00C7F39F /* DetailVacinasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVacinasViewController.h; sourceTree = "<group>"; };
 		A1E8F36A1ACABECD00C7F39F /* DetailVacinasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVacinasViewController.m; sourceTree = "<group>"; };
+		DD2BDFE71ACD99D90009F955 /* Filho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filho.h; sourceTree = "<group>"; };
+		DD2BDFE81ACD99D90009F955 /* Filho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filho.m; sourceTree = "<group>"; };
 		DDB6F57A1AC97BA40068997C /* VacinasCalendarioTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VacinasCalendarioTableView.h; path = ../VacinasCalendarioTableView.h; sourceTree = "<group>"; };
 		DDB6F57B1AC97BA40068997C /* VacinasCalendarioTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VacinasCalendarioTableView.m; path = ../VacinasCalendarioTableView.m; sourceTree = "<group>"; };
 		DDB6F57D1AC984B70068997C /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
@@ -99,8 +101,6 @@
 		E44D31901AC9878C00A81319 /* UpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateViewController.m; sourceTree = "<group>"; };
 		E4A6AE581ACC36690012834D /* Graphs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphs.h; sourceTree = "<group>"; };
 		E4A6AE591ACC36690012834D /* Graphs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graphs.m; sourceTree = "<group>"; };
-		E4C0D2A71ACAC14200DC3903 /* Filho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Filho.h; path = ../Filho.h; sourceTree = "<group>"; };
-		E4C0D2A81ACAC14200DC3903 /* Filho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Filho.m; path = ../Filho.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,18 +125,18 @@
 		02BB77A61AC2D10800F1DD4D /* Entidades */ = {
 			isa = PBXGroup;
 			children = (
-				02377CB51AC456C20081B4A2 /* Solitaire.h */,
-				02377CB61AC456C20081B4A2 /* Solitaire.m */,
 				E44D31831AC96AF800A81319 /* Vacina.h */,
 				E44D31841AC96AF800A81319 /* Vacina.m */,
 				DDB6F57D1AC984B70068997C /* EventManager.h */,
 				DDB6F57E1AC984B70068997C /* EventManager.m */,
-				E4C0D2A71ACAC14200DC3903 /* Filho.h */,
-				E4C0D2A81ACAC14200DC3903 /* Filho.m */,
 				A18EDE651ACC141500D66D3F /* Medidas.h */,
 				A18EDE661ACC141500D66D3F /* Medidas.m */,
 				A1E8F3661ACABD3D00C7F39F /* VacinasSingleton.h */,
 				A1E8F3671ACABD3D00C7F39F /* VacinasSingleton.m */,
+				02377CB51AC456C20081B4A2 /* Solitaire.h */,
+				02377CB61AC456C20081B4A2 /* Solitaire.m */,
+				DD2BDFE71ACD99D90009F955 /* Filho.h */,
+				DD2BDFE81ACD99D90009F955 /* Filho.m */,
 			);
 			name = Entidades;
 			sourceTree = "<group>";
@@ -310,11 +310,11 @@
 				TargetAttributes = {
 					E4024BBF1AC1F17A00A0FFF6 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 9WJKK289EM;
+						DevelopmentTeam = F2Q5YFHJHH;
 					};
 					E4024BDB1AC1F17B00A0FFF6 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 63SRE9K6S5;
+						DevelopmentTeam = F2Q5YFHJHH;
 						TestTargetID = E4024BBF1AC1F17A00A0FFF6;
 					};
 				};
@@ -363,7 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C0D2A91ACAC14200DC3903 /* Filho.m in Sources */,
+				DD2BDFE91ACD99D90009F955 /* Filho.m in Sources */,
 				E4A6AE5A1ACC36690012834D /* Graphs.m in Sources */,
 				02B5FE981AC4359400B96E05 /* PerfilViewController.m in Sources */,
 				02BB77AF1AC2D28300F1DD4D /* InitialTableView.m in Sources */,
@@ -500,9 +500,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EngineerChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -511,9 +513,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EngineerChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

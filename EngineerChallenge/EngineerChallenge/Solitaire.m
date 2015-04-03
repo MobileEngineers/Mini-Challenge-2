@@ -7,6 +7,7 @@
 //
 
 #import "Solitaire.h"
+#import "AppDelegate.h"
 
 @implementation Solitaire
 
@@ -21,10 +22,29 @@ static bool isFirstAccess = YES;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         isFirstAccess = NO;
-        SINGLETON = [[super allocWithZone:NULL] init];    
+        SINGLETON = [[super allocWithZone:NULL] init];
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        SINGLETON.context = [appDelegate managedObjectContext];
     });
     
     return SINGLETON;
+}
+
+
+-(void)saveContext
+{
+    NSError *error;
+    [self.context save:&error];
+    if (error) {
+        NSLog(@"Error ao salvar contexto (%@)",  error);
+    }
+}
+
+-(NSArray *)findFilhos
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Filho"];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"nome" ascending:YES]];
+    return [_context executeFetchRequest:fetchRequest error:nil];
 }
 
 #pragma mark - Life Cycle

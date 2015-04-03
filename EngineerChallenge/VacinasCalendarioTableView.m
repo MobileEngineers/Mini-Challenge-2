@@ -19,6 +19,7 @@ static EKCalendar *calendario = nil;
 -(void)loadEventCalendars;
 -(void)loadCreateCalendars;
 -(void)loadEvents;
+-(void)loadCreateEvents;
 -(NSArray *)getEventsOfSelectedCalendar;
 
 @property (nonatomic, strong) NSArray *arrEvents;
@@ -38,10 +39,8 @@ static EKCalendar *calendario = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     solitaire = [Solitaire sharedInstance];
-    
-    if (solitaire.persona == YES) {
+    if ([Solitaire sharedInstance].persona == YES) {
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.7 green:0.7 blue:0.9 alpha:1.0];
         self.view.backgroundColor = fundoTela;
     } else {
@@ -59,14 +58,18 @@ static EKCalendar *calendario = nil;
     
         //criando calendário
     [self loadEventCalendars];
-    [self createCalendar];
+    if ([[[Solitaire sharedInstance] nino] checarCalendario] ==NO) {
+        [self createCalendar];
+        [[[Solitaire sharedInstance] nino] setChecarCalendario:YES];
+
+    }
     
     //setando eventos
     self.eventStartDate = nil;
     self.eventEndDate = nil; //pegar o intervalo (inicio + intervalo)
 
     //load events
-    [self performSelector:@selector(loadEvents) withObject:nil afterDelay:0.5];
+    [self performSelector:@selector(loadCreateEvents) withObject:nil afterDelay:0.5];
 
     
 }
@@ -82,7 +85,6 @@ static EKCalendar *calendario = nil;
     // Reload the table view.
     [self.tableView reloadData];
 }
-
 
 
 -(void)createCalendar{
@@ -144,6 +146,26 @@ static EKCalendar *calendario = nil;
         
         [self.tableView reloadData];    }
 }
+-(void)loadCreateEvents{
+    if (self.appDelegate.eventManager.eventsAccessGranted) {
+        EKCalendar* currentCalendar = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:self.appDelegate.eventManager.eventStore];
+        for (int i=0; i<self.arrCalendars; i++) {
+            currentCalendar = [self.arrCalendars objectAtIndex:i];
+            if (currentCalendar.type == EKCalendarTypeCalDAV){
+                NSLog(@"nome : %@",currentCalendar.title);
+            if ([currentCalendar.title isEqualToString:[NSString stringWithFormat:@"Vacinas %@", solitaire.nombre]]){
+                
+                calendario = currentCalendar;
+                break;
+            }
+            
+            }}
+        self.arrEvents = [self.appDelegate.eventManager getEventsOfSelectedCalendar:calendario.calendarIdentifier];
+        
+        [self.tableView reloadData];
+    }
+}
+
 
 -(void)createEvent;
 {
@@ -203,6 +225,7 @@ return self.arrEvents.count;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellCalendar"];
     // Get each single event.
     
+
     EKEvent *event = [self.arrEvents objectAtIndex:indexPath.row];
     
     // Set its title to the cell's text label.

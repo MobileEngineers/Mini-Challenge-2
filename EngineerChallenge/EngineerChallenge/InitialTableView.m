@@ -11,13 +11,14 @@
 #import "AppDelegate.h"
 #import "CadastroViewController.h"
 #import "Solitaire.h"
+#import "VacinasCalendarioTableView.h"
 
 @interface InitialTableView ()
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *filhos;
 @property (nonatomic,strong) AppDelegate *appDelegate;
-
+@property (nonatomic,strong) VacinasCalendarioTableView *Calendar;
 -(void)requestAccessToEvents;
 
 @end
@@ -29,10 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Filho"];
-    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"nome" ascending:YES]];
-    self.filhos = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    solitaire = [Solitaire sharedInstance];
+
+    self.filhos = [[Solitaire sharedInstance] findFilhos];
     
     UIColor *fundoTela = [[UIColor alloc] initWithRed:0.5 green:0.9 blue:0.8 alpha:1.0];
     self.view.backgroundColor = fundoTela;
@@ -55,9 +55,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSManagedObjectContext *)managedObjectContext{
-    return [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
-}
 
 #pragma mark - accessCalendarGranted
 
@@ -201,10 +198,14 @@
 #pragma mark - Navigation
 
 -(void)retornoCadastro:(NSString *)nome andData:(NSDate *)nascimento andSexo:(BOOL)sexo {
-    Filho *newFilho = [NSEntityDescription insertNewObjectForEntityForName:@"Filho" inManagedObjectContext:self.managedObjectContext];
+    Filho *newFilho = [[Filho alloc] init]; //[NSEntityDescription insertNewObjectForEntityForName:@"Filho" inManagedObjectContext:self.managedObjectContext];
     newFilho.nome = nome;
     newFilho.nascimento = nascimento;
-    newFilho.sexo = sexo;
+    newFilho.sexo = NO;
+    
+    newFilho.checarCalendario=NO;
+    
+    
     
     [self.managedObjectContext save:nil];
     self.filhos = [self.filhos arrayByAddingObject:newFilho];
