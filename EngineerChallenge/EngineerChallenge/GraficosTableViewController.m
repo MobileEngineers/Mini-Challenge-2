@@ -65,6 +65,7 @@
 
 - (IBAction)graph:(id)sender {
     [self performSegueWithIdentifier:@"graph" sender:self];
+    solitaire.nino = filho;
 }
 
 #pragma mark - Table view data source
