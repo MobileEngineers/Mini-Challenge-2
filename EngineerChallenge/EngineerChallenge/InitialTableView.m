@@ -201,7 +201,7 @@
     Filho *newFilho = [[Filho alloc] init]; //[NSEntityDescription insertNewObjectForEntityForName:@"Filho" inManagedObjectContext:self.managedObjectContext];
     newFilho.nome = nome;
     newFilho.nascimento = nascimento;
-    newFilho.sexo = NO;
+    newFilho.sexo = sexo;
     
     newFilho.checarCalendario=NO;
     

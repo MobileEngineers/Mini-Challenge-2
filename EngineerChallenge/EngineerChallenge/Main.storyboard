@@ -261,6 +261,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Graficos" id="5Ys-dd-j7i"/>
+                    <connections>
+                        <outlet property="botaoGraficos" destination="b7d-WY-PnI" id="PPQ-dV-MFz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPK-Uc-G3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
