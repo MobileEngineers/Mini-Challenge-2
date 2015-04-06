@@ -184,14 +184,11 @@ static EKCalendar *calendario = nil;
       // Set its calendar.
       event.calendar = [self.appDelegate.eventManager.eventStore calendarWithIdentifier:calendario.calendarIdentifier];
       
-      // Set the start and end dates to the event.
-   
-      //self.eventStartDate =[[self.todasvacinas objectAtIndex:i]objectForKey:@"meses"];
       
-      data1 = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:[NSDate date] options:0];
   components.month = [[[self.todasvacinas objectAtIndex:i] objectForKey:@"meses"] intValue];
+      data1 = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:solitaire.cumpleanos options:0];
       event.startDate = data1;
-      event.endDate = [event.startDate dateByAddingTimeInterval:60*60*24];
+      event.endDate = [event.startDate dateByAddingTimeInterval:60*60];
     
       // Save and commit the event.
       NSError *error;
@@ -231,17 +228,27 @@ static EKCalendar *calendario = nil;
 return self.arrEvents.count;
 }
 
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellCalendar"];
     // Get each single event.
     
-
-    EKEvent *event = [self.arrEvents objectAtIndex:indexPath.row];
+    NSDate *data1 = [[NSDate alloc]init];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    
+    //    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    
+    components.month = [[[self.todasvacinas objectAtIndex:indexPath.row] objectForKey:@"meses"] intValue];
+    data1 = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:solitaire.cumpleanos options:0];
+    //  NSString *CurrentTime = [dateFormatter stringFromDate:data1];
+    
+    NSString *SessionID = [dateFormatter stringFromDate:data1];
     
     // Set its title to the cell's text label.
-        cell.textLabel.text = event.title;
+    cell.textLabel.text =  SessionID;
     return cell;
-
     
     // Get the event start date as a string value.
 //    NSString *startDateString = [self.appDelegate.eventManager getStringFromDate:event.startDate];
