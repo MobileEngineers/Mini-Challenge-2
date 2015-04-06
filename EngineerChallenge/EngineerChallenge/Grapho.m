@@ -43,7 +43,14 @@
     [axis1 stroke];
     [axis2 stroke];
     
-    CGFloat maior = [[medidas lastObject] peso];
+    CGFloat maior = 0;
+    
+    for (int k = 0; k < medidas.count; k++) {
+        if ([[medidas objectAtIndex:k] peso] > maior) {
+            maior = [[medidas objectAtIndex:k] peso];
+        }
+    }
+    
     CGFloat menor = [[medidas firstObject] peso];
     CGFloat n = maior - menor;
     CGFloat y = self.frame.size.height - 95;

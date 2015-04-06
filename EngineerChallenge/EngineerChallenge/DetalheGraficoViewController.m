@@ -45,11 +45,19 @@
     NSString *data2 = [NSString stringWithFormat:@"%@", [[medidas firstObject] data]];
     primeiraData.text = [data2 substringToIndex:11];
     
-    ultimoPeso.text = [NSString stringWithFormat:@"%.0f cm", [[medidas lastObject] peso]];
+    CGFloat maior = 0;
+    
+    for (int k = 0; k < medidas.count; k++) {
+        if ([[medidas objectAtIndex:k] peso] > maior) {
+            maior = [[medidas objectAtIndex:k] peso];
+        }
+    }
+    
+    ultimoPeso.text = [NSString stringWithFormat:@"%.2f kg", [[medidas lastObject] peso]];
     NSString *Data1 = [NSString stringWithFormat:@"%@", [[medidas lastObject] data]];
     dataPeso.text = [Data1 substringToIndex:11];
-    ultimoPesinho.text = [NSString stringWithFormat:@"%.0f", [[medidas lastObject] peso]];
-    primeiroPeso.text = [NSString stringWithFormat:@"%.0f", [[medidas firstObject] peso]];
+    ultimoPesinho.text = [NSString stringWithFormat:@"%.2f", maior];
+    primeiroPeso.text = [NSString stringWithFormat:@"%.2f", [[medidas firstObject] peso]];
     NSString *Data2 = [NSString stringWithFormat:@"%@", [[medidas firstObject] data]];
     primeiroData.text = [Data2 substringToIndex:11];
 }
