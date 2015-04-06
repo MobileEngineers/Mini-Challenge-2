@@ -21,7 +21,6 @@
 		A18EDE671ACC141500D66D3F /* Medidas.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EDE661ACC141500D66D3F /* Medidas.m */; };
 		A1E8F3681ACABD3D00C7F39F /* VacinasSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8F3671ACABD3D00C7F39F /* VacinasSingleton.m */; };
 		A1E8F36B1ACABECD00C7F39F /* DetailVacinasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8F36A1ACABECD00C7F39F /* DetailVacinasViewController.m */; };
-		DD2BDFE91ACD99D90009F955 /* Filho.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2BDFE81ACD99D90009F955 /* Filho.m */; };
 		DDB6F57C1AC97BA40068997C /* VacinasCalendarioTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB6F57B1AC97BA40068997C /* VacinasCalendarioTableView.m */; };
 		DDB6F57F1AC984B70068997C /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB6F57E1AC984B70068997C /* EventManager.m */; };
 		DDB6F5831AC987650068997C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6F5801AC985550068997C /* EventKit.framework */; };
@@ -32,9 +31,10 @@
 		E4024BD71AC1F17A00A0FFF6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4024BD51AC1F17A00A0FFF6 /* LaunchScreen.xib */; };
 		E4024BE31AC1F17B00A0FFF6 /* EngineerChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4024BE21AC1F17B00A0FFF6 /* EngineerChallengeTests.m */; };
 		E4024BED1AC1F1BE00A0FFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4024BEC1AC1F1BE00A0FFF6 /* Main.storyboard */; };
-		E44D31851AC96AF800A81319 /* Vacina.m in Sources */ = {isa = PBXBuildFile; fileRef = E44D31841AC96AF800A81319 /* Vacina.m */; };
 		E44D31911AC9878C00A81319 /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44D31901AC9878C00A81319 /* UpdateViewController.m */; };
 		E462689E1AD0AF27000BC17A /* Grapho.m in Sources */ = {isa = PBXBuildFile; fileRef = E462689D1AD0AF27000BC17A /* Grapho.m */; };
+		E4644BF81AD2A742000486B0 /* Filho.m in Sources */ = {isa = PBXBuildFile; fileRef = E4644BF71AD2A742000486B0 /* Filho.m */; };
+		E4644BFB1AD2A743000486B0 /* Vacina.m in Sources */ = {isa = PBXBuildFile; fileRef = E4644BFA1AD2A743000486B0 /* Vacina.m */; };
 		E4A6AE5A1ACC36690012834D /* Graphs.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A6AE591ACC36690012834D /* Graphs.m */; };
 /* End PBXBuildFile section */
 
@@ -77,8 +77,6 @@
 		A1E8F3671ACABD3D00C7F39F /* VacinasSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VacinasSingleton.m; sourceTree = "<group>"; };
 		A1E8F3691ACABECD00C7F39F /* DetailVacinasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVacinasViewController.h; sourceTree = "<group>"; };
 		A1E8F36A1ACABECD00C7F39F /* DetailVacinasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVacinasViewController.m; sourceTree = "<group>"; };
-		DD2BDFE71ACD99D90009F955 /* Filho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filho.h; sourceTree = "<group>"; };
-		DD2BDFE81ACD99D90009F955 /* Filho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filho.m; sourceTree = "<group>"; };
 		DDB6F57A1AC97BA40068997C /* VacinasCalendarioTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VacinasCalendarioTableView.h; path = ../VacinasCalendarioTableView.h; sourceTree = "<group>"; };
 		DDB6F57B1AC97BA40068997C /* VacinasCalendarioTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VacinasCalendarioTableView.m; path = ../VacinasCalendarioTableView.m; sourceTree = "<group>"; };
 		DDB6F57D1AC984B70068997C /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
@@ -96,12 +94,14 @@
 		E4024BE11AC1F17B00A0FFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4024BE21AC1F17B00A0FFF6 /* EngineerChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EngineerChallengeTests.m; sourceTree = "<group>"; };
 		E4024BEC1AC1F1BE00A0FFF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E44D31831AC96AF800A81319 /* Vacina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vacina.h; sourceTree = "<group>"; };
-		E44D31841AC96AF800A81319 /* Vacina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vacina.m; sourceTree = "<group>"; };
 		E44D318F1AC9878C00A81319 /* UpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateViewController.h; sourceTree = "<group>"; };
 		E44D31901AC9878C00A81319 /* UpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateViewController.m; sourceTree = "<group>"; };
 		E462689C1AD0AF27000BC17A /* Grapho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grapho.h; sourceTree = "<group>"; };
 		E462689D1AD0AF27000BC17A /* Grapho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grapho.m; sourceTree = "<group>"; };
+		E4644BF61AD2A742000486B0 /* Filho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filho.h; sourceTree = "<group>"; };
+		E4644BF71AD2A742000486B0 /* Filho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filho.m; sourceTree = "<group>"; };
+		E4644BF91AD2A743000486B0 /* Vacina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vacina.h; sourceTree = "<group>"; };
+		E4644BFA1AD2A743000486B0 /* Vacina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vacina.m; sourceTree = "<group>"; };
 		E4A6AE581ACC36690012834D /* Graphs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphs.h; sourceTree = "<group>"; };
 		E4A6AE591ACC36690012834D /* Graphs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graphs.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,8 +128,6 @@
 		02BB77A61AC2D10800F1DD4D /* Entidades */ = {
 			isa = PBXGroup;
 			children = (
-				E44D31831AC96AF800A81319 /* Vacina.h */,
-				E44D31841AC96AF800A81319 /* Vacina.m */,
 				DDB6F57D1AC984B70068997C /* EventManager.h */,
 				DDB6F57E1AC984B70068997C /* EventManager.m */,
 				A18EDE651ACC141500D66D3F /* Medidas.h */,
@@ -138,8 +136,10 @@
 				A1E8F3671ACABD3D00C7F39F /* VacinasSingleton.m */,
 				02377CB51AC456C20081B4A2 /* Solitaire.h */,
 				02377CB61AC456C20081B4A2 /* Solitaire.m */,
-				DD2BDFE71ACD99D90009F955 /* Filho.h */,
-				DD2BDFE81ACD99D90009F955 /* Filho.m */,
+				E4644BF91AD2A743000486B0 /* Vacina.h */,
+				E4644BFA1AD2A743000486B0 /* Vacina.m */,
+				E4644BF61AD2A742000486B0 /* Filho.h */,
+				E4644BF71AD2A742000486B0 /* Filho.m */,
 			);
 			name = Entidades;
 			sourceTree = "<group>";
@@ -368,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD2BDFE91ACD99D90009F955 /* Filho.m in Sources */,
+				E4644BF81AD2A742000486B0 /* Filho.m in Sources */,
 				E4A6AE5A1ACC36690012834D /* Graphs.m in Sources */,
 				02B5FE981AC4359400B96E05 /* PerfilViewController.m in Sources */,
 				02BB77AF1AC2D28300F1DD4D /* InitialTableView.m in Sources */,
@@ -389,7 +389,7 @@
 				DDB6F57F1AC984B70068997C /* EventManager.m in Sources */,
 				E4024BC91AC1F17A00A0FFF6 /* AppDelegate.m in Sources */,
 				E4024BC61AC1F17A00A0FFF6 /* main.m in Sources */,
-				E44D31851AC96AF800A81319 /* Vacina.m in Sources */,
+				E4644BFB1AD2A743000486B0 /* Vacina.m in Sources */,
 				0206AFD61AC5E17E000682CD /* VacinasAplicarTableView.m in Sources */,
 				A18EDE671ACC141500D66D3F /* Medidas.m in Sources */,
 			);

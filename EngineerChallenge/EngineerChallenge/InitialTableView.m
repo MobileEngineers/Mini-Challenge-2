@@ -198,7 +198,7 @@
 #pragma mark - Navigation
 
 -(void)retornoCadastro:(NSString *)nome andData:(NSDate *)nascimento andSexo:(BOOL)sexo {
-    Filho *newFilho = [[Filho alloc] init]; //[NSEntityDescription insertNewObjectForEntityForName:@"Filho" inManagedObjectContext:self.managedObjectContext];
+    Filho *newFilho = [NSEntityDescription insertNewObjectForEntityForName:@"Filho" inManagedObjectContext:self.managedObjectContext];
     newFilho.nome = nome;
     newFilho.nascimento = nascimento;
     newFilho.sexo = sexo;
@@ -211,6 +211,10 @@
     self.filhos = [self.filhos arrayByAddingObject:newFilho];
     NSLog(@"Xablau");
     [self.tableView reloadData];
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+    return [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
