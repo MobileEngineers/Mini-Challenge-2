@@ -20,7 +20,7 @@
     NSArray *medidas;
 }
 
-@synthesize nomeLabel, mesesLabel, sexoLabel, pesoLabel, alturaLabel;
+@synthesize nomeLabel, mesesLabel, sexoLabel, pesoLabel, alturaLabel, vacinasEmDia;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -84,6 +84,8 @@
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
         self.view.backgroundColor = fundoTela;
     }
+    
+    [vacinasEmDia setText:@"Consulte o pediatra!!!!!!"];
 
 }
 - (void)viewWillAppear:(BOOL)animated {

@@ -1,19 +1,19 @@
 //
-//  Graphs.m
+//  Grapho.m
 //  EngineerChallenge
 //
-//  Created by Isaías Lima on 01/04/15.
+//  Created by Isaías Lima on 04/04/15.
 //  Copyright (c) 2015 Isaías Lima. All rights reserved.
 //
 
-#import "Graphs.h"
+#import "Grapho.h"
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 #import "Solitaire.h"
 #import "Filho.h"
 #import "Medidas.h"
 
-@implementation Graphs {
+@implementation Grapho {
     Solitaire *solitaire;
     NSArray *medidas;
 }
@@ -43,8 +43,8 @@
     [axis1 stroke];
     [axis2 stroke];
     
-    CGFloat maior = [[medidas lastObject] altura];
-    CGFloat menor = [[medidas firstObject] altura];
+    CGFloat maior = [[medidas lastObject] peso];
+    CGFloat menor = [[medidas firstObject] peso];
     CGFloat n = maior - menor;
     CGFloat y = self.frame.size.height - 95;
     CGFloat x = self.frame.size.width - 30;
@@ -52,8 +52,8 @@
     CGFloat escalaX = x/[medidas count];
     
     UIBezierPath *axis3 = [[UIBezierPath alloc] init];
-    [axis3 moveToPoint:CGPointMake(15, ((y + 60) - escalaY*([[medidas objectAtIndex:medidas.count/2] altura]-menor)))];
-    [axis3 addLineToPoint:CGPointMake(self.frame.size.width - 15, ((y + 60) - escalaY*([[medidas objectAtIndex:medidas.count/2] altura]-menor)))];
+    [axis3 moveToPoint:CGPointMake(15, ((y + 60) - escalaY*([[medidas objectAtIndex:medidas.count/2] peso]-menor)))];
+    [axis3 addLineToPoint:CGPointMake(self.frame.size.width - 15, ((y + 60) - escalaY*([[medidas objectAtIndex:medidas.count/2] peso]-menor)))];
     axis3.lineWidth = 0.8;
     axis3.lineJoinStyle = kCGLineJoinBevel;
     axis3.lineCapStyle = kCGLineCapSquare;
@@ -67,7 +67,7 @@
     UIBezierPath *pontos[medidas.count];
     UIBezierPath *linhas[medidas.count];
     for (int i = 0; i < medidas.count; i++) {
-        alturas[i] = [[medidas objectAtIndex:i] altura];
+        alturas[i] = [[medidas objectAtIndex:i] peso];
         pontos[i] = [[UIBezierPath alloc] init];
         [pontos[i] moveToPoint:CGPointMake(15 + escalaX/2 + escalaX*i, ((y + 60) - escalaY*(alturas[i]-menor)))];
         [pontos[i] addLineToPoint:CGPointMake(15 + escalaX/2 + escalaX*i, ((y + 60) - escalaY*(alturas[i]-menor)))];
@@ -91,4 +91,6 @@
 }
 
 
+
 @end
+

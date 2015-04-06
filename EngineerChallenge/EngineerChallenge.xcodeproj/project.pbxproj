@@ -34,6 +34,7 @@
 		E4024BED1AC1F1BE00A0FFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4024BEC1AC1F1BE00A0FFF6 /* Main.storyboard */; };
 		E44D31851AC96AF800A81319 /* Vacina.m in Sources */ = {isa = PBXBuildFile; fileRef = E44D31841AC96AF800A81319 /* Vacina.m */; };
 		E44D31911AC9878C00A81319 /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44D31901AC9878C00A81319 /* UpdateViewController.m */; };
+		E462689E1AD0AF27000BC17A /* Grapho.m in Sources */ = {isa = PBXBuildFile; fileRef = E462689D1AD0AF27000BC17A /* Grapho.m */; };
 		E4A6AE5A1ACC36690012834D /* Graphs.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A6AE591ACC36690012834D /* Graphs.m */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,8 @@
 		E44D31841AC96AF800A81319 /* Vacina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vacina.m; sourceTree = "<group>"; };
 		E44D318F1AC9878C00A81319 /* UpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateViewController.h; sourceTree = "<group>"; };
 		E44D31901AC9878C00A81319 /* UpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateViewController.m; sourceTree = "<group>"; };
+		E462689C1AD0AF27000BC17A /* Grapho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grapho.h; sourceTree = "<group>"; };
+		E462689D1AD0AF27000BC17A /* Grapho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grapho.m; sourceTree = "<group>"; };
 		E4A6AE581ACC36690012834D /* Graphs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphs.h; sourceTree = "<group>"; };
 		E4A6AE591ACC36690012834D /* Graphs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graphs.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +187,8 @@
 				E44D31901AC9878C00A81319 /* UpdateViewController.m */,
 				E4A6AE581ACC36690012834D /* Graphs.h */,
 				E4A6AE591ACC36690012834D /* Graphs.m */,
+				E462689C1AD0AF27000BC17A /* Grapho.h */,
+				E462689D1AD0AF27000BC17A /* Grapho.m */,
 			);
 			name = Graficos;
 			sourceTree = "<group>";
@@ -310,11 +315,11 @@
 				TargetAttributes = {
 					E4024BBF1AC1F17A00A0FFF6 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = F2Q5YFHJHH;
+						DevelopmentTeam = YBDF2UUEMG;
 					};
 					E4024BDB1AC1F17B00A0FFF6 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = F2Q5YFHJHH;
+						DevelopmentTeam = YBDF2UUEMG;
 						TestTargetID = E4024BBF1AC1F17A00A0FFF6;
 					};
 				};
@@ -367,6 +372,7 @@
 				E4A6AE5A1ACC36690012834D /* Graphs.m in Sources */,
 				02B5FE981AC4359400B96E05 /* PerfilViewController.m in Sources */,
 				02BB77AF1AC2D28300F1DD4D /* InitialTableView.m in Sources */,
+				E462689E1AD0AF27000BC17A /* Grapho.m in Sources */,
 				A1E8F3681ACABD3D00C7F39F /* VacinasSingleton.m in Sources */,
 				02377CB71AC456C20081B4A2 /* Solitaire.m in Sources */,
 				02B5FE9E1AC437F300B96E05 /* GraficosTableViewController.m in Sources */,

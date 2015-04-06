@@ -24,7 +24,7 @@
     Solitaire *solitaire;
     NSArray *medidas;
 }
-@synthesize filho;
+@synthesize filho, botaoGraficos;
 
 
 - (void)viewDidLoad {
@@ -44,6 +44,7 @@
         UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
         self.view.backgroundColor = fundoTela;
     }
+    
     
     [self.tableView reloadData];
     
@@ -65,6 +66,7 @@
 
 - (IBAction)graph:(id)sender {
     [self performSegueWithIdentifier:@"graph" sender:self];
+    solitaire.nino = filho;
 }
 
 #pragma mark - Table view data source
@@ -96,6 +98,12 @@
     NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:NO]];
     
     medidas = [[filho.medicoes allObjects] sortedArrayUsingDescriptors:sortDescriptors];
+    
+    if ([filho.medicoes count] <2) {
+        [botaoGraficos setEnabled:NO];
+    } else {
+        [botaoGraficos setEnabled:YES];
+    }
 }
 
 

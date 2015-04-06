@@ -13,5 +13,6 @@
 @interface GraficosTableViewController : UITableViewController <returnMedidas>
 
 @property (nonatomic, strong) Filho *filho;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *botaoGraficos;
 
 @end

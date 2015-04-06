@@ -8,6 +8,8 @@
 
 #import "DetalheGraficoViewController.h"
 #import "Solitaire.h"
+#import "Filho.h"
+#import "Medidas.h"
 
 @interface DetalheGraficoViewController ()
 
@@ -15,7 +17,9 @@
 
 @implementation DetalheGraficoViewController {
     Solitaire *solitaire;
+    NSArray *medidas;
 }
+@synthesize ultimaAltura, dataAltura, ultimaAlturinha, primeiraAltura, primeiraData, ultimoPeso, dataPeso, ultimoPesinho, primeiroPeso, primeiroData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,7 +34,24 @@
         self.view.backgroundColor = fundoTela;
     }
     
-    self.graficoAltura.layer.cornerRadius = 20.0;
+    NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"data" ascending:YES]];
+    medidas = [[solitaire.nino.medicoes allObjects] sortedArrayUsingDescriptors:sortDescriptors];
+    
+    ultimaAltura.text = [NSString stringWithFormat:@"%.0f cm", [[medidas lastObject] altura]];
+    NSString *data1 = [NSString stringWithFormat:@"%@", [[medidas lastObject] data]];
+    dataAltura.text = [data1 substringToIndex:11];
+    ultimaAlturinha.text = [NSString stringWithFormat:@"%.0f", [[medidas lastObject] altura]];
+    primeiraAltura.text = [NSString stringWithFormat:@"%.0f", [[medidas firstObject] altura]];
+    NSString *data2 = [NSString stringWithFormat:@"%@", [[medidas firstObject] data]];
+    primeiraData.text = [data2 substringToIndex:11];
+    
+    ultimoPeso.text = [NSString stringWithFormat:@"%.0f cm", [[medidas lastObject] peso]];
+    NSString *Data1 = [NSString stringWithFormat:@"%@", [[medidas lastObject] data]];
+    dataPeso.text = [Data1 substringToIndex:11];
+    ultimoPesinho.text = [NSString stringWithFormat:@"%.0f", [[medidas lastObject] peso]];
+    primeiroPeso.text = [NSString stringWithFormat:@"%.0f", [[medidas firstObject] peso]];
+    NSString *Data2 = [NSString stringWithFormat:@"%@", [[medidas firstObject] data]];
+    primeiroData.text = [Data2 substringToIndex:11];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,7 +69,7 @@
 }
 */
 
-- (IBAction)dismiss:(id)sender {
+- (IBAction)backButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
