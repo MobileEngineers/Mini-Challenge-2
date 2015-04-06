@@ -169,6 +169,11 @@ static EKCalendar *calendario = nil;
 
 -(void)createEvent;
 {
+    
+ NSDate *data1 = [[NSDate alloc]init];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+//    components.month = 1;
+    
   for (int i = 0; i < self.todasvacinas.count; i++) {
       int indexPath = 0;
       // Create a new event object.
@@ -180,8 +185,13 @@ static EKCalendar *calendario = nil;
       event.calendar = [self.appDelegate.eventManager.eventStore calendarWithIdentifier:calendario.calendarIdentifier];
       
       // Set the start and end dates to the event.
-      event.startDate = [NSDate date];
-      event.endDate = [event.startDate dateByAddingTimeInterval:60*60];
+   
+      //self.eventStartDate =[[self.todasvacinas objectAtIndex:i]objectForKey:@"meses"];
+      
+      data1 = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:[NSDate date] options:0];
+  components.month = [[[self.todasvacinas objectAtIndex:i] objectForKey:@"meses"] intValue];
+      event.startDate = data1;
+      event.endDate = [event.startDate dateByAddingTimeInterval:60*60*24];
     
       // Save and commit the event.
       NSError *error;
@@ -223,6 +233,15 @@ return self.arrEvents.count;
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellCalendar"];
+
+    if (solitaire.persona == YES) {
+        UIColor *fundoTela = [[UIColor alloc] initWithRed:0.7 green:0.7 blue:0.9 alpha:1.0];
+        cell.backgroundColor = fundoTela;
+    } else {
+        UIColor *fundoTela = [[UIColor alloc] initWithRed:0.9 green:0.6 blue:0.7 alpha:1.0];
+        cell.backgroundColor = fundoTela;
+    }
+    
     // Get each single event.
     
 

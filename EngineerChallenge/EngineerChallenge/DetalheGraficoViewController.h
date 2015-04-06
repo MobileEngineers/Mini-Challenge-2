@@ -25,6 +25,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *primeiroPeso;
 @property (strong, nonatomic) IBOutlet UILabel *primeiroData;
 
-- (IBAction)dismiss:(id)sender;
+- (IBAction)backButton:(id)sender;
 
 @end
