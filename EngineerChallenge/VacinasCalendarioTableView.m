@@ -256,7 +256,11 @@ return self.arrEvents.count;
     NSString *SessionID = [dateFormatter stringFromDate:data1];
     
     // Set its title to the cell's text label.
-    cell.textLabel.text =  SessionID;
+    EKEvent *event = [EKEvent eventWithEventStore:self.appDelegate.eventManager.eventStore];
+    
+    event.title = [[self.todasvacinas objectAtIndex:indexPath.row]objectForKey:@"nome"];
+
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",SessionID,event.title ];
     return cell;
     
     // Get the event start date as a string value.
