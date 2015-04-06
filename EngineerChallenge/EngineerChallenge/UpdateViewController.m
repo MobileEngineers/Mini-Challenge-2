@@ -38,6 +38,7 @@
     peso.keyboardType = UIKeyboardTypeDecimalPad;
     altura.keyboardType = UIKeyboardTypeDecimalPad;
     
+    
     [salvarButton setEnabled:NO];
     
 }

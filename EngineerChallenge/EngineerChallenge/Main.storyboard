@@ -260,7 +260,7 @@
                             <outlet property="delegate" destination="8iE-7r-0HV" id="dSI-hA-dwl"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Graficos" id="5Ys-dd-j7i"/>
+                    <tabBarItem key="tabBarItem" title="Graficos" image="positive_dynamic-25" id="5Ys-dd-j7i"/>
                     <connections>
                         <outlet property="botaoGraficos" destination="b7d-WY-PnI" id="PPQ-dV-MFz"/>
                     </connections>
@@ -396,7 +396,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Última altura" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7t-g8-Vo9">
-                                        <rect key="frame" x="418" y="19" width="133.5" height="21"/>
+                                        <rect key="frame" x="418" y="19" width="134" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="6Rk-WL-j28"/>
                                             <constraint firstAttribute="height" constant="21" id="aIo-CC-WEs"/>
@@ -464,7 +464,7 @@
                                 <rect key="frame" x="16" y="309" width="568" height="235"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Os-t5-JWl">
-                                        <rect key="frame" x="14" y="20" width="58.5" height="21"/>
+                                        <rect key="frame" x="14" y="20" width="59" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="1mx-Pm-yLK"/>
                                         </constraints>
@@ -473,7 +473,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Último peso" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WK-ni-Jus">
-                                        <rect key="frame" x="423" y="20" width="128.5" height="21"/>
+                                        <rect key="frame" x="423" y="20" width="129" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="8AD-nr-iPB"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="swm-JC-iwe"/>
@@ -649,7 +649,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oh6-WD-Rdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="2539"/>
+            <point key="canvasLocation" x="1482" y="2539"/>
         </scene>
         <!--Detail Vacinas View Controller-->
         <scene sceneID="9zi-nG-DPG">
@@ -721,15 +721,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkl-Cy-wqV">
-                                <rect key="frame" x="282" y="449" width="35" height="30"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="back:" destination="XE5-xm-s7K" eventType="touchUpInside" id="dWD-lD-hiO"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuM-0v-REy">
                                 <rect key="frame" x="271" y="339" width="58" height="21"/>
                                 <attributedString key="attributedText">
@@ -756,6 +747,15 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkl-Cy-wqV">
+                                <rect key="frame" x="281" y="449" width="39" height="30"/>
+                                <state key="normal" title="Voltar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="XE5-xm-s7K" eventType="touchUpInside" id="dWD-lD-hiO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Xu3-5H-uOI" secondAttribute="trailing" id="0h1-ng-gDs"/>
@@ -998,7 +998,7 @@
                             <constraint firstItem="VbH-MB-rqO" firstAttribute="top" secondItem="cdG-YO-qCt" secondAttribute="bottom" constant="29" id="ySl-Re-RgM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Perfil" id="jfJ-vu-MRa"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="user_male_circle_filled-25" id="jfJ-vu-MRa"/>
                     <connections>
                         <outlet property="alturaLabel" destination="eR5-e9-PrU" id="0X1-fs-nsI"/>
                         <outlet property="mesesLabel" destination="bCR-GU-WJh" id="Oxs-ub-LVw"/>
@@ -1044,6 +1044,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTe-V9-bav">
+                                <rect key="frame" x="0.0" y="71" width="600" height="480"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UgD-Ou-Be0">
                                 <rect key="frame" x="16" y="28" width="568" height="29"/>
                                 <segments>
@@ -1056,10 +1060,6 @@
                                     <action selector="alterarView:" destination="DVY-0p-Mbu" eventType="valueChanged" id="VwC-qw-Fpw"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTe-V9-bav">
-                                <rect key="frame" x="0.0" y="71" width="600" height="480"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1072,7 +1072,7 @@
                             <constraint firstItem="XTe-V9-bav" firstAttribute="bottom" secondItem="n5h-W0-s8h" secondAttribute="top" id="yvv-Hj-a2p"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Vacinas" id="jqe-hG-1cZ"/>
+                    <tabBarItem key="tabBarItem" title="Vacinas" image="syringe-25" id="jqe-hG-1cZ"/>
                     <connections>
                         <outlet property="conteudoView" destination="XTe-V9-bav" id="1zq-Er-LHV"/>
                         <outlet property="segmentedCont" destination="UgD-Ou-Be0" id="aAF-mh-bQK"/>
@@ -1111,5 +1111,8 @@
     </scenes>
     <resources>
         <image name="line_chart-25" width="24" height="24"/>
+        <image name="positive_dynamic-25" width="24" height="24"/>
+        <image name="syringe-25" width="24" height="24"/>
+        <image name="user_male_circle_filled-25" width="24" height="24"/>
     </resources>
 </document>
