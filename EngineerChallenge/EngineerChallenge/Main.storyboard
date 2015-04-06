@@ -260,7 +260,7 @@
                             <outlet property="delegate" destination="8iE-7r-0HV" id="dSI-hA-dwl"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Graficos" id="5Ys-dd-j7i"/>
+                    <tabBarItem key="tabBarItem" title="Graficos" image="positive_dynamic-25" id="5Ys-dd-j7i"/>
                     <connections>
                         <outlet property="botaoGraficos" destination="b7d-WY-PnI" id="PPQ-dV-MFz"/>
                     </connections>
@@ -998,7 +998,7 @@
                             <constraint firstItem="VbH-MB-rqO" firstAttribute="top" secondItem="cdG-YO-qCt" secondAttribute="bottom" constant="29" id="ySl-Re-RgM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Perfil" id="jfJ-vu-MRa"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="user_male_circle_filled-25" id="jfJ-vu-MRa"/>
                     <connections>
                         <outlet property="alturaLabel" destination="eR5-e9-PrU" id="0X1-fs-nsI"/>
                         <outlet property="mesesLabel" destination="bCR-GU-WJh" id="Oxs-ub-LVw"/>
@@ -1072,7 +1072,7 @@
                             <constraint firstItem="XTe-V9-bav" firstAttribute="bottom" secondItem="n5h-W0-s8h" secondAttribute="top" id="yvv-Hj-a2p"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Vacinas" id="jqe-hG-1cZ"/>
+                    <tabBarItem key="tabBarItem" title="Vacinas" image="syringe-25" id="jqe-hG-1cZ"/>
                     <connections>
                         <outlet property="conteudoView" destination="XTe-V9-bav" id="1zq-Er-LHV"/>
                         <outlet property="segmentedCont" destination="UgD-Ou-Be0" id="aAF-mh-bQK"/>
@@ -1111,5 +1111,8 @@
     </scenes>
     <resources>
         <image name="line_chart-25" width="24" height="24"/>
+        <image name="positive_dynamic-25" width="24" height="24"/>
+        <image name="syringe-25" width="24" height="24"/>
+        <image name="user_male_circle_filled-25" width="24" height="24"/>
     </resources>
 </document>
