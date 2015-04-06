@@ -69,7 +69,7 @@
 }
 */
 
-- (IBAction)dismiss:(id)sender {
+- (IBAction)backButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
