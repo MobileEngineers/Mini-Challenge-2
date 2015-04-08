@@ -315,11 +315,11 @@
 				TargetAttributes = {
 					E4024BBF1AC1F17A00A0FFF6 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = F2Q5YFHJHH;
+						DevelopmentTeam = YBDF2UUEMG;
 					};
 					E4024BDB1AC1F17B00A0FFF6 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = F2Q5YFHJHH;
+						DevelopmentTeam = YBDF2UUEMG;
 						TestTargetID = E4024BBF1AC1F17A00A0FFF6;
 					};
 				};
