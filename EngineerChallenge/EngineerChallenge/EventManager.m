@@ -44,7 +44,7 @@
     //check the type of each returned calendar. Every local calendar found in the first array is stored to the mutable one, which is returned at the end
     for (int i=0; i<allCalendars.count; i++){
         EKCalendar *currentCalendar = [allCalendars objectAtIndex:i];
-        if (currentCalendar.type == EKCalendarTypeCalDAV){
+        if (currentCalendar.type == EKCalendarTypeCalDAV  || currentCalendar.type == EKCalendarTypeLocal){
             //Each calendar (the currentCalendar) is stored to a EKCalendar object temporarily.
             [localCalendars addObject:currentCalendar];
             
